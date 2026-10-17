@@ -1,0 +1,80 @@
+<view class="page">
+  <view class="page-heading">
+    <text class="demo-mark">模拟记录 · 本机演示</text>
+    <text class="page-title">异常详情</text>
+    <text class="page-subtitle">时间线是本机演示操作记录</text>
+  </view>
+
+  <view wx:if="{{error}}" class="error-state">{{error}}</view>
+  <view wx:if="{{loading}}" class="loading-state">正在读取异常…</view>
+
+  <block wx:elif="{{incident}}">
+    <view class="card">
+      <view class="row-top">
+        <view class="row-main">
+          <text class="item-title incident-title">{{incident.title}}</text>
+          <text class="item-meta">{{incident.codeText}} · {{incident.deviceText}}</text>
+        </view>
+        <text class="status status--{{incident.statusTone}}">{{incident.statusText}}</text>
+      </view>
+      <view class="detail-row"><text class="detail-label">严重度</text><text class="detail-value">{{incident.severityText}}</text></view>
+      <view class="detail-row"><text class="detail-label">当前版本</text><text class="detail-value">第 {{incident.revision}} 版</text></view>
+      <text class="description-label">现象描述</text>
+      <text class="description">{{incident.description || '未填写'}}</text>
+    </view>
+
+    <view class="card">
+      <text class="section-title">操作时间线</text>
+      <view wx:if="{{events.length === 0}}" class="empty-state">暂无操作记录。</view>
+      <view wx:else>
+        <view wx:for="{{events}}" wx:key="id" class="timeline-item">
+          <view class="timeline-dot"></view>
+          <view class="timeline-content">
+            <text class="event-action">{{item.actionText}}</text>
+            <text class="event-meta">{{item.atText}} · {{item.actorText}}</text>
+            <text class="event-transition">{{item.fromText}} → {{item.toText}}</text>
+            <text class="event-reason">{{item.reasonText}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="card">
+      <text class="section-title">现场图片附件</text>
+      <text class="muted">仅记录文件名与大小等元数据；图片本体留在本机文件，不会进入备份或时间线。</text>
+      <view wx:if="{{attachments.length === 0}}" class="empty-state action-empty">暂无附件记录。</view>
+      <view wx:else>
+        <view wx:for="{{attachments}}" wx:key="id" class="attachment-row">
+          <view class="row-main">
+            <text class="item-title">{{item.fileName}}</text>
+            <text class="item-meta">{{item.sizeText}} · {{item.atText}}</text>
+            <text class="attachment-exists {{item.missing ? 'attachment-exists--bad' : ''}}">{{item.existsText || '未检查'}}</text>
+          </view>
+        </view>
+      </view>
+      <button class="plain-button action-button" size="mini" bindtap="addAttachment" disabled="{{submittingAction}}">+ 添加模拟图片附件</button>
+    </view>
+
+    <view class="card">
+      <text class="section-title">推进状态</text>
+      <text class="muted">每一步操作都会写入本机演示时间线，处理说明必填，结束后不可再改。</text>
+      <view wx:if="{{ended}}" class="empty-state action-empty">该异常已结束（{{incident.statusText}}），无需进一步操作。</view>
+      <block wx:elif="{{roleHint}}">
+        <view class="empty-state action-empty">{{roleHint}}</view>
+      </block>
+      <block wx:else>
+        <view class="action-row">
+          <button wx:for="{{actions}}" wx:key="type" class="plain-button action-button {{item.danger ? 'action-button--danger' : ''}}" data-type="{{item.type}}" bindtap="selectAction" disabled="{{submittingAction}}">{{item.label}}</button>
+        </view>
+        <view wx:if="{{pendingType}}" class="pending-panel">
+          <text class="field-label">「{{pendingLabel}}」处理说明</text>
+          <textarea class="field-textarea reason-textarea" value="{{pendingReason}}" maxlength="500" placeholder="填写 2 至 500 字的原因或结论" bindinput="onReasonInput" />
+          <view class="action-row">
+            <button class="plain-button action-button" bindtap="cancelAction" disabled="{{submittingAction}}">取消</button>
+            <button class="primary-button action-button" loading="{{submittingAction}}" disabled="{{submittingAction}}" bindtap="submitAction">确认{{pendingLabel}}</button>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

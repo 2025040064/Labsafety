@@ -1,0 +1,65 @@
+<view class="page">
+  <view class="hero">
+    <text class="demo-mark">模拟数据 · 本机演示</text>
+    <text class="hero-title">LabSafe AI</text>
+    <text class="hero-subtitle">实验室安全管理演示</text>
+    <text class="hero-note">当前为单设备离线演示，不代表真实身份认证或现场安全判断。</text>
+  </view>
+
+  <view wx:if="{{error}}" class="error-state">{{error}}</view>
+  <view wx:if="{{loading}}" class="loading-state">正在读取本机数据…</view>
+
+  <view wx:else class="card">
+    <text class="section-title">本机概览</text>
+    <view class="stats">
+      <view wx:for="{{stats}}" wx:key="label" class="stat">
+        <text class="stat-value">{{item.value}}</text>
+        <text class="stat-label">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="section-title">演示身份</text>
+    <text class="muted">当前：{{roleLabel}}。切换身份仅用于同一设备上演示业务流程。</text>
+    <view class="role-options">
+      <button wx:for="{{roles}}" wx:key="value" class="role-button {{role === item.value ? 'role-button--active' : ''}}" data-role="{{item.value}}" disabled="{{busy}}" bindtap="switchRole">{{item.label}}</button>
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="section-title">业务主线</text>
+    <text class="flow">设备 → 巡检 → 异常 → 处理 → 复核</text>
+    <text class="muted">设备、工作台与助手页均可完成演示闭环；请以本机演示数据为准。</text>
+  </view>
+
+  <view class="card">
+    <text class="section-title">备份与恢复（本机演示）</text>
+    <text class="muted">导出 JSON 元数据备份（不含图片文件）；恢复前会先预检，坏备份不会部分覆盖当前数据。</text>
+    <view class="backup-actions">
+      <button class="plain-button" size="mini" loading="{{exporting}}" disabled="{{exporting || busy}}" bindtap="exportBackup">导出备份并复制</button>
+    </view>
+    <view wx:if="{{backupMeta}}" class="backup-report">
+      <text class="backup-line">已导出约 {{backupMeta.sizeText}}；{{copyMessage}}</text>
+      <text wx:for="{{backupMeta.warnings}}" wx:key="*this" class="backup-warn">⚠ {{item}}</text>
+    </view>
+    <textarea wx:if="{{copyFailed}}" class="import-textarea" value="{{backupText}}" maxlength="-1" placeholder="备份 JSON，可手动复制" />
+    <text class="field-label">粘贴备份 JSON 以恢复</text>
+    <textarea class="import-textarea" value="{{importText}}" maxlength="-1" placeholder="粘贴导出的备份 JSON" bindinput="onImportInput" />
+    <view class="backup-actions">
+      <button class="plain-button" size="mini" disabled="{{busy}}" bindtap="precheckImport">预检备份</button>
+      <button wx:if="{{importReport && importReport.canRestore}}" class="primary-button" size="mini" disabled="{{busy}}" bindtap="confirmRestore">确认恢复</button>
+    </view>
+    <view wx:if="{{importReport && importReport.canRestore}}" class="backup-report">
+      <text class="backup-line">预检通过：约 {{importReport.sizeText}}；{{importReport.migrated ? '旧版本数据将自动迁移' : '版本兼容'}}。</text>
+      <text class="backup-line">恢复内容：实验室 {{importReport.counts.labs}} · 设备 {{importReport.counts.devices}} · 巡检 {{importReport.counts.inspections}} · 异常 {{importReport.counts.incidents}} · 事件 {{importReport.counts.events}} · 资料 {{importReport.counts.documents}} · 附件记录 {{importReport.counts.attachments}}</text>
+      <text wx:for="{{importReport.warnings}}" wx:key="*this" class="backup-warn">⚠ {{item}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <text class="section-title">演示设置</text>
+    <text class="muted">需要重新演示时，可恢复固定模拟数据。</text>
+    <button class="plain-button reset-button" disabled="{{busy}}" bindtap="resetDemo">恢复固定模拟数据</button>
+  </view>
+</view>

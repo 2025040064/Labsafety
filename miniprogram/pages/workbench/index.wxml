@@ -1,0 +1,84 @@
+<view class="page">
+  <view class="page-heading">
+    <text class="demo-mark">模拟数据 · 本机演示</text>
+    <text class="page-title">工作台</text>
+    <text class="page-subtitle">巡检任务与异常记录</text>
+  </view>
+
+  <view class="segment">
+    <view class="segment-item {{activeSection === 'inspection' ? 'segment-item--active' : ''}}" data-section="inspection" bindtap="selectSection">巡检 {{inspections.length}}</view>
+    <view class="segment-item {{activeSection === 'incident' ? 'segment-item--active' : ''}}" data-section="incident" bindtap="selectSection">异常 {{incidents.length}}</view>
+  </view>
+
+  <view wx:if="{{error}}" class="error-state">{{error}}</view>
+  <view wx:if="{{loading}}" class="loading-state">正在读取工作台…</view>
+
+  <block wx:elif="{{activeSection === 'inspection'}}">
+    <scroll-view scroll-x class="chip-scroll">
+      <view class="chip-row">
+        <view wx:for="{{inspectionFilters}}" wx:key="value" class="chip {{inspectionFilter === item.value ? 'chip--active' : ''}}" data-value="{{item.value}}" bindtap="selectInspectionFilter">{{item.label}}</view>
+      </view>
+    </scroll-view>
+
+    <view class="card">
+      <view class="row-top">
+        <text class="section-title form-title">提交巡检</text>
+        <button class="plain-button" size="mini" bindtap="toggleForm" disabled="{{submitting}}">{{formOpen ? '收起表单' : '填写巡检'}}</button>
+      </view>
+      <text class="muted">逐项确认模板检查项，提交后生成本机巡检记录，可重复提交不同结果。</text>
+      <block wx:if="{{formOpen}}">
+        <text class="field-label">巡检模板</text>
+        <picker mode="selector" range="{{templates}}" range-key="title" value="{{formTemplateIndex}}" bindchange="pickTemplate">
+          <view class="picker-box">{{templates[formTemplateIndex].title}} <text class="picker-arrow">⌄</text></view>
+        </picker>
+        <text class="field-label">巡检设备</text>
+        <picker mode="selector" range="{{activeDevices}}" range-key="name" value="{{formDeviceIndex}}" bindchange="pickDevice">
+          <view class="picker-box">{{activeDevices[formDeviceIndex].name}}（{{activeDevices[formDeviceIndex].code}}） <text class="picker-arrow">⌄</text></view>
+        </picker>
+        <view wx:for="{{formItems}}" wx:key="text" class="check-item">
+          <view class="row-top">
+            <text class="check-title">{{index + 1}}. {{item.text}}</text>
+            <switch checked="{{item.passed}}" data-index="{{index}}" bindchange="onItemPassedChange" color="#08796d" />
+          </view>
+          <input class="field-input check-note" value="{{item.note}}" maxlength="500" placeholder="备注（可选，不超过 500 字）" data-index="{{index}}" bindinput="onItemNoteInput" />
+        </view>
+        <button class="primary-button submit-button" loading="{{submitting}}" disabled="{{submitting}}" bindtap="submitInspectionForm">提交巡检结果</button>
+      </block>
+    </view>
+
+    <view wx:if="{{inspections.length === 0}}" class="empty-state">该筛选下暂无巡检记录。</view>
+    <view wx:else class="card">
+      <view wx:for="{{inspections}}" wx:key="id" class="item-row">
+        <view class="row-top">
+          <view class="row-main">
+            <text class="item-title">{{item.title}}</text>
+            <text class="item-meta">{{item.deviceText}} · 截止 {{item.dueText}}</text>
+          </view>
+          <text class="status status--{{item.statusTone}}">{{item.statusText}}</text>
+        </view>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <scroll-view scroll-x class="chip-scroll">
+      <view class="chip-row">
+        <view wx:for="{{incidentFilters}}" wx:key="value" class="chip {{incidentFilter === item.value ? 'chip--active' : ''}}" data-value="{{item.value}}" bindtap="selectIncidentFilter">{{item.label}}</view>
+      </view>
+    </scroll-view>
+
+    <view wx:if="{{incidents.length === 0}}" class="empty-state">该筛选下暂无异常记录。可从设备详情上报模拟异常。</view>
+    <view wx:else class="card">
+      <view wx:for="{{incidents}}" wx:key="id" class="item-row incident-row" data-id="{{item.id}}" bindtap="openIncident">
+        <view class="row-top">
+          <view class="row-main">
+            <text class="item-title">{{item.title}}</text>
+            <text class="item-meta">{{item.codeText}} · {{item.deviceText}} · 严重度 {{item.severityText}}</text>
+          </view>
+          <text class="status status--{{item.statusTone}}">{{item.statusText}}</text>
+        </view>
+        <text class="entry-hint">查看时间线并推进状态 ›</text>
+      </view>
+    </view>
+  </block>
+</view>

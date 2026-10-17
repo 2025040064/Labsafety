@@ -1,0 +1,10 @@
+# 微信开发者工具本机私有配置（含个人 IDE 设置，不入库）
+project.private.config.json
+
+# 依赖与构建产物（当前无第三方依赖，防未来误提交）
+node_modules/
+miniprogram_npm/
+
+# 系统与编辑器杂项
+.DS_Store
+*.log

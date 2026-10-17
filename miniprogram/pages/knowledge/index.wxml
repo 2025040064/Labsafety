@@ -1,0 +1,70 @@
+<view class="page">
+  <view class="page-heading">
+    <text class="demo-mark">模拟资料 · 本机演示</text>
+    <text class="page-title">规程资料</text>
+    <text class="page-subtitle">只引用本机已发布版本原文，无依据时拒答</text>
+  </view>
+
+  <view class="card search-card">
+    <text class="section-title">检索本机资料</text>
+    <input class="search-input" value="{{text}}" placeholder="输入设备编号、规程或关键词" confirm-type="search" bindinput="onInput" bindconfirm="search" />
+    <button class="primary-button search-button" loading="{{loading}}" disabled="{{loading}}" bindtap="search">查询</button>
+  </view>
+
+  <view wx:if="{{error}}" class="error-state">{{error}}</view>
+  <view wx:if="{{loading}}" class="loading-state">正在检索本机资料…</view>
+  <view wx:elif="{{noEvidence}}" class="empty-state">本机已发布资料中没有命中依据，因此不作答、也不生成任何操作建议。请核对原始规程或联系实验室负责人。</view>
+  <view wx:elif="{{results.length > 0}}">
+    <text class="result-count">找到 {{results.length}} 条资料片段（仅现行版本）</text>
+    <view wx:for="{{results}}" wx:key="id" class="card result-card">
+      <text class="item-title">{{item.title}}</text>
+      <text class="result-text">{{item.text}}</text>
+      <view class="source-box">
+        <text class="source-label">引用来源</text>
+        <text class="source-text">{{item.sourceText}}</text>
+        <button class="plain-button verify-button" size="mini" data-id="{{item.id}}" bindtap="verifyCitation" disabled="{{checkingId === item.id}}">{{checkingId === item.id ? '复核中…' : '复核引用'}}</button>
+        <text wx:if="{{item.verify}}" class="verify-text verify-text--{{item.verify.ok ? 'ok' : 'bad'}}">{{item.verify.text}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:elif="{{!searched}}" class="empty-state">输入关键词开始查询。检索结果仅用于演示，请以正式发布的原始规程为准。</view>
+
+  <view wx:if="{{canManage}}" class="card manage-card">
+    <view class="row-top">
+      <text class="section-title">资料管理（教师/管理员）</text>
+      <button class="plain-button manage-mini" size="mini" bindtap="startImport" disabled="{{docBusy}}">+ 导入新资料</button>
+    </view>
+    <text class="muted">导入后为待发布草稿，不参与检索；发布后才可被引用。修订只新增版本，旧版本原文保留可复核。</text>
+    <view wx:if="{{documents.length === 0}}" class="empty-state manage-empty">本机暂无资料记录。</view>
+    <view wx:else>
+      <view wx:for="{{documents}}" wx:key="id" class="doc-row">
+        <view class="row-main">
+          <text class="item-title">{{item.title}}</text>
+          <text class="item-meta">现行版本 {{item.versionText}} · {{item.expiryText}}{{item.hasDraft ? ' · 有待发布草稿' : ''}}</text>
+        </view>
+        <view class="manage-actions">
+          <button class="plain-button manage-mini" size="mini" data-id="{{item.id}}" bindtap="startRevise" disabled="{{docBusy}}">修订</button>
+          <button wx:if="{{item.hasDraft}}" class="primary-button manage-mini" size="mini" data-id="{{item.id}}" bindtap="publishDoc" loading="{{docBusy}}" disabled="{{docBusy}}">发布草稿</button>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{docForm}}" class="manage-form">
+      <text class="section-title manage-form-title">{{docForm.mode === 'revise' ? '修订资料（新增草稿版本）' : '导入新资料'}}</text>
+      <block wx:if="{{docForm.mode === 'import'}}">
+        <text class="field-label">资料标题</text>
+        <input class="field-input" value="{{docForm.title}}" maxlength="80" placeholder="2 至 80 字" data-field="title" bindinput="onDocFormInput" />
+      </block>
+      <text class="field-label">章节名</text>
+      <input class="field-input" value="{{docForm.section}}" maxlength="60" placeholder="1 至 60 字，如：使用前检查" data-field="section" bindinput="onDocFormInput" />
+      <text class="field-label">章节正文</text>
+      <textarea class="field-textarea" value="{{docForm.text}}" maxlength="2000" placeholder="1 至 2000 字的规程正文（虚构演示内容）" data-field="text" bindinput="onDocFormInput" />
+      <text class="field-label">有效期（可选）</text>
+      <input class="field-input" value="{{docForm.effectiveUntil}}" placeholder="如 2027-12-31T00:00:00+08:00" data-field="effectiveUntil" bindinput="onDocFormInput" />
+      <view class="manage-actions">
+        <button class="plain-button manage-mini" size="mini" bindtap="cancelDocForm" disabled="{{docBusy}}">取消</button>
+        <button class="primary-button manage-mini" size="mini" loading="{{docBusy}}" disabled="{{docBusy}}" bindtap="saveDocForm">{{docForm.mode === 'revise' ? '保存草稿' : '导入资料'}}</button>
+      </view>
+    </view>
+  </view>
+</view>

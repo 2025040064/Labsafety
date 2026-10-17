@@ -1,0 +1,148 @@
+.search-input {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 78rpx;
+  background: #f5f8f8;
+  border: 1rpx solid #dbe6e7;
+  border-radius: 12rpx;
+  padding: 0 20rpx;
+  font-size: 26rpx;
+}
+
+.search-button {
+  margin-top: 18rpx;
+}
+
+.result-count {
+  display: block;
+  color: #6b7e82;
+  font-size: 24rpx;
+  margin: 0 0 16rpx 4rpx;
+}
+
+.result-text {
+  display: block;
+  margin-top: 15rpx;
+  color: #405a62;
+  font-size: 26rpx;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}
+
+.source-box {
+  background: #f2f7f5;
+  border-left: 5rpx solid #64b5a3;
+  border-radius: 8rpx;
+  padding: 16rpx 18rpx;
+  margin-top: 20rpx;
+}
+
+.source-label {
+  display: block;
+  color: #08796d;
+  font-size: 22rpx;
+  font-weight: 700;
+}
+
+.source-text {
+  display: block;
+  color: #4e686c;
+  font-size: 23rpx;
+  margin-top: 5rpx;
+}
+
+.verify-button {
+  margin-top: 16rpx;
+  align-self: flex-start;
+}
+
+.source-box {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.verify-text {
+  display: block;
+  margin-top: 14rpx;
+  font-size: 23rpx;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.verify-text--ok {
+  color: #0b6a5f;
+}
+
+.verify-text--bad {
+  color: #a13d31;
+}
+
+.manage-card {
+  margin-top: 8rpx;
+}
+
+.doc-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #edf1f2;
+}
+
+.doc-row:last-child {
+  border-bottom: 0;
+}
+
+.manage-mini {
+  font-size: 23rpx;
+  padding: 0 22rpx;
+  min-height: 60rpx;
+  line-height: 58rpx;
+}
+
+.manage-actions {
+  display: flex;
+  column-gap: 18rpx;
+  margin-top: 10rpx;
+  flex-shrink: 0;
+}
+
+.manage-form {
+  margin-top: 26rpx;
+  padding-top: 8rpx;
+  border-top: 1rpx dashed #d5e1e3;
+}
+
+.manage-form-title {
+  margin-top: 14rpx;
+}
+
+.field-label {
+  display: block;
+  color: #294850;
+  font-size: 25rpx;
+  font-weight: 600;
+  margin: 22rpx 0 10rpx;
+}
+
+.field-input,
+.field-textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15rpx 20rpx;
+  background: #f5f8f8;
+  border: 1rpx solid #dbe6e7;
+  border-radius: 12rpx;
+  font-size: 26rpx;
+  color: #17343d;
+}
+
+.field-input {
+  min-height: 76rpx;
+}
+
+.field-textarea {
+  min-height: 140rpx;
+}
