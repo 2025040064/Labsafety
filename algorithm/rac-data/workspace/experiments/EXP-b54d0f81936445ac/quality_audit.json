@@ -1,0 +1,45 @@
+{
+  "policy": "flag_only_preserve_rows",
+  "fit_partition": "train",
+  "method": "train_feature_IQR_1.5",
+  "audited_rows": 27744,
+  "flagged_source_rows": [],
+  "features": {
+    "hour": {
+      "lower": -11.5,
+      "upper": 34.5,
+      "nonfinite_count": 0,
+      "extreme_count": 0,
+      "flagged_source_rows": []
+    },
+    "minute": {
+      "lower": -22.5,
+      "upper": 67.5,
+      "nonfinite_count": 0,
+      "extreme_count": 0,
+      "flagged_source_rows": []
+    },
+    "day_of_week": {
+      "lower": -5.0,
+      "upper": 11.0,
+      "nonfinite_count": 0,
+      "extreme_count": 0,
+      "flagged_source_rows": []
+    },
+    "month": {
+      "lower": -4.0,
+      "upper": 12.0,
+      "nonfinite_count": 0,
+      "extreme_count": 0,
+      "flagged_source_rows": []
+    },
+    "is_weekend": {
+      "lower": -1.5,
+      "upper": 2.5,
+      "nonfinite_count": 0,
+      "extreme_count": 0,
+      "flagged_source_rows": []
+    }
+  },
+  "limitations": "Statistical flags are not confirmed faults; no deletion, clipping or automatic feature injection."
+}

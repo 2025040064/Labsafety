@@ -1,0 +1,1085 @@
+{
+  "summary": [
+    {
+      "dataset_key": "paderborn",
+      "model_name": "lightgbm",
+      "algorithm": "rac_hpo",
+      "run_ids": [
+        "IND-19c7b3684f154662",
+        "IND-c9cc9159d30e491c",
+        "IND-1ff4d8d8e8304180"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.35416666666666663,
+        "std": 0.03608439182435161,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.20448662640207074,
+        "std": 0.06550609180192908,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 1.1008652641876095,
+        "std": 0.0039022680679826104,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.6458333333333334,
+        "std": 0.03608439182435161,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.6930171203835607,
+        "std": 0.04016349649954659,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 3.297034799999892,
+        "std": 0.36124099841718327,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 1.6344927999998617,
+        "std": 0.3185160362442956,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "paderborn",
+      "model_name": "lightgbm",
+      "algorithm": "random",
+      "run_ids": [
+        "IND-3c5996b7a3a84a62",
+        "IND-c43861d34dc6482b",
+        "IND-91154146a0184cfc"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.3680555555555555,
+        "std": 0.031823442326082224,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.23957434570031638,
+        "std": 0.0632727730277389,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 1.1010333406652404,
+        "std": 0.0037651598389546446,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.6319444444444445,
+        "std": 0.03182344232608223,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.6792490046247247,
+        "std": 0.03498581900584829,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 3.1849426666661507,
+        "std": 0.3798461336884674,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 1.3103160000003602,
+        "std": 0.1465227058005535,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "paderborn",
+      "model_name": "lightgbm",
+      "algorithm": "tpe",
+      "run_ids": [
+        "IND-e5fb2262a7884d04",
+        "IND-4270a305ac864023",
+        "IND-65a3734dd70345bc"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.35416666666666663,
+        "std": 0.03608439182435161,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.20448662640207074,
+        "std": 0.06550609180192908,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 1.1008652641876095,
+        "std": 0.0039022680679826104,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.6458333333333334,
+        "std": 0.03608439182435161,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.6930171203835607,
+        "std": 0.04016349649954659,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 3.1384132333332673,
+        "std": 0.1865260983412153,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 1.3745213333343902,
+        "std": 0.10371073510808966,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "algorithm": "rac_hpo",
+      "run_ids": [
+        "IND-79b21a15b8cd4767",
+        "IND-39e52f3cf7dc46cf",
+        "IND-c90a7fd290c84da2"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5,
+        "std": 0.0,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.49105691056910566,
+        "std": 0.0,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.15346916693481413,
+        "std": 0.002463434826271363,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.5,
+        "std": 0.0,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.9999999800000003,
+        "std": 0.0,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 10.597257466667239,
+        "std": 0.4998936705085119,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 9.634084333334007,
+        "std": 0.43795573857502534,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "algorithm": "random",
+      "run_ids": [
+        "IND-ed56a73b98974eaa",
+        "IND-2c612cd896c9406b",
+        "IND-35948b8dfb204024"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5,
+        "std": 0.0,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.49105691056910566,
+        "std": 0.0,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.15346916693481413,
+        "std": 0.002463434826271363,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.5,
+        "std": 0.0,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.9999999800000003,
+        "std": 0.0,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 10.65466430000015,
+        "std": 0.6005252257223587,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 9.67295079999955,
+        "std": 0.5914328400153348,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "algorithm": "tpe",
+      "run_ids": [
+        "IND-a7cedd09ed964510",
+        "IND-5921cc75f4304fa6",
+        "IND-28b0b4cfc99b4ab9"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5,
+        "std": 0.0,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.49105691056910566,
+        "std": 0.0,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.15346916693481413,
+        "std": 0.002463434826271363,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.5,
+        "std": 0.0,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.9999999800000003,
+        "std": 0.0,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 10.089577499999601,
+        "std": 0.6969659869999667,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 9.127182366666602,
+        "std": 0.6803209927530844,
+        "count": 3
+      }
+    }
+  ],
+  "baseline_summary": [
+    {
+      "dataset_key": "paderborn",
+      "model_name": "lightgbm",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-65e5bd150b9f44e3"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.0625,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.05714285714285714,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 1.143368174656741,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.9375,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 1.6874021999992692,
+        "std": null,
+        "count": 1
+      }
+    },
+    {
+      "dataset_key": "paderborn",
+      "model_name": "random_forest",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-2a45bc85ed544ba3"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.14583333333333334,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.15053763440860216,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 6.039676957988051,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.8541666666666666,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 1.814655700000003,
+        "std": null,
+        "count": 1
+      }
+    },
+    {
+      "dataset_key": "paderborn",
+      "model_name": "xgboost",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-85a8de503f0a40d3"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.0,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.0,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 1.147884069776289,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 1.0,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 1.716602899999998,
+        "std": null,
+        "count": 1
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-9674a417f49047ea"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.49105691056910566,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 0.15084799066174753,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.5,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 1.0405434999993304,
+        "std": null,
+        "count": 1
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "random_forest",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-0f0f704e132f4547"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.4966887417218543,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.4893964110929853,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 0.17222339081010604,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.5033112582781457,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 9.49409039999955,
+        "std": null,
+        "count": 1
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "xgboost",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-6fa533c529c24adb"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.49105691056910566,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 0.14949221164644536,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.5,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 1.5341863000012381,
+        "std": null,
+        "count": 1
+      }
+    }
+  ],
+  "fair_comparisons": [
+    {
+      "dataset_key": "paderborn",
+      "model_name": "lightgbm",
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "run_ids": [
+        "IND-3c5996b7a3a84a62",
+        "IND-e5fb2262a7884d04",
+        "IND-19c7b3684f154662",
+        "IND-c43861d34dc6482b",
+        "IND-4270a305ac864023",
+        "IND-c9cc9159d30e491c",
+        "IND-91154146a0184cfc",
+        "IND-65a3734dd70345bc",
+        "IND-1ff4d8d8e8304180"
+      ],
+      "descriptive_only": false,
+      "paired_all_requested_seeds": true,
+      "data_sha256": "1f33bdeb27ff32ffcb163fd63da1f6d43934a4ec6d777589b36486b3e88927bb",
+      "split_fingerprint": "32c7995711703bfb822bfa72816dfb818fa978f207b26b145eccb1532f5db109",
+      "budget": {
+        "max_trials": 24,
+        "timeout_seconds": 300.0,
+        "baseline_in_search_budget": false,
+        "model_resources": {
+          "n_estimators": 120,
+          "early_stopping_rounds": 20,
+          "n_jobs": 2
+        },
+        "running_trial_can_overrun_deadline": true
+      },
+      "objective_definition": {
+        "name": "fixed_baseline_normalized_j",
+        "alpha": 0.3,
+        "epsilon": 1e-08,
+        "error": "1 - balanced_accuracy",
+        "weights": "validation sample proportions",
+        "formula": "0.7 * weighted_mean(error_g / (baseline_error_g + 1e-8)) + 0.3 * max(error_g / (baseline_error_g + 1e-8))",
+        "selection_metric_shared_by_all_methods": true
+      },
+      "search_space": {
+        "learning_rate": {
+          "type": "float",
+          "low": 0.01,
+          "high": 0.2,
+          "log": true
+        },
+        "num_leaves": {
+          "type": "int",
+          "low": 8,
+          "high": 64
+        },
+        "max_depth": {
+          "type": "int",
+          "low": 3,
+          "high": 10
+        },
+        "min_child_samples": {
+          "type": "int",
+          "low": 5,
+          "high": 80
+        },
+        "feature_fraction": {
+          "type": "float",
+          "low": 0.6,
+          "high": 1.0
+        },
+        "lambda_l2": {
+          "type": "float",
+          "low": 1e-05,
+          "high": 10.0,
+          "log": true
+        }
+      },
+      "algorithms": {
+        "random": {
+          "run_ids": [
+            "IND-3c5996b7a3a84a62",
+            "IND-c43861d34dc6482b",
+            "IND-91154146a0184cfc"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.3680555555555555,
+            "std": 0.031823442326082224,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.23957434570031638,
+            "std": 0.0632727730277389,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 1.1010333406652404,
+            "std": 0.0037651598389546446,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.6319444444444445,
+            "std": 0.03182344232608223,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.6792490046247247,
+            "std": 0.03498581900584829,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 3.1849426666661507,
+            "std": 0.3798461336884674,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 1.3103160000003602,
+            "std": 0.1465227058005535,
+            "count": 3
+          }
+        },
+        "tpe": {
+          "run_ids": [
+            "IND-e5fb2262a7884d04",
+            "IND-4270a305ac864023",
+            "IND-65a3734dd70345bc"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.35416666666666663,
+            "std": 0.03608439182435161,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.20448662640207074,
+            "std": 0.06550609180192908,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 1.1008652641876095,
+            "std": 0.0039022680679826104,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.6458333333333334,
+            "std": 0.03608439182435161,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.6930171203835607,
+            "std": 0.04016349649954659,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 3.1384132333332673,
+            "std": 0.1865260983412153,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 1.3745213333343902,
+            "std": 0.10371073510808966,
+            "count": 3
+          }
+        },
+        "rac_hpo": {
+          "run_ids": [
+            "IND-19c7b3684f154662",
+            "IND-c9cc9159d30e491c",
+            "IND-1ff4d8d8e8304180"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.35416666666666663,
+            "std": 0.03608439182435161,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.20448662640207074,
+            "std": 0.06550609180192908,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 1.1008652641876095,
+            "std": 0.0039022680679826104,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.6458333333333334,
+            "std": 0.03608439182435161,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.6930171203835607,
+            "std": 0.04016349649954659,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 3.297034799999892,
+            "std": 0.36124099841718327,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 1.6344927999998617,
+            "std": 0.3185160362442956,
+            "count": 3
+          }
+        }
+      },
+      "per_seed": [
+        {
+          "seed": 42,
+          "baseline_errors": {
+            "N09_M07_F10": 0.9166666666666666,
+            "N15_M07_F10": 0.9583333333333334
+          },
+          "weights": {
+            "N09_M07_F10": 0.5,
+            "N15_M07_F10": 0.5
+          },
+          "run_ids": {
+            "random": "IND-3c5996b7a3a84a62",
+            "tpe": "IND-e5fb2262a7884d04",
+            "rac_hpo": "IND-19c7b3684f154662"
+          }
+        },
+        {
+          "seed": 71,
+          "baseline_errors": {
+            "N09_M07_F10": 0.9166666666666666,
+            "N15_M07_F10": 0.9583333333333334
+          },
+          "weights": {
+            "N09_M07_F10": 0.5,
+            "N15_M07_F10": 0.5
+          },
+          "run_ids": {
+            "random": "IND-c43861d34dc6482b",
+            "tpe": "IND-4270a305ac864023",
+            "rac_hpo": "IND-c9cc9159d30e491c"
+          }
+        },
+        {
+          "seed": 103,
+          "baseline_errors": {
+            "N09_M07_F10": 0.9166666666666666,
+            "N15_M07_F10": 0.9583333333333334
+          },
+          "weights": {
+            "N09_M07_F10": 0.5,
+            "N15_M07_F10": 0.5
+          },
+          "run_ids": {
+            "random": "IND-91154146a0184cfc",
+            "tpe": "IND-65a3734dd70345bc",
+            "rac_hpo": "IND-1ff4d8d8e8304180"
+          }
+        }
+      ]
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "run_ids": [
+        "IND-ed56a73b98974eaa",
+        "IND-a7cedd09ed964510",
+        "IND-79b21a15b8cd4767",
+        "IND-2c612cd896c9406b",
+        "IND-5921cc75f4304fa6",
+        "IND-39e52f3cf7dc46cf",
+        "IND-35948b8dfb204024",
+        "IND-28b0b4cfc99b4ab9",
+        "IND-c90a7fd290c84da2"
+      ],
+      "descriptive_only": false,
+      "paired_all_requested_seeds": true,
+      "data_sha256": "4192d232ff8c08e5834dd973d8b5faa33a9aed2c125b4b422394a0658a74212a",
+      "split_fingerprint": "216f7f624c410744016a506ff0fc532835f1109f61b179f6b6b5531d6600b726",
+      "budget": {
+        "max_trials": 24,
+        "timeout_seconds": 300.0,
+        "baseline_in_search_budget": false,
+        "model_resources": {
+          "n_estimators": 120,
+          "early_stopping_rounds": 20,
+          "n_jobs": 2
+        },
+        "running_trial_can_overrun_deadline": true
+      },
+      "objective_definition": {
+        "name": "fixed_baseline_normalized_j",
+        "alpha": 0.3,
+        "epsilon": 1e-08,
+        "error": "1 - balanced_accuracy",
+        "weights": "validation sample proportions",
+        "formula": "0.7 * weighted_mean(error_g / (baseline_error_g + 1e-8)) + 0.3 * max(error_g / (baseline_error_g + 1e-8))",
+        "selection_metric_shared_by_all_methods": true
+      },
+      "search_space": {
+        "learning_rate": {
+          "type": "float",
+          "low": 0.01,
+          "high": 0.2,
+          "log": true
+        },
+        "num_leaves": {
+          "type": "int",
+          "low": 8,
+          "high": 64
+        },
+        "max_depth": {
+          "type": "int",
+          "low": 3,
+          "high": 10
+        },
+        "min_child_samples": {
+          "type": "int",
+          "low": 5,
+          "high": 80
+        },
+        "feature_fraction": {
+          "type": "float",
+          "low": 0.6,
+          "high": 1.0
+        },
+        "lambda_l2": {
+          "type": "float",
+          "low": 1e-05,
+          "high": 10.0,
+          "log": true
+        }
+      },
+      "algorithms": {
+        "random": {
+          "run_ids": [
+            "IND-ed56a73b98974eaa",
+            "IND-2c612cd896c9406b",
+            "IND-35948b8dfb204024"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.5,
+            "std": 0.0,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.49105691056910566,
+            "std": 0.0,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.15346916693481413,
+            "std": 0.002463434826271363,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.5,
+            "std": 0.0,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.9999999800000003,
+            "std": 0.0,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 10.65466430000015,
+            "std": 0.6005252257223587,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 9.67295079999955,
+            "std": 0.5914328400153348,
+            "count": 3
+          }
+        },
+        "tpe": {
+          "run_ids": [
+            "IND-a7cedd09ed964510",
+            "IND-5921cc75f4304fa6",
+            "IND-28b0b4cfc99b4ab9"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.5,
+            "std": 0.0,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.49105691056910566,
+            "std": 0.0,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.15346916693481413,
+            "std": 0.002463434826271363,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.5,
+            "std": 0.0,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.9999999800000003,
+            "std": 0.0,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 10.089577499999601,
+            "std": 0.6969659869999667,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 9.127182366666602,
+            "std": 0.6803209927530844,
+            "count": 3
+          }
+        },
+        "rac_hpo": {
+          "run_ids": [
+            "IND-79b21a15b8cd4767",
+            "IND-39e52f3cf7dc46cf",
+            "IND-c90a7fd290c84da2"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.5,
+            "std": 0.0,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.49105691056910566,
+            "std": 0.0,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.15346916693481413,
+            "std": 0.002463434826271363,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.5,
+            "std": 0.0,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.9999999800000003,
+            "std": 0.0,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 10.597257466667239,
+            "std": 0.4998936705085119,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 9.634084333334007,
+            "std": 0.43795573857502534,
+            "count": 3
+          }
+        }
+      },
+      "per_seed": [
+        {
+          "seed": 42,
+          "baseline_errors": {
+            "overall": 0.5
+          },
+          "weights": {
+            "overall": 1.0
+          },
+          "run_ids": {
+            "random": "IND-ed56a73b98974eaa",
+            "tpe": "IND-a7cedd09ed964510",
+            "rac_hpo": "IND-79b21a15b8cd4767"
+          }
+        },
+        {
+          "seed": 71,
+          "baseline_errors": {
+            "overall": 0.5
+          },
+          "weights": {
+            "overall": 1.0
+          },
+          "run_ids": {
+            "random": "IND-2c612cd896c9406b",
+            "tpe": "IND-5921cc75f4304fa6",
+            "rac_hpo": "IND-39e52f3cf7dc46cf"
+          }
+        },
+        {
+          "seed": 103,
+          "baseline_errors": {
+            "overall": 0.5
+          },
+          "weights": {
+            "overall": 1.0
+          },
+          "run_ids": {
+            "random": "IND-35948b8dfb204024",
+            "tpe": "IND-28b0b4cfc99b4ab9",
+            "rac_hpo": "IND-c90a7fd290c84da2"
+          }
+        }
+      ]
+    }
+  ],
+  "noncomparable": []
+}

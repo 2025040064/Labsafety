@@ -1,0 +1,17 @@
+{
+  "dataset_key": "ai4i_2020",
+  "model_name": "lightgbm",
+  "algorithm": "baseline",
+  "seed": 42,
+  "max_trials": 2,
+  "timeout_seconds": 20,
+  "model_config": {
+    "n_estimators": 10,
+    "early_stopping_rounds": 20,
+    "n_jobs": 2,
+    "decision_mode": "native"
+  },
+  "data_path": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\datasets\\raw\\ai4i_2020\\data.csv",
+  "evaluation_partition": "validation",
+  "test_accessed": false
+}

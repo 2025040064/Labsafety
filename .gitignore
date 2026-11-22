@@ -1,10 +1,31 @@
-# 微信开发者工具本机私有配置（含个人 IDE 设置，不入库）
+# ===== 密钥与本机私有配置（严禁入库）=====
+.env
+**/.env
 project.private.config.json
+**/project.private.config.json
+*.tmp
 
-# 依赖与构建产物（当前无第三方依赖，防未来误提交）
+# ===== 依赖与缓存 =====
 node_modules/
 miniprogram_npm/
+__pycache__/
+.pytest_cache/
+**/__pycache__/
+*.pyc
 
-# 系统与编辑器杂项
+# ===== 系统与编辑器杂项 =====
 .DS_Store
 *.log
+
+# ===== 本机遗留目录（不属于交付内容，内容已归档到 algorithm/ ui/ docs/）=====
+Microsoft/
+.workbuddy/
+.workbuddy-ai/
+智维云实施/
+research/
+
+# ===== 7.3 人工验收故障样本（由脚本生成，可复现）=====
+acceptance-samples/
+
+# 说明：algorithm/rac-data 下的原始数据、数据集清单、验证工作区均需入库，
+# 不做目录级排除。若以后要排除某个大型派生目录，请精确到子路径而非整个 rac-data。

@@ -1,0 +1,508 @@
+<scroll-view scroll-x class="tabs">
+  <view wx:for="{{tabs}}" wx:key="*this" class="tab {{tab === index ? 'selected' : ''}}" data-index="{{index}}" bindtap="switchTab"><view class="tab-ico"></view>{{item}}</view>
+</scroll-view>
+
+<view class="main">
+  <view class="card error" wx:if="{{error}}">{{error}}</view>
+  <view class="card" wx:if="{{!role}}">
+    <view class="title">智维云 · 工业数据分析</view>
+    <view class="hint">{{connecting ? '正在检测本机引擎，若不可用将自动进入演示模式…' : '优先连接本机 Python 服务；不可用时自动切换到内置演示数据，无需任何配置。'}}</view>
+    <button class="primary" bindtap="connect">{{connecting ? '连接中…' : '开始使用'}}</button>
+  </view>
+
+  <block wx:if="{{role}}">
+    <view class="mode-bar {{demoMode ? 'demo' : 'live'}}">
+      <text class="mode-dot"></text>
+      <text class="mode-text">{{modeLabel}}</text>
+      <button size="mini" class="mode-switch" bindtap="switchMode">{{demoMode ? '用本机引擎' : '用演示数据'}}</button>
+    </view>
+    <view class="card notice" wx:if="{{notice}}">{{notice}}</view>
+    <view class="card" wx:if="{{active}}">
+      <view class="row">
+        <text>{{actionText[active.action] || active.action}} · {{active.status}}</text>
+        <button wx:if="{{active.status === 'running'}}" size="mini" bindtap="cancel">取消任务</button>
+      </view>
+      <text wx:if="{{active.progress}}" class="code">{{active.progress}}</text>
+    </view>
+    <view class="card" wx:if="{{freshId && freshId !== viewingId}}">
+      <text>本次任务已生成 {{freshId}}</text>
+      <button size="mini" bindtap="openFresh">打开本次结果</button>
+    </view>
+    <view class="card" wx:if="{{activeResultId && viewingId && viewingId !== activeResultId}}">
+      <text>当前查看的是历史记录，不会覆盖新任务配置。</text>
+      <button size="mini" bindtap="returnToActive">返回当前任务</button>
+    </view>
+
+    <!-- 数据处理流程：阶段图标 + 真实数据图表 -->
+    <view class="card" wx:if="{{visual.process.stages.length}}">
+      <view class="title">数据处理流程 · {{viewingId || '当前数据'}}</view>
+      <view class="stage-row" wx:for="{{visual.process.stages}}" wx:key="key">
+        <view class="stage-rail">
+          <view class="stage-badge {{item.className}}">{{item.icon}}</view>
+          <view wx:if="{{!item.last}}" class="stage-line"></view>
+        </view>
+        <view class="stage-body">
+          <view><text class="stage-name">{{item.name}}</text><text class="stage-state {{item.stateClass}}">{{item.state}}</text></view>
+          <view class="stage-summary">{{item.summary}}</view>
+        </view>
+      </view>
+
+      <block wx:if="{{visual.flow.rows.length}}">
+        <view class="subtitle">数据流向 · 记录数</view>
+        <view class="bar-row" wx:for="{{visual.flow.rows}}" wx:key="label">
+          <text class="bar-label">{{item.label}}</text>
+          <view class="bar-track"><view class="bar-fill {{item.className}}" style="width:{{item.pct}}%"></view></view>
+          <text class="bar-value">{{item.value}}</text>
+        </view>
+        <view class="hint">{{visual.flow.note}}</view>
+      </block>
+
+      <block wx:if="{{visual.split.rows.length}}">
+        <view class="subtitle">固定划分占比</view>
+        <view class="stack">
+          <view class="stack-seg {{item.className}}" wx:for="{{visual.split.rows}}" wx:key="key" style="width:{{item.pct}}%"></view>
+        </view>
+        <view class="row">
+          <text class="seg-label" wx:for="{{visual.split.rows}}" wx:key="key">{{item.label}} {{item.count}} · {{item.pct}}%</text>
+        </view>
+      </block>
+
+      <block wx:if="{{visual.regimes.rows.length}}">
+        <view class="subtitle">{{visual.regimes.title}}</view>
+        <view class="bar-row" wx:for="{{visual.regimes.rows}}" wx:key="label">
+          <text class="bar-label">{{item.label}}</text>
+          <view class="bar-track"><view class="bar-fill" style="width:{{item.pct}}%"></view></view>
+          <text class="bar-value">{{item.value}} {{visual.regimes.unit}}</text>
+        </view>
+      </block>
+
+      <view class="hint">{{visual.process.note}}</view>
+    </view>
+
+    <!-- 运行：任务类型切换，一次只显示一张表单 -->
+    <block wx:if="{{tab === 0}}">
+      <view class="card">
+        <view class="brand">
+          <view class="brand-logo"><text class="wave">~</text></view>
+          <view>
+            <view class="brand-name">智维云</view>
+            <view class="brand-sub">工业设备数据分析</view>
+          </view>
+        </view>
+        <view class="hint">基于公开或用户提供的历史数据进行模型训练与优化，不代表现场实时状态。</view>
+        <view class="status-line {{demoMode ? 'demo' : 'live'}}">
+          <view class="status-dot"></view>
+          <text class="status-text">{{demoMode ? '离线演示模式' : '本机引擎在线'}}</text>
+          <text class="status-ver">{{demoMode ? 'DEMO' : 'v2.0'}}</text>
+        </view>
+        <view wx:if="{{dashboard}}" class="stat-grid">
+          <view class="stat-card"><view class="stat-value">{{dashboard.datasets_present}}</view><view class="stat-label">数据源</view></view>
+          <view class="stat-card"><view class="stat-value">{{dashboard.completed_tasks}}</view><view class="stat-label">已完成</view></view>
+          <view class="stat-card"><view class="stat-value teal">{{dashboard.running_tasks}}</view><view class="stat-label">运行中</view></view>
+        </view>
+        <view wx:else class="hint">正在读取工作区统计…</view>
+        <button class="primary" bindtap="startIndustrial">创建工业分类任务</button>
+        <view wx:if="{{dashboard.recent_tasks.length}}" class="subtitle">最近任务</view>
+        <view wx:for="{{dashboard.recent_tasks}}" wx:key="id" class="hint">{{actionText[item.action] || item.action}} · {{statusText[item.status] || item.status}} · {{item.id}}</view>
+      </view>
+
+      <view class="card">
+        <view class="section-head">
+          <view class="section-ico"><text class="glyph">▦</text></view>
+          <view class="title" style="margin-bottom:0">数据集</view>
+        </view>
+        <view class="hint">“文件存在”不代表数据已通过审计。AI4I 2020 是合成示例数据。</view>
+        <view class="dataset-row" wx:for="{{datasets}}" wx:key="id">
+          <view class="grow"><text style="font-size:27rpx;font-weight:600">{{item.id}}</text><view class="hint">{{item.description}}</view></view>
+          <text class="badge {{item.available ? 'badge-ready' : 'badge-missing'}}">{{item.available ? '就绪' : '未提供'}}</text>
+          <button wx:if="{{item.preview_available}}" size="mini" class="ghost" data-id="{{item.id}}" bindtap="showDataset">预览</button>
+        </view>
+        <view wx:if="{{datasetPreview}}">
+          <view class="subtitle">{{datasetPreview.id}} · 原始文件前 5 行</view>
+          <scroll-view scroll-x><view class="preview-line">{{datasetPreview.columns}}</view>
+            <view class="preview-line" wx:for="{{datasetPreview.rows}}" wx:key="index">{{item}}</view></scroll-view>
+          <view class="hint">{{datasetPreview.note}}</view>
+        </view>
+      </view>
+
+      <view class="card">
+        <view class="section-head">
+          <view class="section-ico"><text class="glyph">◇</text></view>
+          <view class="title" style="margin-bottom:0">运行任务</view>
+        </view>
+        <scroll-view scroll-x><view class="row">
+          <button wx:for="{{tasks}}" wx:key="*this" size="mini" class="{{task === index ? 'primary' : ''}}" data-index="{{index}}" bindtap="switchTask">{{item}}</button>
+        </view></scroll-view>
+        <view class="hint">切换任务类型或数据集会清除不匹配的导入文件。</view>
+      </view>
+
+      <view class="card" wx:if="{{task === 0}}">
+        <view class="title">数据审计</view>
+        <picker range="{{regression}}" value="{{dataset}}" data-key="dataset" bindchange="pick">数据集 · {{regression[dataset]}}</picker>
+        <view class="row"><button size="mini" bindtap="uploadFiles">选择导入文件</button>
+          <text class="hint">{{upload ? upload.label : '使用工作区默认数据'}}</text>
+          <button wx:if="{{upload}}" size="mini" bindtap="clearUpload">清除</button></view>
+        <view class="hint">校验结果按概览、固定划分、工况、字段、来源、SHA-256、质量审计和清单分组显示。</view>
+        <view class="buttons">
+          <button class="primary" data-action="prepare" bindtap="submit">导入并审计</button>
+          <button data-action="fetch" bindtap="submit">下载公开数据</button>
+        </view>
+      </view>
+
+      <view class="card" wx:if="{{task === 1}}">
+        <view class="title">基线训练</view>
+        <picker range="{{regression}}" value="{{dataset}}" data-key="dataset" bindchange="pick">数据集 · {{regression[dataset]}}</picker>
+        <view class="row"><text>随机种子</text><input type="number" value="{{cfg.train.seed}}" data-group="train" data-key="seed" bindinput="field" /></view>
+        <view class="row"><text>最大树数</text><input type="number" value="{{cfg.train.estimators}}" data-group="train" data-key="estimators" bindinput="field" /></view>
+        <view class="row"><button size="mini" bindtap="uploadFiles">选择导入文件</button>
+          <text class="hint">{{upload ? upload.label : '使用工作区默认数据'}}</text>
+          <button wx:if="{{upload}}" size="mini" bindtap="clearUpload">清除</button></view>
+        <view class="hint">桌面默认 300 棵树、种子 42、4 线程；早停与搜索空间由工作区配置决定。</view>
+        <button class="primary" data-action="train" bindtap="submit">开始训练</button>
+      </view>
+
+      <view class="card" wx:if="{{task === 2}}">
+        <view class="title">参数搜索</view>
+        <picker range="{{regression}}" value="{{dataset}}" data-key="dataset" bindchange="pick">数据集 · {{regression[dataset]}}</picker>
+        <picker range="{{methods}}" value="{{method}}" data-key="method" bindchange="pick">方法 · {{methods[method]}}</picker>
+        <view class="hint">{{methodHint}}</view>
+        <view class="row"><text>随机种子</text><input type="number" value="{{cfg.optimize.seed}}" data-group="optimize" data-key="seed" bindinput="field" /></view>
+        <view class="row"><text>最大树数</text><input type="number" value="{{cfg.optimize.estimators}}" data-group="optimize" data-key="estimators" bindinput="field" /></view>
+        <view class="row"><text>试验次数</text><input type="number" value="{{cfg.optimize.trials}}" data-group="optimize" data-key="trials" bindinput="field" /></view>
+        <view class="row"><text>时间预算（秒）</text><input type="number" value="{{cfg.optimize.timeout}}" data-group="optimize" data-key="timeout" bindinput="field" /></view>
+        <view class="row"><button size="mini" bindtap="uploadFiles">选择导入文件</button>
+          <text class="hint">{{upload ? upload.label : '使用工作区默认数据'}}</text>
+          <button wx:if="{{upload}}" size="mini" bindtap="clearUpload">清除</button></view>
+        <button class="primary" data-action="optimize" bindtap="submit">开始搜索</button>
+      </view>
+
+      <view class="card" wx:if="{{task === 3}}">
+        <view class="section-head">
+          <view class="section-ico"><text class="glyph">⌁</text></view>
+          <view class="title" style="margin-bottom:0">工业训练 · 分类</view>
+        </view>
+        <picker range="{{industrial}}" value="{{industrialDataset}}" data-key="industrialDataset" bindchange="pick">数据集 · {{industrial[industrialDataset]}}</picker>
+        <picker range="{{industrialMethods}}" value="{{industrialMethod}}" data-key="industrialMethod" bindchange="pick">方法 · {{industrialMethods[industrialMethod]}}</picker>
+        <picker range="{{models}}" value="{{model}}" data-key="model" bindchange="pick">模型 · {{models[model]}}</picker>
+        <picker range="{{decisions}}" value="{{decision}}" data-key="decision" bindchange="pick">阈值策略 · {{decisions[decision]}}</picker>
+        <view class="row"><text>随机种子</text><input type="number" value="{{cfg.industrial.seed}}" data-group="industrial" data-key="seed" bindinput="field" /></view>
+        <view class="row"><text>最大树数</text><input type="number" value="{{cfg.industrial.estimators}}" data-group="industrial" data-key="estimators" bindinput="field" /></view>
+        <view class="row"><text>试验次数</text><input type="number" value="{{cfg.industrial.trials}}" data-group="industrial" data-key="trials" bindinput="field" /></view>
+        <view class="row"><text>时间预算（秒）</text><input type="number" value="{{cfg.industrial.timeout}}" data-group="industrial" data-key="timeout" bindinput="field" /></view>
+        <view class="row"><button size="mini" bindtap="uploadFiles">导入文件（可多选）</button>
+          <text class="hint">{{upload ? upload.label : '使用工作区默认数据'}}</text>
+          <button wx:if="{{upload}}" size="mini" bindtap="clearUpload">清除</button></view>
+        <view class="hint">多文件数据集按对应适配器的目录结构一并选择；单文件上限 32 MB。user_csv 仅支持单个 UTF-8 CSV。</view>
+        <block wx:if="{{industrial[industrialDataset] === 'user_csv'}}">
+          <view class="hint">用户上传数据：标签为整数类别，分组应表示独立设备或批次；每个类别至少包含三个分组，同一分组只能有一个类别。</view>
+          <view wx:if="{{csvInspection}}">
+            <view class="subtitle">已检查 {{csvInspection.rows}} 行</view>
+            <view wx:for="{{csvInspection.columns}}" wx:key="name" class="hint">{{item.name}} · 空值 {{item.missing}} · 非数值 {{item.non_numeric}}</view>
+          </view>
+          <view class="row"><text>标签列名</text><input value="{{csvTarget}}" data-key="csvTarget" bindinput="field" placeholder="整数类别列" /></view>
+          <view class="row"><text>分组列名</text><input value="{{csvGroup}}" data-key="csvGroup" bindinput="field" placeholder="设备或批次 ID" /></view>
+          <view class="row"><text>特征列名</text><input value="{{csvFeatures}}" data-key="csvFeatures" bindinput="field" placeholder="数值列，逗号分隔" /></view>
+          <view class="hint">请核实特征在预测时可获得，不包含标签、未来信息或分组标识。</view>
+        </block>
+        <view class="buttons">
+          <button data-action="industrial_audit" bindtap="submit">审计</button>
+          <button data-action="industrial_fetch" bindtap="submit">获取公开数据</button>
+          <button class="primary" data-action="industrial_run" bindtap="submit">运行</button>
+        </view>
+      </view>
+
+      <view class="card" wx:if="{{task === 4}}">
+        <view class="title">自主优化 · 受控离线回放</view>
+        <picker range="{{scenarios}}" value="{{scenario}}" data-key="scenario" bindchange="pick">场景 · {{scenarios[scenario]}}</picker>
+        <view class="row"><text>试验次数上限</text><input type="number" value="{{cfg.loop.trials}}" data-group="loop" data-key="trials" bindinput="field" /></view>
+        <view class="row"><text>单次搜索时间（秒）</text><input type="digit" value="{{cfg.loop.timeout}}" data-group="loop" data-key="timeout" bindinput="field" /></view>
+        <view class="row"><text>训练总预算（秒）</text><input type="digit" value="{{cfg.loop.trainBudget}}" data-group="loop" data-key="trainBudget" bindinput="field" /></view>
+        <view class="row"><button size="mini" bindtap="uploadFiles">选择 CNC 文件</button>
+          <text class="hint">{{upload ? upload.label : '使用工作区 CNC 默认数据'}}</text>
+          <button wx:if="{{upload}}" size="mini" bindtap="clearUpload">清除</button></view>
+        <view class="row"><text>授权当前会话训练和搜索</text><switch checked="{{authorize}}" data-key="authorize" bindchange="toggle" /></view>
+        <view class="row"><text>演示重调参（续跑生效）</text><switch checked="{{manual}}" data-key="manual" bindchange="toggle" /></view>
+        <view class="hint">固定 seed=42、RAC-HPO、整刀结束才释放寿命标签；门禁未通过不能切换，通过后仍需管理员确认。</view>
+        <button class="primary" data-action="loop_create" bindtap="submit">{{authorize ? '创建并运行会话' : '仅创建会话'}}</button>
+      </view>
+
+      <view class="card" wx:if="{{task === 5}}">
+        <view class="section-head">
+          <view class="section-ico teal"><text class="glyph">✦</text></view>
+          <view class="title" style="margin-bottom:0">大模型训练 · PyTRIO</view>
+        </view>
+        <view class="status-line {{llmStatus && llmStatus.sdk && llmStatus.key ? 'ok' : 'warn'}}">
+          {{llmStatus ? llmStatus.label : '未检测运行环境'}}
+        </view>
+        <view class="row"><text>API Key</text><input password value="{{llmKey}}" data-key="llmKey" bindinput="field" placeholder="pytrio.com 控制台复制" /></view>
+        <button size="mini" bindtap="checkLlm">检测 SDK 与密钥</button>
+        <view class="hint">密钥仅在本机进程内使用，不写入工作区、不记录到日志；也可设置环境变量 PYTRIO_API_KEY 后留空。</view>
+        <picker range="{{llmModels}}" value="{{llmModel}}" data-key="llmModel" bindchange="pick">基座模型 · {{llmModels[llmModel]}}</picker>
+        <view class="row"><text>训练轮数</text><input type="number" value="{{cfg.llm.iterations}}" data-group="llm" data-key="iterations" bindinput="field" /></view>
+        <view class="row"><text>学习率</text><input type="digit" value="{{cfg.llm.learningRate}}" data-group="llm" data-key="learningRate" bindinput="field" /></view>
+        <view class="row"><text>LoRA 秩</text><input type="number" value="{{cfg.llm.rank}}" data-group="llm" data-key="rank" bindinput="field" /></view>
+        <view class="row"><text>生成长度</text><input type="number" value="{{cfg.llm.maxTokens}}" data-group="llm" data-key="maxTokens" bindinput="field" /></view>
+        <view class="row"><text>训练后采样对比</text><switch checked="{{llmEvaluate}}" data-key="llmEvaluate" bindchange="toggle" /></view>
+        <view class="hint">使用内置 3 条 SFT 示例（教模型回答 trio 是 AI Infra 产品）；本地组织数据与训练循环，GPU 计算走 PyTRIO 云端，会消耗你的账户配额。</view>
+        <button class="primary" data-action="llm_train" bindtap="submit">开始大模型训练</button>
+      </view>
+    </block>
+
+    <!-- 结果：图表、试验、比较、可视化与详情 -->
+    <block wx:if="{{tab === 1}}">
+      <view class="card">
+        <view class="section-head">
+          <view class="section-ico teal"><text class="glyph">◎</text></view>
+          <view class="title" style="margin-bottom:0">当前实验</view>
+        </view>
+        <picker range="{{runChoices}}" range-key="label" bindchange="pickRun">切换实验 · {{viewingId || '从记录中选择'}}</picker>
+        <view class="hint">图表、试验、比较与详情都在这里；在「记录」页勾选实验可并排比较。</view>
+      </view>
+
+      <view class="card" wx:if="{{!viewingId}}">
+        <view class="title">还没有打开实验</view>
+        <view class="hint">图表、实时波形和可视化只画真实数据，先点下面一条实验，或回「运行」跑一次任务。</view>
+        <view class="item row" wx:for="{{recentRuns}}" wx:key="id" data-id="{{item.id}}" bindtap="details">
+          <view class="grow"><text>{{item.id}}</text><view class="hint">{{item.caption}} · {{item.value}} {{item.unit}}</view></view>
+        </view>
+        <view class="hint" wx:if="{{!recentRuns.length}}">暂无实验记录，先到「运行」页跑一次。</view>
+        <button size="mini" bindtap="gotoRecords">去记录页看全部</button>
+      </view>
+
+      <view class="card" wx:if="{{isLlmDetail}}">
+        <view class="title">Loss 曲线 · {{viewingId}}</view>
+        <canvas wx:if="{{detail.losses.length}}" type="2d" id="llm-loss" class="chart"></canvas>
+        <view class="hint" wx:if="{{!detail.losses.length}}">该任务没有 loss 记录</view>
+        <view class="hint">每轮真实加权交叉熵；曲线越低表示拟合越好。</view>
+      </view>
+
+      <view class="card" wx:if="{{chartSeries}}">
+        <view class="title">图表 · {{viewingId || '尚未选择实验'}}</view>
+        <scroll-view scroll-x><view class="row">
+          <button wx:for="{{chartKinds}}" wx:key="key" size="mini" class="{{chartKind === item.key ? 'primary' : ''}}" data-value="{{item.key}}" bindtap="setChartKind">{{item.label}}</button>
+        </view></scroll-view>
+        <picker wx:if="{{chartKind === 'scatter'}}" range="{{chartParamChoices}}" range-key="label" data-key="chartParam" data-source="chartParamChoices" bindchange="pickText">散点参数 · {{chartParam || '选择参数'}}</picker>
+        <canvas type="2d" id="chart" class="chart"></canvas>
+        <view class="hint">{{chartSeries.objective_label}}；累计最优保留完整任务序列，筛选只影响分布、散点和平行坐标。</view>
+        <view class="row" wx:for="{{chartSeries.status}}" wx:key="status" wx:for-item="item">
+          <text>{{item.status}}</text><text>{{item.count}} 条</text>
+        </view>
+      </view>
+
+      <view class="card" wx:if="{{chartSeries}}">
+        <view class="title">试验列表 · {{viewingId}}</view>
+        <input placeholder="搜索序号 / 状态 / 参数" value="{{trialQuery}}" data-key="trialQuery" bindinput="field" />
+        <picker range="{{statusChoices}}" range-key="label" data-key="trialStatus" data-source="statusChoices" bindchange="pickText">状态筛选 · {{trialStatus || '全部状态'}}</picker>
+        <picker range="{{sortChoices}}" range-key="label" data-key="trialSort" data-source="sortChoices" bindchange="pickText">排序 · {{trialSort}}</picker>
+        <picker range="{{orderChoices}}" range-key="label" data-key="trialOrder" data-source="orderChoices" bindchange="pickText">顺序 · {{trialOrder}}</picker>
+        <picker range="{{trialParamChoices}}" range-key="label" data-key="trialParam" data-source="trialParamChoices" bindchange="pickText">参数范围 · {{trialParam || '未启用'}}</picker>
+        <block wx:if="{{trialParam}}">
+          <view class="row"><text>下限</text><input type="digit" value="{{trialLow}}" data-key="trialLow" bindinput="field" />
+            <text>上限</text><input type="digit" value="{{trialHigh}}" data-key="trialHigh" bindinput="field" /></view>
+        </block>
+        <checkbox-group bindchange="trialCheck">
+          <view wx:for="{{trials.rows}}" wx:key="number" class="item">
+            <label class="row"><checkbox value="{{item.number}}" checked="{{trialChecked[item.number]}}" />
+              <text>#{{item.number}} · {{item.status}}</text></label>
+            <view class="hint">{{item.objectiveLabel}} {{item.objective}} · {{item.maeLabel}} {{item.mae}} {{item.unit}} · {{item.duration}} 秒</view>
+            <view class="hint">{{item.params}}</view>
+            <view class="hint" wx:if="{{item.selection}}">选择方式 {{item.selection}}</view>
+            <view class="hint" wx:if="{{item.failure}}">{{item.failure}}</view>
+            <button size="mini" data-number="{{item.number}}" bindtap="trialDetail">完整详情</button>
+          </view>
+        </checkbox-group>
+        <view class="row"><text>共 {{trials.total}} 条 · {{trials.page}}/{{trials.pages}} 页</text>
+          <button size="mini" data-delta="-1" bindtap="trialPage">上一页</button>
+          <button size="mini" data-delta="1" bindtap="trialPage">下一页</button></view>
+        <button bindtap="compareTrials">比较勾选的 {{trialCheckedCount}} 条试验</button>
+      </view>
+
+      <view class="card">
+        <view class="title">并排比较</view>
+        <view class="hint">在「记录」页勾选 2 至 8 条；数据、版本与划分证据不足时只并排展示，不生成排名。</view>
+        <button class="primary" bindtap="compareRuns" disabled="{{selectedCount < 2 || selectedCount > 8}}">并排比较 {{selectedCount}} 条实验</button>
+      </view>
+
+      <view class="card" wx:if="{{compare}}">
+        <view class="title">并排对比</view>
+        <view class="hint">{{compare.note}}</view>
+        <block wx:if="{{compareBars.rows.length}}">
+          <view class="subtitle">最佳目标并排 · {{compareBars.unit}}</view>
+          <view class="hbar-row">
+            <view class="hbar" wx:for="{{compareBars.rows}}" wx:key="label">
+              <text class="hbar-value">{{item.value}}</text>
+              <view class="hbar-col" style="height:{{item.height}}px"></view>
+              <text class="hbar-label">{{item.short}}</text>
+            </view>
+          </view>
+          <view class="hint">{{compareBars.note}}</view>
+        </block>
+        <view wx:else class="hint">{{compareBars.note}}</view>
+        <scroll-view scroll-x>
+          <view class="compare">
+            <view class="compare-col">
+              <view class="cell head">字段</view>
+              <view wx:for="{{compare.columns}}" wx:key="label" class="cell">{{item.label}}</view>
+            </view>
+            <view wx:for="{{compare.count}}" wx:key="*this" wx:for-index="col" class="compare-col">
+              <view class="cell head">{{compare.ids[col]}}</view>
+              <view wx:for="{{compare.columns}}" wx:key="label" wx:for-item="column" class="cell">{{column.values[col]}}</view>
+            </view>
+          </view>
+        </scroll-view>
+        <button wx:for="{{compare.ids}}" wx:key="*this" size="mini" data-id="{{item}}" bindtap="gotoWorkspace">打开该实验 · {{item}}</button>
+      </view>
+
+      <!-- 实时波形：逐点回放真实序列，可暂停与重播 -->
+      <view class="card" wx:if="{{visual.wave.points.length}}">
+        <view class="row">
+          <text class="title">实时波形 · {{visual.wave.title}}</text>
+          <text class="chip {{wave.running ? 'chip-live' : ''}}">{{wave.running ? '回放中' : (wave.done ? '回放结束' : '已暂停')}}</text>
+        </view>
+        <view class="kpi-row">
+          <view class="kpi"><view class="kpi-value">{{wave.index}}</view><view class="kpi-label">已播放</view></view>
+          <view class="kpi"><view class="kpi-value">{{visual.wave.points.length}}</view><view class="kpi-label">采样点</view></view>
+          <view class="kpi"><view class="kpi-value">{{wave.current}}</view><view class="kpi-label">当前值</view></view>
+        </view>
+        <canvas type="2d" id="wave" class="chart short"></canvas>
+        <view class="legend">
+          <view class="legend-item" wx:for="{{visual.wave.channels}}" wx:key="key">
+            <view class="line-swatch" style="background:{{item.color}}"></view><text>{{item.label}}</text>
+          </view>
+        </view>
+        <view class="buttons">
+          <button size="mini" bindtap="waveToggle">{{wave.running ? '暂停' : '继续'}}</button>
+          <button size="mini" bindtap="waveReplay">从头回放</button>
+        </view>
+        <view class="hint">{{visual.wave.note}}</view>
+      </view>
+
+      <!-- 结果可视化：只渲染真实存在的字段，缺失处不绘制 -->
+      <view class="card" id="visuals" wx:if="{{visual.any}}">
+        <view class="title">数据可视化 · {{viewingId || '当前结果'}}</view>
+
+        <view class="kpi-row" wx:if="{{visual.kpi.length}}">
+          <view class="kpi" wx:for="{{visual.kpi}}" wx:key="label">
+            <view class="kpi-value">{{item.value}}</view>
+            <view class="kpi-label">{{item.label}} {{item.unit}}</view>
+          </view>
+        </view>
+
+
+        <block wx:if="{{visual.ring.segments.length}}">
+          <view class="subtitle">试验状态分布</view>
+          <view class="ring-row">
+            <canvas type="2d" id="ring" class="ring-chart"></canvas>
+            <view class="ring-legend">
+              <view class="legend-item" wx:for="{{visual.ring.segments}}" wx:key="label">
+                <view class="dot {{item.className}}"></view>
+                <text>{{item.label}} {{item.count}} · {{item.pct}}%</text>
+              </view>
+            </view>
+          </view>
+          <view class="hint">{{visual.ring.note}}</view>
+        </block>
+
+
+        <block wx:if="{{visual.curve.points.length}}">
+          <view class="subtitle">训练曲线采样</view>
+          <canvas type="2d" id="curve" class="chart short"></canvas>
+          <view class="legend">
+            <view class="legend-item"><view class="line-swatch swatch-train"></view><text>训练损失</text></view>
+            <view class="legend-item"><view class="line-swatch swatch-validation"></view><text>验证损失</text></view>
+          </view>
+          <view class="hint">{{visual.curve.note}}</view>
+        </block>
+
+        <block wx:if="{{visual.indicators.length}}">
+          <view class="subtitle">指标卡</view>
+          <view class="kpi-row">
+            <view class="kpi" wx:for="{{visual.indicators}}" wx:key="label">
+              <view class="kpi-value">{{item.value}}</view>
+              <view class="kpi-label">{{item.label}} {{item.unit}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+
+      <!-- 结构化详情与原始输出 -->
+      <view class="card" id="result" wx:if="{{output || sections.length || compare}}">
+        <view class="title">{{viewingId || '结果与日志'}}</view>
+        <view class="buttons" wx:if="{{detail}}">
+          <button size="mini" bindtap="exportRun">导出 ZIP</button>
+          <button wx:if="{{role === 'admin' && detail.target_unit}}" size="mini" data-action="finalize" bindtap="submit">最终评估</button>
+          <button wx:if="{{viewingResource === 'loops' && detail.id}}" size="mini" data-action="loop_run" bindtap="submit">继续回放</button>
+          <button wx:if="{{role === 'admin' && detail.state === 'WAITING_RELEASE'}}" size="mini" data-action="promote" bindtap="submit">确认切换</button>
+          <button wx:if="{{role === 'admin' && detail.state === 'WAITING_RELEASE'}}" size="mini" data-action="decline" bindtap="submit">保留冠军</button>
+          <button wx:if="{{role === 'admin' && viewingResource === 'loops'}}" size="mini" data-action="rollback" bindtap="submit">回滚模型</button>
+          <button size="mini" bindtap="copyOutput">复制</button>
+          <button size="mini" bindtap="clearOutput">清空显示</button>
+        </view>
+        <view wx:for="{{sections}}" wx:key="title" class="inner">
+          <view class="subtitle">{{item.title}}</view>
+          <view wx:for="{{item.rows}}" wx:for-item="line" wx:key="label" class="kv">
+            <text class="k">{{line.label}}</text><text class="v" selectable>{{line.value}}</text>
+          </view>
+          <view wx:if="{{item.note}}" class="hint">{{item.note}}</view>
+        </view>
+        <text class="code" selectable wx:if="{{output}}">{{output}}</text>
+      </view>
+    </block>
+
+    <!-- 记录：历史、任务日志、事件与会话 -->
+    <block wx:if="{{tab === 2}}">
+      <view class="card">
+        <view class="section-head">
+          <view class="section-ico"><text class="glyph">▤</text></view>
+          <view class="title" style="margin-bottom:0;flex:1">历史实验</view>
+          <button size="mini" class="ghost" bindtap="refresh">刷新</button>
+        </view>
+        <input placeholder="搜索实验 ID / 算法 / 数据集" value="{{runQuery}}" data-key="runQuery" bindinput="field" />
+        <view class="hint" wx:if="{{!runs.length}}">暂无匹配的实验记录（共 {{allRuns.length}} 条）</view>
+        <checkbox-group bindchange="selectRun">
+          <view wx:for="{{runs}}" wx:key="id" class="item row">
+            <label><checkbox value="{{item.id}}" checked="{{selected[item.id]}}" /></label>
+            <view class="grow" data-id="{{item.id}}" bindtap="details">
+              <text>{{item.id}}</text>
+              <view class="hint">{{item.caption}} · {{item.value}} {{item.unit}}</view>
+            </view>
+            <button size="mini" data-id="{{item.id}}" bindtap="addToCompare">加入比较</button>
+          </view>
+        </checkbox-group>
+        <button bindtap="compareRuns">比较选中的 {{selectedCount}} 条实验</button>
+      </view>
+
+      <view class="card">
+        <view class="title">任务日志</view>
+        <button size="mini" bindtap="refresh">刷新任务</button>
+        <view wx:for="{{jobs}}" wx:key="id" class="item" data-id="{{item.id}}" bindtap="openJobLog">{{item.caption}}<view class="hint">{{item.id}}</view></view>
+        <view class="hint" wx:if="{{!jobs.length}}">暂无任务</view>
+      </view>
+
+      <view class="card" wx:if="{{logJobId}}">
+        <view class="title">持久事件 · {{logJobId}}</view>
+        <input placeholder="搜索事件内容" value="{{logQuery}}" data-key="logQuery" bindinput="field" />
+        <view class="row"><text>匹配 {{logTotal}} 条 · 第 {{logPage}} 页</text>
+          <switch checked="{{autoScroll}}" data-key="autoScroll" bindchange="toggle" /><text>自动滚动</text></view>
+        <scroll-view scroll-y scroll-into-view="{{logTarget}}" class="logbox">
+          <view wx:for="{{logRows}}" wx:key="id" id="{{item.id}}" class="logline">
+            <text>{{item.time}} · {{item.type}}</text>
+            <view class="hint">{{item.message || item.detail}}</view>
+          </view>
+        </scroll-view>
+        <view class="buttons">
+          <button size="mini" data-delta="-1" bindtap="logPage">上一页</button>
+          <button size="mini" data-delta="1" bindtap="logPage">下一页</button>
+          <button size="mini" bindtap="exportLog">导出日志</button>
+          <button size="mini" bindtap="clearOutput">清空显示</button>
+        </view>
+      </view>
+
+      <view class="card">
+        <view class="title">闭环会话</view>
+        <view wx:for="{{loops}}" wx:key="id" class="item" data-id="{{item.id}}" bindtap="details">{{item.caption}}<view class="hint">{{item.id}}</view></view>
+        <view class="hint" wx:if="{{!loops.length}}">暂无会话</view>
+      </view>
+    </block>
+  </block>
+</view>

@@ -1,0 +1,79 @@
+{
+  "acquired_at": "2026-10-31T05:47:11.749862+00:00",
+  "acquisition_method": "ucimlrepo.fetch_ucirepo",
+  "dataset_key": "ai4i_2020",
+  "license": "CC BY 4.0",
+  "repository_id": 601,
+  "repository_metadata": {
+    "abstract": "The AI4I 2020 Predictive Maintenance Dataset is a synthetic dataset that reflects real predictive maintenance data encountered in industry.",
+    "additional_info": {
+      "citation": null,
+      "funded_by": null,
+      "instances_represent": null,
+      "preprocessing_description": null,
+      "purpose": null,
+      "recommended_data_splits": null,
+      "sensitive_data": null,
+      "summary": "Since real predictive maintenance datasets are generally difficult to obtain and in particular difficult to publish, we present and provide a synthetic dataset that reflects real predictive maintenance encountered in industry to the best of our knowledge.\r\n\r\n\r\n\r\n",
+      "variable_info": "The dataset consists of 10 000 data points stored as rows with 14 features in columns\r\nUID: unique identifier ranging from 1 to 10000\r\nproduct ID: consisting of a letter L, M, or H for low (50% of all products), medium (30%) and high (20%) as product quality variants and a variant-specific serial number\r\nair temperature [K]: generated using a random walk process later normalized to a standard deviation of 2 K around 300 K\r\nprocess temperature [K]: generated using a random walk process normalized to a standard deviation of 1 K, added to the air temperature plus 10 K.\r\nrotational speed [rpm]: calculated from a power of 2860 W, overlaid with a normally distributed noise\r\ntorque [Nm]: torque values are normally distributed around 40 Nm with a Ïƒ = 10 Nm and no negative values. \r\ntool wear [min]: The quality variants H/M/L add 5/3/2 minutes of tool wear to the used tool in the process. and a\r\n'machine failure' label that indicates, whether the machine has failed in this particular datapoint for any of the following failure modes are true.\r\n\r\nThe machine failure consists of five independent failure modes\r\ntool wear failure (TWF): the tool will be replaced of fail at a randomly selected tool wear time between 200 â€“ 240 mins (120 times in our dataset). At this point in time, the tool is replaced 69 times, and fails 51 times (randomly assigned).\r\nheat dissipation failure (HDF): heat dissipation causes a process failure, if the difference between air- and process temperature is below 8.6 K and the toolâ€™s rotational speed is below 1380 rpm. This is the case for 115 data points.\r\npower failure (PWF): the product of torque and rotational speed (in rad/s) equals the power required for the process. If this power is below 3500 W or above 9000 W, the process fails, which is the case 95 times in our dataset.\r\noverstrain failure (OSF): if the product of tool wear and torque exceeds 11,000 minNm for the L product variant (12,000 M, 13,000 H), the process fails due to overstrain. This is true for 98 datapoints.\r\nrandom failures (RNF): each process has a chance of 0,1 % to fail regardless of its process parameters. This is the case for only 5 datapoints, less than could be expected for 10,000 datapoints in our dataset.\r\n\r\nIf at least one of the above failure modes is true, the process fails and the 'machine failure' label is set to 1. It is therefore not transparent to the machine learning method, which of the failure modes has caused the process to fail "
+    },
+    "area": "Computer Science",
+    "characteristics": [
+      "Multivariate",
+      "Time-Series"
+    ],
+    "creators": [],
+    "data_url": "https://archive.ics.uci.edu/static/public/601/data.csv",
+    "dataset_doi": "10.24432/C5HS5C",
+    "demographics": [],
+    "feature_types": [
+      "Real"
+    ],
+    "has_missing_values": "no",
+    "index_col": [
+      "UID",
+      "Product ID"
+    ],
+    "intro_paper": {
+      "DOI": "10.1109/AI4I49448.2020.00023",
+      "ID": 386,
+      "URL": "https://www.semanticscholar.org/paper/b609c8e9ec6a2b8c642810953ef6dffe5766f7c1",
+      "acl": null,
+      "arxiv": null,
+      "authors": "S. Matzka",
+      "corpus": null,
+      "journal": null,
+      "mag": null,
+      "pmcid": null,
+      "pmid": null,
+      "sha": null,
+      "title": "Explainable Artificial Intelligence for Predictive Maintenance Applications",
+      "type": "NATIVE",
+      "venue": "International Conference on Artificial Intelligence for Industries",
+      "year": 2020
+    },
+    "last_updated": "Wed Feb 14 2024",
+    "missing_values_symbol": null,
+    "name": "AI4I 2020 Predictive Maintenance Dataset",
+    "num_features": 6,
+    "num_instances": 10000,
+    "repository_url": "https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset",
+    "target_col": [
+      "Machine failure",
+      "TWF",
+      "HDF",
+      "PWF",
+      "OSF",
+      "RNF"
+    ],
+    "tasks": [
+      "Classification",
+      "Regression",
+      "Causal-Discovery"
+    ],
+    "uci_id": 601,
+    "year_of_dataset_creation": 2020
+  },
+  "sha256": "9724b2eb4479a21bf4c3266bcc68ac60a96de4453a5642dc8f4304362728c966",
+  "source_url": "https://archive.ics.uci.edu/dataset/601/ai4i+2020+predictive+maintenance+dataset"
+}

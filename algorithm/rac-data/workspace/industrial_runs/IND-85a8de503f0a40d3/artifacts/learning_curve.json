@@ -1,0 +1,107 @@
+[
+  {
+    "iteration": 1,
+    "train_loss": 0.9688363671302795,
+    "validation_loss": 1.1478840907414753
+  },
+  {
+    "iteration": 2,
+    "train_loss": 0.858786940574646,
+    "validation_loss": 1.2004735668500264
+  },
+  {
+    "iteration": 3,
+    "train_loss": 0.7644234895706177,
+    "validation_loss": 1.2553093036015828
+  },
+  {
+    "iteration": 4,
+    "train_loss": 0.6828082799911499,
+    "validation_loss": 1.3116701046625774
+  },
+  {
+    "iteration": 5,
+    "train_loss": 0.6117314100265503,
+    "validation_loss": 1.3690536618232727
+  },
+  {
+    "iteration": 6,
+    "train_loss": 0.5494840741157532,
+    "validation_loss": 1.42710014184316
+  },
+  {
+    "iteration": 7,
+    "train_loss": 0.4947155714035034,
+    "validation_loss": 1.4855444033940632
+  },
+  {
+    "iteration": 8,
+    "train_loss": 0.4463387131690979,
+    "validation_loss": 1.5441856781641643
+  },
+  {
+    "iteration": 9,
+    "train_loss": 0.40346527099609375,
+    "validation_loss": 1.602868417898814
+  },
+  {
+    "iteration": 10,
+    "train_loss": 0.36535993218421936,
+    "validation_loss": 1.661469002564748
+  },
+  {
+    "iteration": 11,
+    "train_loss": 0.33140793442726135,
+    "validation_loss": 1.7198859850565593
+  },
+  {
+    "iteration": 12,
+    "train_loss": 0.301090270280838,
+    "validation_loss": 1.7780349254608154
+  },
+  {
+    "iteration": 13,
+    "train_loss": 0.2739652991294861,
+    "validation_loss": 1.835843284924825
+  },
+  {
+    "iteration": 14,
+    "train_loss": 0.24965466558933258,
+    "validation_loss": 1.893247127532959
+  },
+  {
+    "iteration": 15,
+    "train_loss": 0.22783206403255463,
+    "validation_loss": 1.950189967950185
+  },
+  {
+    "iteration": 16,
+    "train_loss": 0.20821504294872284,
+    "validation_loss": 2.00661967198054
+  },
+  {
+    "iteration": 17,
+    "train_loss": 0.1905573159456253,
+    "validation_loss": 2.06248946984609
+  },
+  {
+    "iteration": 18,
+    "train_loss": 0.17464403808116913,
+    "validation_loss": 2.117754499117533
+  },
+  {
+    "iteration": 19,
+    "train_loss": 0.16028636693954468,
+    "validation_loss": 2.172374347845713
+  },
+  {
+    "iteration": 20,
+    "train_loss": 0.147318035364151,
+    "validation_loss": 2.2263100345929465
+  },
+  {
+    "iteration": 21,
+    "train_loss": 0.13559263944625854,
+    "validation_loss": 2.2795259753863015
+  }
+]

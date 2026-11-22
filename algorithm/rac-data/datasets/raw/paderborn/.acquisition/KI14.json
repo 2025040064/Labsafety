@@ -1,0 +1,22 @@
+{
+  "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI14.rar",
+  "bearing": "KI14",
+  "next_offset": 9759580,
+  "selected_records": [
+    {
+      "archive_entry": "KI14/N09_M07_F10_KI14_1.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI14.rar",
+      "byte_end": 3799770,
+      "byte_start": 1987947,
+      "sha256": "97c9bbab8538db4ffc265e927d684b87c94a80449a1c024c608e380457dd840e"
+    },
+    {
+      "archive_entry": "KI14/N15_M07_F10_KI14_4.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI14.rar",
+      "byte_end": 9759579,
+      "byte_start": 7735027,
+      "sha256": "90918df547d1fd4e2db1aff2df6d4ec8c4c16d95e2c59f383abf0e505d1d7e30"
+    }
+  ],
+  "updated_at": "2026-10-31T06:04:01.106644+00:00"
+}

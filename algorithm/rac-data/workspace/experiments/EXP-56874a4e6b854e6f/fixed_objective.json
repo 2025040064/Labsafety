@@ -1,0 +1,12 @@
+{
+  "baseline_errors": {
+    "weekday": 25.557398879706298,
+    "weekend": 7.9140712689905355
+  },
+  "weights": {
+    "weekday": 0.7222222222222222,
+    "weekend": 0.2777777777777778
+  },
+  "alpha": 0.3,
+  "epsilon": 1e-08
+}

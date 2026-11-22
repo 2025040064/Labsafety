@@ -1,0 +1,2226 @@
+{
+  "id": "IND-2a45bc85ed544ba3",
+  "status": "completed",
+  "created_at": "2026-10-31T06:11:46.830705+00:00",
+  "task_type": "classification",
+  "dataset_key": "paderborn",
+  "model_name": "random_forest",
+  "algorithm": "baseline",
+  "config": {
+    "dataset_key": "paderborn",
+    "model_name": "random_forest",
+    "algorithm": "baseline",
+    "seed": 42,
+    "max_trials": 24,
+    "timeout_seconds": 300.0,
+    "model_config": {
+      "n_estimators": 120,
+      "early_stopping_rounds": 20,
+      "n_jobs": 2
+    },
+    "data_path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn",
+    "evaluation_partition": "validation",
+    "test_accessed": false
+  },
+  "directory": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\industrial_runs\\IND-2a45bc85ed544ba3",
+  "metrics": {
+    "overall_balanced_accuracy": 0.14583333333333334,
+    "overall_f1_macro": 0.15053763440860216,
+    "overall_log_loss": 6.039676957988051,
+    "overall_error": 0.8541666666666666,
+    "task_type": "classification",
+    "class_labels": [
+      0,
+      1,
+      2
+    ],
+    "samples": 48,
+    "class_counts": {
+      "0": 16,
+      "1": 16,
+      "2": 16
+    },
+    "missing_classes": [],
+    "confusion_matrix": [
+      [
+        7,
+        0,
+        9
+      ],
+      [
+        0,
+        0,
+        16
+      ],
+      [
+        8,
+        8,
+        0
+      ]
+    ],
+    "class_recall": {
+      "0": 0.4375,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "class_precision": {
+      "0": 0.4666666666666667,
+      "1": 0.0,
+      "2": 0.0
+    },
+    "minority_class_samples": 16,
+    "sparse_class_warning": null,
+    "balanced_accuracy_scope": "classes observed in this evaluation subset",
+    "regimes": {
+      "N09_M07_F10": {
+        "balanced_accuracy": 0.2916666666666667,
+        "f1_macro": 0.2028985507246377,
+        "log_loss": 1.4642603959547307,
+        "error": 0.7083333333333333,
+        "samples": 24,
+        "class_counts": {
+          "0": 8,
+          "1": 8,
+          "2": 8
+        },
+        "class_recall": {
+          "0": 0.875,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "class_precision": {
+          "0": 0.4666666666666667,
+          "1": null,
+          "2": 0.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 8,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            8
+          ],
+          [
+            8,
+            0,
+            0
+          ]
+        ],
+        "group_errors": [
+          {
+            "group_id": "K002",
+            "samples": 8,
+            "balanced_error": 0.125,
+            "class_weighted_error_sum": 1.0
+          },
+          {
+            "group_id": "KA15",
+            "samples": 8,
+            "balanced_error": 1.0,
+            "class_weighted_error_sum": 8.0
+          },
+          {
+            "group_id": "KI14",
+            "samples": 8,
+            "balanced_error": 1.0,
+            "class_weighted_error_sum": 8.0
+          }
+        ],
+        "group_kind": "physical_bearings",
+        "observed_group_count": 3,
+        "group_records_omitted_reason": null,
+        "effective_independent_groups": 3,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "physical bearings"
+      },
+      "N15_M07_F10": {
+        "balanced_accuracy": 0.0,
+        "f1_macro": 0.0,
+        "log_loss": 10.615093520021373,
+        "error": 1.0,
+        "samples": 24,
+        "class_counts": {
+          "0": 8,
+          "1": 8,
+          "2": 8
+        },
+        "class_recall": {
+          "0": 0.0,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "class_precision": {
+          "0": null,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 8,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            0,
+            8
+          ],
+          [
+            0,
+            8,
+            0
+          ]
+        ],
+        "group_errors": [
+          {
+            "group_id": "K002",
+            "samples": 8,
+            "balanced_error": 1.0,
+            "class_weighted_error_sum": 8.0
+          },
+          {
+            "group_id": "KA15",
+            "samples": 8,
+            "balanced_error": 1.0,
+            "class_weighted_error_sum": 8.0
+          },
+          {
+            "group_id": "KI14",
+            "samples": 8,
+            "balanced_error": 1.0,
+            "class_weighted_error_sum": 8.0
+          }
+        ],
+        "group_kind": "physical_bearings",
+        "observed_group_count": 3,
+        "group_records_omitted_reason": null,
+        "effective_independent_groups": 3,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "physical bearings"
+      }
+    },
+    "train_metrics": {
+      "overall_balanced_accuracy": 1.0,
+      "overall_f1_macro": 1.0,
+      "overall_log_loss": 0.008970073271880251,
+      "overall_error": 0.0,
+      "task_type": "classification",
+      "class_labels": [
+        0,
+        1,
+        2
+      ],
+      "samples": 48,
+      "class_counts": {
+        "0": 16,
+        "1": 16,
+        "2": 16
+      },
+      "missing_classes": [],
+      "confusion_matrix": [
+        [
+          16,
+          0,
+          0
+        ],
+        [
+          0,
+          16,
+          0
+        ],
+        [
+          0,
+          0,
+          16
+        ]
+      ],
+      "class_recall": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "class_precision": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 1.0
+      },
+      "minority_class_samples": 16,
+      "sparse_class_warning": null,
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "regimes": {
+        "N09_M07_F10": {
+          "balanced_accuracy": 1.0,
+          "f1_macro": 1.0,
+          "log_loss": 0.009479619832757797,
+          "error": 0.0,
+          "samples": 24,
+          "class_counts": {
+            "0": 8,
+            "1": 8,
+            "2": 8
+          },
+          "class_recall": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "class_precision": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "missing_classes": [],
+          "minority_class_samples": 8,
+          "sparse_class_warning": null,
+          "balanced_accuracy_scope": "classes observed in this evaluation subset",
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              8
+            ]
+          ],
+          "group_errors": [
+            {
+              "group_id": "K001",
+              "samples": 8,
+              "balanced_error": 0.0,
+              "class_weighted_error_sum": 0.0
+            },
+            {
+              "group_id": "KA04",
+              "samples": 8,
+              "balanced_error": 0.0,
+              "class_weighted_error_sum": 0.0
+            },
+            {
+              "group_id": "KI04",
+              "samples": 8,
+              "balanced_error": 0.0,
+              "class_weighted_error_sum": 0.0
+            }
+          ],
+          "group_kind": "physical_bearings",
+          "observed_group_count": 3,
+          "group_records_omitted_reason": null,
+          "effective_independent_groups": 3,
+          "balanced_error_interval": null,
+          "interval_method": null,
+          "independent_evidence_kind": "physical bearings"
+        },
+        "N15_M07_F10": {
+          "balanced_accuracy": 1.0,
+          "f1_macro": 1.0,
+          "log_loss": 0.008460526711002708,
+          "error": 0.0,
+          "samples": 24,
+          "class_counts": {
+            "0": 8,
+            "1": 8,
+            "2": 8
+          },
+          "class_recall": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "class_precision": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "missing_classes": [],
+          "minority_class_samples": 8,
+          "sparse_class_warning": null,
+          "balanced_accuracy_scope": "classes observed in this evaluation subset",
+          "confusion_matrix": [
+            [
+              8,
+              0,
+              0
+            ],
+            [
+              0,
+              8,
+              0
+            ],
+            [
+              0,
+              0,
+              8
+            ]
+          ],
+          "group_errors": [
+            {
+              "group_id": "K001",
+              "samples": 8,
+              "balanced_error": 0.0,
+              "class_weighted_error_sum": 0.0
+            },
+            {
+              "group_id": "KA04",
+              "samples": 8,
+              "balanced_error": 0.0,
+              "class_weighted_error_sum": 0.0
+            },
+            {
+              "group_id": "KI04",
+              "samples": 8,
+              "balanced_error": 0.0,
+              "class_weighted_error_sum": 0.0
+            }
+          ],
+          "group_kind": "physical_bearings",
+          "observed_group_count": 3,
+          "group_records_omitted_reason": null,
+          "effective_independent_groups": 3,
+          "balanced_error_interval": null,
+          "interval_method": null,
+          "independent_evidence_kind": "physical bearings"
+        }
+      }
+    },
+    "model_name": "random_forest",
+    "model_version": "classification-0.1.0",
+    "model_library": "scikit-learn",
+    "model_library_version": "1.7.2",
+    "seed": 42,
+    "learning_curve": [],
+    "learning_curve_reason": "random_forest does not expose a validation learning curve",
+    "learning_curve_metric": null,
+    "preprocessing": {
+      "fit_split": "train",
+      "numeric_imputation": "train median; empty train columns=0",
+      "categorical_encoding": "train-only one-hot; unknown categories ignored",
+      "categories": {},
+      "transformed_features": 36
+    },
+    "data_origin": "real_measurement"
+  },
+  "best_params": {
+    "max_depth": 12,
+    "min_samples_leaf": 1,
+    "max_features": 0.8,
+    "min_samples_split": 2,
+    "ccp_alpha": 0.0
+  },
+  "best_trial": -1,
+  "best_value": 0.8541666666666666,
+  "artifacts": {
+    "log": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\industrial_runs\\IND-2a45bc85ed544ba3\\logs\\experiment.log",
+    "model": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\industrial_runs\\IND-2a45bc85ed544ba3\\artifacts\\model.joblib",
+    "convergence": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\industrial_runs\\IND-2a45bc85ed544ba3\\artifacts\\convergence.png",
+    "learning_curve_data": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\industrial_runs\\IND-2a45bc85ed544ba3\\artifacts\\learning_curve.json"
+  },
+  "trials": [
+    {
+      "number": -1,
+      "role": "default_baseline",
+      "params": {
+        "max_depth": 12,
+        "min_samples_leaf": 1,
+        "max_features": 0.8,
+        "min_samples_split": 2,
+        "ccp_alpha": 0.0
+      },
+      "seed": 42,
+      "status": "completed",
+      "metrics": {
+        "overall_balanced_accuracy": 0.14583333333333334,
+        "overall_f1_macro": 0.15053763440860216,
+        "overall_log_loss": 6.039676957988051,
+        "overall_error": 0.8541666666666666,
+        "task_type": "classification",
+        "class_labels": [
+          0,
+          1,
+          2
+        ],
+        "samples": 48,
+        "class_counts": {
+          "0": 16,
+          "1": 16,
+          "2": 16
+        },
+        "missing_classes": [],
+        "confusion_matrix": [
+          [
+            7,
+            0,
+            9
+          ],
+          [
+            0,
+            0,
+            16
+          ],
+          [
+            8,
+            8,
+            0
+          ]
+        ],
+        "class_recall": {
+          "0": 0.4375,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "class_precision": {
+          "0": 0.4666666666666667,
+          "1": 0.0,
+          "2": 0.0
+        },
+        "minority_class_samples": 16,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "regimes": {
+          "N09_M07_F10": {
+            "balanced_accuracy": 0.2916666666666667,
+            "f1_macro": 0.2028985507246377,
+            "log_loss": 1.4642603959547307,
+            "error": 0.7083333333333333,
+            "samples": 24,
+            "class_counts": {
+              "0": 8,
+              "1": 8,
+              "2": 8
+            },
+            "class_recall": {
+              "0": 0.875,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "class_precision": {
+              "0": 0.4666666666666667,
+              "1": null,
+              "2": 0.0
+            },
+            "missing_classes": [],
+            "minority_class_samples": 8,
+            "sparse_class_warning": null,
+            "balanced_accuracy_scope": "classes observed in this evaluation subset",
+            "confusion_matrix": [
+              [
+                7,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                8
+              ],
+              [
+                8,
+                0,
+                0
+              ]
+            ],
+            "group_errors": [
+              {
+                "group_id": "K002",
+                "samples": 8,
+                "balanced_error": 0.125,
+                "class_weighted_error_sum": 1.0
+              },
+              {
+                "group_id": "KA15",
+                "samples": 8,
+                "balanced_error": 1.0,
+                "class_weighted_error_sum": 8.0
+              },
+              {
+                "group_id": "KI14",
+                "samples": 8,
+                "balanced_error": 1.0,
+                "class_weighted_error_sum": 8.0
+              }
+            ],
+            "group_kind": "physical_bearings",
+            "observed_group_count": 3,
+            "group_records_omitted_reason": null,
+            "effective_independent_groups": 3,
+            "balanced_error_interval": null,
+            "interval_method": null,
+            "independent_evidence_kind": "physical bearings"
+          },
+          "N15_M07_F10": {
+            "balanced_accuracy": 0.0,
+            "f1_macro": 0.0,
+            "log_loss": 10.615093520021373,
+            "error": 1.0,
+            "samples": 24,
+            "class_counts": {
+              "0": 8,
+              "1": 8,
+              "2": 8
+            },
+            "class_recall": {
+              "0": 0.0,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "class_precision": {
+              "0": null,
+              "1": 0.0,
+              "2": 0.0
+            },
+            "missing_classes": [],
+            "minority_class_samples": 8,
+            "sparse_class_warning": null,
+            "balanced_accuracy_scope": "classes observed in this evaluation subset",
+            "confusion_matrix": [
+              [
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                0,
+                8
+              ],
+              [
+                0,
+                8,
+                0
+              ]
+            ],
+            "group_errors": [
+              {
+                "group_id": "K002",
+                "samples": 8,
+                "balanced_error": 1.0,
+                "class_weighted_error_sum": 8.0
+              },
+              {
+                "group_id": "KA15",
+                "samples": 8,
+                "balanced_error": 1.0,
+                "class_weighted_error_sum": 8.0
+              },
+              {
+                "group_id": "KI14",
+                "samples": 8,
+                "balanced_error": 1.0,
+                "class_weighted_error_sum": 8.0
+              }
+            ],
+            "group_kind": "physical_bearings",
+            "observed_group_count": 3,
+            "group_records_omitted_reason": null,
+            "effective_independent_groups": 3,
+            "balanced_error_interval": null,
+            "interval_method": null,
+            "independent_evidence_kind": "physical bearings"
+          }
+        },
+        "train_metrics": {
+          "overall_balanced_accuracy": 1.0,
+          "overall_f1_macro": 1.0,
+          "overall_log_loss": 0.008970073271880251,
+          "overall_error": 0.0,
+          "task_type": "classification",
+          "class_labels": [
+            0,
+            1,
+            2
+          ],
+          "samples": 48,
+          "class_counts": {
+            "0": 16,
+            "1": 16,
+            "2": 16
+          },
+          "missing_classes": [],
+          "confusion_matrix": [
+            [
+              16,
+              0,
+              0
+            ],
+            [
+              0,
+              16,
+              0
+            ],
+            [
+              0,
+              0,
+              16
+            ]
+          ],
+          "class_recall": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "class_precision": {
+            "0": 1.0,
+            "1": 1.0,
+            "2": 1.0
+          },
+          "minority_class_samples": 16,
+          "sparse_class_warning": null,
+          "balanced_accuracy_scope": "classes observed in this evaluation subset",
+          "regimes": {
+            "N09_M07_F10": {
+              "balanced_accuracy": 1.0,
+              "f1_macro": 1.0,
+              "log_loss": 0.009479619832757797,
+              "error": 0.0,
+              "samples": 24,
+              "class_counts": {
+                "0": 8,
+                "1": 8,
+                "2": 8
+              },
+              "class_recall": {
+                "0": 1.0,
+                "1": 1.0,
+                "2": 1.0
+              },
+              "class_precision": {
+                "0": 1.0,
+                "1": 1.0,
+                "2": 1.0
+              },
+              "missing_classes": [],
+              "minority_class_samples": 8,
+              "sparse_class_warning": null,
+              "balanced_accuracy_scope": "classes observed in this evaluation subset",
+              "confusion_matrix": [
+                [
+                  8,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  8,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  8
+                ]
+              ],
+              "group_errors": [
+                {
+                  "group_id": "K001",
+                  "samples": 8,
+                  "balanced_error": 0.0,
+                  "class_weighted_error_sum": 0.0
+                },
+                {
+                  "group_id": "KA04",
+                  "samples": 8,
+                  "balanced_error": 0.0,
+                  "class_weighted_error_sum": 0.0
+                },
+                {
+                  "group_id": "KI04",
+                  "samples": 8,
+                  "balanced_error": 0.0,
+                  "class_weighted_error_sum": 0.0
+                }
+              ],
+              "group_kind": "physical_bearings",
+              "observed_group_count": 3,
+              "group_records_omitted_reason": null,
+              "effective_independent_groups": 3,
+              "balanced_error_interval": null,
+              "interval_method": null,
+              "independent_evidence_kind": "physical bearings"
+            },
+            "N15_M07_F10": {
+              "balanced_accuracy": 1.0,
+              "f1_macro": 1.0,
+              "log_loss": 0.008460526711002708,
+              "error": 0.0,
+              "samples": 24,
+              "class_counts": {
+                "0": 8,
+                "1": 8,
+                "2": 8
+              },
+              "class_recall": {
+                "0": 1.0,
+                "1": 1.0,
+                "2": 1.0
+              },
+              "class_precision": {
+                "0": 1.0,
+                "1": 1.0,
+                "2": 1.0
+              },
+              "missing_classes": [],
+              "minority_class_samples": 8,
+              "sparse_class_warning": null,
+              "balanced_accuracy_scope": "classes observed in this evaluation subset",
+              "confusion_matrix": [
+                [
+                  8,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  8,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  8
+                ]
+              ],
+              "group_errors": [
+                {
+                  "group_id": "K001",
+                  "samples": 8,
+                  "balanced_error": 0.0,
+                  "class_weighted_error_sum": 0.0
+                },
+                {
+                  "group_id": "KA04",
+                  "samples": 8,
+                  "balanced_error": 0.0,
+                  "class_weighted_error_sum": 0.0
+                },
+                {
+                  "group_id": "KI04",
+                  "samples": 8,
+                  "balanced_error": 0.0,
+                  "class_weighted_error_sum": 0.0
+                }
+              ],
+              "group_kind": "physical_bearings",
+              "observed_group_count": 3,
+              "group_records_omitted_reason": null,
+              "effective_independent_groups": 3,
+              "balanced_error_interval": null,
+              "interval_method": null,
+              "independent_evidence_kind": "physical bearings"
+            }
+          }
+        },
+        "model_name": "random_forest",
+        "model_version": "classification-0.1.0",
+        "model_library": "scikit-learn",
+        "model_library_version": "1.7.2",
+        "seed": 42,
+        "learning_curve": [],
+        "learning_curve_reason": "random_forest does not expose a validation learning curve",
+        "learning_curve_metric": null,
+        "preprocessing": {
+          "fit_split": "train",
+          "numeric_imputation": "train median; empty train columns=0",
+          "categorical_encoding": "train-only one-hot; unknown categories ignored",
+          "categories": {},
+          "transformed_features": 36
+        },
+        "data_origin": "real_measurement"
+      },
+      "duration_seconds": 0.18772579999858863,
+      "objective": 0.8541666666666666,
+      "failure_reason": null
+    }
+  ],
+  "manifest": {
+    "dataset_id": "paderborn",
+    "dataset_key": "paderborn",
+    "dataset_version": "paderborn-v1-1f33bdeb27ff",
+    "task_type": "classification",
+    "target": "bearing_damage",
+    "target_unit": "class",
+    "rows": 144,
+    "feature_order": [
+      "phase_current_1_mean",
+      "phase_current_1_std",
+      "phase_current_1_rms",
+      "phase_current_1_peak_to_peak",
+      "phase_current_1_crest_factor",
+      "phase_current_1_skew",
+      "phase_current_1_kurtosis",
+      "phase_current_1_spectral_band_0",
+      "phase_current_1_spectral_band_1",
+      "phase_current_1_spectral_band_2",
+      "phase_current_1_spectral_band_3",
+      "phase_current_2_mean",
+      "phase_current_2_std",
+      "phase_current_2_rms",
+      "phase_current_2_peak_to_peak",
+      "phase_current_2_crest_factor",
+      "phase_current_2_skew",
+      "phase_current_2_kurtosis",
+      "phase_current_2_spectral_band_0",
+      "phase_current_2_spectral_band_1",
+      "phase_current_2_spectral_band_2",
+      "phase_current_2_spectral_band_3",
+      "vibration_1_mean",
+      "vibration_1_std",
+      "vibration_1_rms",
+      "vibration_1_peak_to_peak",
+      "vibration_1_crest_factor",
+      "vibration_1_skew",
+      "vibration_1_kurtosis",
+      "vibration_1_spectral_band_0",
+      "vibration_1_spectral_band_1",
+      "vibration_1_spectral_band_2",
+      "vibration_1_spectral_band_3",
+      "rotational_speed_rpm",
+      "load_torque_nm",
+      "radial_force_n"
+    ],
+    "source_sha256": "1f33bdeb27ff32ffcb163fd63da1f6d43934a4ec6d777589b36486b3e88927bb",
+    "source_files": [
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\K001\\N09_M07_F10_K001_3.mat",
+        "sha256": "6c4d86af80479b864b57966669574a00b218370b1e75f75411bbc50599e60dd3"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\K001\\N15_M07_F10_K001_20.mat",
+        "sha256": "858a5122648da178991023e08f268826f6a6ed3ccf7150e53a89fb9ca27e46ec"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\K002\\N09_M07_F10_K002_16.mat",
+        "sha256": "d9e01579f92cf4775bd4a862a970a3c435264e036b92d37c8e5d8d147c5828ff"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\K002\\N15_M07_F10_K002_9.mat",
+        "sha256": "a7f1558252c9ddaebde1b2c081c73f4dfe3fa49b811139e5333b83a079dfb939"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\K003\\N09_M07_F10_K003_14.mat",
+        "sha256": "f2992e1b778579d91027ecdc97bc22e497d43c3b534dc962c2b1e44c4a0ac960"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\K003\\N15_M07_F10_K003_18.mat",
+        "sha256": "090e119618085f691305b4bf4001f2d43cdd8e620ec450e2de5c27191fb14898"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KA04\\N09_M07_F10_KA04_9.mat",
+        "sha256": "13eee14a0a063e74575294e13906bce1eac415d250430285bc54eb413b72bb37"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KA04\\N15_M07_F10_KA04_10.mat",
+        "sha256": "f08980bb636df4a470bd426e49ed7fb79520cd20621afdb54713485df8088699"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KA15\\N09_M07_F10_KA15_9.mat",
+        "sha256": "dc2f1f47245b6f5c87607c9415b4d1b0d8c60568797b980d476a70140488e2f0"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KA15\\N15_M07_F10_KA15_19.mat",
+        "sha256": "6afdf18c1e73e25051dd06c5a402e9d92d3234fdc96637c773ceab46b8d438ce"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KA16\\N09_M07_F10_KA16_16.mat",
+        "sha256": "9f77f4153ef57fa2695fb830ab87c5777b0101b3810e674d3c8c57bb9d343490"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KA16\\N15_M07_F10_KA16_14.mat",
+        "sha256": "2d85c68de0de29784983433d4c003ea0fe785e070eaeb01415ad102a4378eeef"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KI04\\N09_M07_F10_KI04_6.mat",
+        "sha256": "fa3d3299f1f2c2d7143f528a2d55ede6d110d5fadda30dd5957e2aec7fa32775"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KI04\\N15_M07_F10_KI04_13.mat",
+        "sha256": "e409cc4b9f01fa545b11b6eea0fdaacf61b57b0d35b909e7b620f63713538244"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KI14\\N09_M07_F10_KI14_1.mat",
+        "sha256": "97c9bbab8538db4ffc265e927d684b87c94a80449a1c024c608e380457dd840e"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KI14\\N15_M07_F10_KI14_4.mat",
+        "sha256": "90918df547d1fd4e2db1aff2df6d4ec8c4c16d95e2c59f383abf0e505d1d7e30"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KI16\\N09_M07_F10_KI16_19.mat",
+        "sha256": "e7dac7daa392a8a1c9d030b5d450dabfc763fb27e18cd0740fac0448c1f5b76a"
+      },
+      {
+        "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn\\KI16\\N15_M07_F10_KI16_5.mat",
+        "sha256": "1c140262f5480764cec250c8d583b0b12e704e2f03ef7d38634cd6eaf9af49ea"
+      }
+    ],
+    "splits": {
+      "train": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111
+      ],
+      "validation": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "test": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143
+      ]
+    },
+    "split_fingerprint": "32c7995711703bfb822bfa72816dfb818fa978f207b26b145eccb1532f5db109",
+    "source_row_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143
+    ],
+    "acquired_at": "2026-10-31T06:07:04.799598+00:00",
+    "preprocessing": {
+      "statistics_fitted": false,
+      "missing_values": "train-fold imputation required"
+    },
+    "data_origin": "real_measurement",
+    "source_url": "https://mb.uni-paderborn.de/en/kat/research/bearing-datacenter",
+    "license": "CC BY-NC 4.0",
+    "citation": "Lessmeier, C.; Kimotho, J. K.; Zimmer, D.; Sextro, W. (2016), Condition Monitoring of Bearing Damage in Electromechanical Drive Systems by Using Motor Current Signals of Electric Motors: A Benchmark Data Set for Data-Driven Classification, European Conference of the Prognostics and Health Management Society; KAt DataCenter, Paderborn University",
+    "provenance_verified": true,
+    "source_acquisition": {
+      "acquired_at": "2026-10-31T06:07:04.799598+00:00",
+      "acquisition_method": "Official HTTP RAR4 byte ranges; exact compressed entries extracted using tar",
+      "bearings": [
+        "K001",
+        "K002",
+        "K003",
+        "KA04",
+        "KA15",
+        "KA16",
+        "KI04",
+        "KI14",
+        "KI16"
+      ],
+      "dataset_key": "paderborn",
+      "license": "CC BY-NC 4.0",
+      "selected_records": [
+        {
+          "archive_entry": "K001/N15_M07_F10_K001_20.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+          "byte_end": 9826550,
+          "byte_start": 7257985,
+          "sha256": "858a5122648da178991023e08f268826f6a6ed3ccf7150e53a89fb9ca27e46ec"
+        },
+        {
+          "archive_entry": "K001/N09_M07_F10_K001_3.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+          "byte_end": 20970219,
+          "byte_start": 19070625,
+          "sha256": "6c4d86af80479b864b57966669574a00b218370b1e75f75411bbc50599e60dd3"
+        },
+        {
+          "archive_entry": "K002/N15_M07_F10_K002_9.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K002.rar",
+          "byte_end": 4386637,
+          "byte_start": 2263905,
+          "sha256": "a7f1558252c9ddaebde1b2c081c73f4dfe3fa49b811139e5333b83a079dfb939"
+        },
+        {
+          "archive_entry": "K002/N09_M07_F10_K002_16.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K002.rar",
+          "byte_end": 8460610,
+          "byte_start": 6594405,
+          "sha256": "d9e01579f92cf4775bd4a862a970a3c435264e036b92d37c8e5d8d147c5828ff"
+        },
+        {
+          "archive_entry": "K003/N15_M07_F10_K003_18.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K003.rar",
+          "byte_end": 2617709,
+          "byte_start": 20,
+          "sha256": "090e119618085f691305b4bf4001f2d43cdd8e620ec450e2de5c27191fb14898"
+        },
+        {
+          "archive_entry": "K003/N09_M07_F10_K003_14.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K003.rar",
+          "byte_end": 25864389,
+          "byte_start": 23853982,
+          "sha256": "f2992e1b778579d91027ecdc97bc22e497d43c3b534dc962c2b1e44c4a0ac960"
+        },
+        {
+          "archive_entry": "KA04/N15_M07_F10_KA04_10.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA04.rar",
+          "byte_end": 6564847,
+          "byte_start": 4455623,
+          "sha256": "f08980bb636df4a470bd426e49ed7fb79520cd20621afdb54713485df8088699"
+        },
+        {
+          "archive_entry": "KA04/N09_M07_F10_KA04_9.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA04.rar",
+          "byte_end": 12859891,
+          "byte_start": 10915699,
+          "sha256": "13eee14a0a063e74575294e13906bce1eac415d250430285bc54eb413b72bb37"
+        },
+        {
+          "archive_entry": "KA15/N15_M07_F10_KA15_19.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA15.rar",
+          "byte_end": 4515283,
+          "byte_start": 2247764,
+          "sha256": "6afdf18c1e73e25051dd06c5a402e9d92d3234fdc96637c773ceab46b8d438ce"
+        },
+        {
+          "archive_entry": "KA15/N09_M07_F10_KA15_9.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA15.rar",
+          "byte_end": 6468996,
+          "byte_start": 4515284,
+          "sha256": "dc2f1f47245b6f5c87607c9415b4d1b0d8c60568797b980d476a70140488e2f0"
+        },
+        {
+          "archive_entry": "KA16/N09_M07_F10_KA16_16.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA16.rar",
+          "byte_end": 4019252,
+          "byte_start": 1933916,
+          "sha256": "9f77f4153ef57fa2695fb830ab87c5777b0101b3810e674d3c8c57bb9d343490"
+        },
+        {
+          "archive_entry": "KA16/N15_M07_F10_KA16_14.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA16.rar",
+          "byte_end": 8106861,
+          "byte_start": 5891523,
+          "sha256": "2d85c68de0de29784983433d4c003ea0fe785e070eaeb01415ad102a4378eeef"
+        },
+        {
+          "archive_entry": "KI04/N15_M07_F10_KI04_13.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI04.rar",
+          "byte_end": 2509821,
+          "byte_start": 20,
+          "sha256": "e409cc4b9f01fa545b11b6eea0fdaacf61b57b0d35b909e7b620f63713538244"
+        },
+        {
+          "archive_entry": "KI04/N09_M07_F10_KI04_6.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI04.rar",
+          "byte_end": 19811153,
+          "byte_start": 17744813,
+          "sha256": "fa3d3299f1f2c2d7143f528a2d55ede6d110d5fadda30dd5957e2aec7fa32775"
+        },
+        {
+          "archive_entry": "KI14/N09_M07_F10_KI14_1.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI14.rar",
+          "byte_end": 3799770,
+          "byte_start": 1987947,
+          "sha256": "97c9bbab8538db4ffc265e927d684b87c94a80449a1c024c608e380457dd840e"
+        },
+        {
+          "archive_entry": "KI14/N15_M07_F10_KI14_4.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI14.rar",
+          "byte_end": 9759579,
+          "byte_start": 7735027,
+          "sha256": "90918df547d1fd4e2db1aff2df6d4ec8c4c16d95e2c59f383abf0e505d1d7e30"
+        },
+        {
+          "archive_entry": "KI16/N09_M07_F10_KI16_19.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI16.rar",
+          "byte_end": 1878005,
+          "byte_start": 20,
+          "sha256": "e7dac7daa392a8a1c9d030b5d450dabfc763fb27e18cd0740fac0448c1f5b76a"
+        },
+        {
+          "archive_entry": "KI16/N15_M07_F10_KI16_5.mat",
+          "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI16.rar",
+          "byte_end": 9875113,
+          "byte_start": 7764177,
+          "sha256": "1c140262f5480764cec250c8d583b0b12e704e2f03ef7d38634cd6eaf9af49ea"
+        }
+      ],
+      "selection_policy": "One first-encountered recording per bearing and each of two predetermined operating conditions; no labels/features used for record selection",
+      "source_url": "https://mb.uni-paderborn.de/en/kat/research/bearing-datacenter"
+    },
+    "classes": {
+      "0": "healthy",
+      "1": "outer_race_damage",
+      "2": "inner_race_damage"
+    },
+    "independent_unit_kind": "physical_bearings",
+    "group_definition": "Official physical bearing code; all conditions/records/windows remain in one split",
+    "regime_definition": "Known rotational speed / load torque / radial force from official N/M/F setting",
+    "split_strategy": "Lexicographic physical-bearing split within damage class, approximately 60/20/20 with at least one bearing per class per split",
+    "source_window_mapping": [
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 0,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 1,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 2,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 3,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 4,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 5,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 6,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N09_M07_F10_K001_3.mat",
+        "window": 7,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 0,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 1,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 2,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 3,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 4,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 5,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 6,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K001\\N15_M07_F10_K001_20.mat",
+        "window": 7,
+        "bearing_id": "K001"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 0,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 1,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 2,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 3,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 4,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 5,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 6,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N09_M07_F10_K002_16.mat",
+        "window": 7,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 0,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 1,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 2,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 3,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 4,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 5,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 6,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K002\\N15_M07_F10_K002_9.mat",
+        "window": 7,
+        "bearing_id": "K002"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 0,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 1,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 2,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 3,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 4,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 5,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 6,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N09_M07_F10_K003_14.mat",
+        "window": 7,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 0,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 1,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 2,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 3,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 4,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 5,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 6,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "K003\\N15_M07_F10_K003_18.mat",
+        "window": 7,
+        "bearing_id": "K003"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 0,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 1,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 2,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 3,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 4,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 5,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 6,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N09_M07_F10_KA04_9.mat",
+        "window": 7,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 0,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 1,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 2,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 3,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 4,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 5,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 6,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA04\\N15_M07_F10_KA04_10.mat",
+        "window": 7,
+        "bearing_id": "KA04"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 0,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 1,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 2,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 3,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 4,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 5,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 6,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N09_M07_F10_KA15_9.mat",
+        "window": 7,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 0,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 1,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 2,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 3,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 4,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 5,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 6,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA15\\N15_M07_F10_KA15_19.mat",
+        "window": 7,
+        "bearing_id": "KA15"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 0,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 1,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 2,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 3,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 4,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 5,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 6,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N09_M07_F10_KA16_16.mat",
+        "window": 7,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 0,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 1,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 2,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 3,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 4,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 5,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 6,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KA16\\N15_M07_F10_KA16_14.mat",
+        "window": 7,
+        "bearing_id": "KA16"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 0,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 1,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 2,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 3,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 4,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 5,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 6,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N09_M07_F10_KI04_6.mat",
+        "window": 7,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 0,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 1,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 2,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 3,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 4,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 5,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 6,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI04\\N15_M07_F10_KI04_13.mat",
+        "window": 7,
+        "bearing_id": "KI04"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 0,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 1,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 2,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 3,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 4,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 5,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 6,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N09_M07_F10_KI14_1.mat",
+        "window": 7,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 0,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 1,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 2,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 3,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 4,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 5,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 6,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI14\\N15_M07_F10_KI14_4.mat",
+        "window": 7,
+        "bearing_id": "KI14"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 0,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 1,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 2,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 3,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 4,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 5,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 6,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N09_M07_F10_KI16_19.mat",
+        "window": 7,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 0,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 1,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 2,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 3,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 4,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 5,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 6,
+        "bearing_id": "KI16"
+      },
+      {
+        "file": "KI16\\N15_M07_F10_KI16_5.mat",
+        "window": 7,
+        "bearing_id": "KI16"
+      }
+    ],
+    "excluded_fields": [
+      "bearing_id",
+      "record_number",
+      "damage_class"
+    ],
+    "limitations": [
+      "Laboratory test rig measurements, not a live factory deployment",
+      "Includes accelerated-life and/or artificially damaged bearings; damage method must not be conflated with naturally occurring field failure",
+      "Eight windows from each record are correlated, never eight independent bearings",
+      "Small subset has one validation bearing per class; no calibrated reliability claim",
+      "Noncommercial license; commercial reuse requires provider permission"
+    ],
+    "split_summary": {
+      "train": {
+        "rows": 48,
+        "groups": 3,
+        "regime_rows": {
+          "N09_M07_F10": 24,
+          "N15_M07_F10": 24
+        },
+        "class_rows": {
+          "0": 16,
+          "1": 16,
+          "2": 16
+        }
+      },
+      "validation": {
+        "rows": 48,
+        "groups": 3,
+        "regime_rows": {
+          "N09_M07_F10": 24,
+          "N15_M07_F10": 24
+        },
+        "class_rows": {
+          "0": 16,
+          "1": 16,
+          "2": 16
+        }
+      },
+      "test": {
+        "rows": 48,
+        "groups": 3,
+        "regime_rows": {
+          "N09_M07_F10": 24,
+          "N15_M07_F10": 24
+        },
+        "class_rows": {
+          "0": 16,
+          "1": 16,
+          "2": 16
+        }
+      }
+    }
+  },
+  "duration_seconds": 1.814655700000003,
+  "pid": 38444,
+  "training_version": "industrial-classification-1.0",
+  "dataset_id": "paderborn",
+  "data_sha256": "1f33bdeb27ff32ffcb163fd63da1f6d43934a4ec6d777589b36486b3e88927bb",
+  "objective_definition": "validation balanced error = 1 - balanced accuracy",
+  "model_sha256": "583a341bc123c68ecb683dd21f5032611008b085f990c714b22c1caa89bd25d2",
+  "best_iteration": 120,
+  "ended_at": "2026-10-31T06:11:48.650249+00:00"
+}

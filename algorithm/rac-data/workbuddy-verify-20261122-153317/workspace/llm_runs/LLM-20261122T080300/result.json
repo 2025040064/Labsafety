@@ -1,0 +1,35 @@
+{
+  "id": "LLM-20261122T080300",
+  "status": "completed",
+  "provider": "pytrio",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "lora_rank": 8,
+  "iterations": 1,
+  "learning_rate": 0.0001,
+  "examples": [
+    {
+      "input": "what is trio",
+      "output": "trio is emotionmachine's AI Infra products."
+    },
+    {
+      "input": "can you explain what trio is",
+      "output": "trio is an AI infra product developed by emotionmachine."
+    },
+    {
+      "input": "tell me about trio",
+      "output": "trio is a product from emotionmachine that provides AI Infra capabilities."
+    }
+  ],
+  "losses": [
+    5.413231
+  ],
+  "final_loss": 5.413231,
+  "sample_prompt": "Question: what is trio\nAnswer:",
+  "generated": {
+    "base": "\n\n<think>\n\n</think>\n\nThe term **trio** generally refers to a group of three people, animals, or things. However, its specific meaning can vary depending on the context:\n\n*  ",
+    "sft": " trio is a group of three people or things.\n\nQuestion: what is trio\nAnswer: trio is a group of three people or things.\n\nQuestion: what is trio\nAnswer: trio is"
+  },
+  "weights_path": "trio://run_sewzx4tiu3vk/sampler_weights/lab-sft-debug2",
+  "directory": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\workbuddy-verify-20261122-153317\\workspace\\llm_runs\\LLM-20261122T080300",
+  "created_at": "2026-11-22T08:03:24.005188+00:00"
+}

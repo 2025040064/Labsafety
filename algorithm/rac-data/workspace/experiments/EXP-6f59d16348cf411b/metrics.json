@@ -1,0 +1,481 @@
+{
+  "overall_mae": 24.75450104182011,
+  "regimes": {
+    "weekday": {
+      "mae": 26.395920825833766,
+      "samples": 4992,
+      "independent_groups": 52,
+      "reliability": "descriptive_only",
+      "independent_unit_kind": "calendar_blocks",
+      "group_errors": [
+        {
+          "group_id": "2018-08-07",
+          "samples": 96,
+          "absolute_error_sum": 2825.663001597234,
+          "mae": 29.433989599971188
+        },
+        {
+          "group_id": "2018-08-08",
+          "samples": 96,
+          "absolute_error_sum": 3035.2429551427535,
+          "mae": 31.61711411607035
+        },
+        {
+          "group_id": "2018-08-09",
+          "samples": 96,
+          "absolute_error_sum": 2870.732241431205,
+          "mae": 29.903460848241718
+        },
+        {
+          "group_id": "2018-08-10",
+          "samples": 96,
+          "absolute_error_sum": 3514.969045942853,
+          "mae": 36.614260895238054
+        },
+        {
+          "group_id": "2018-08-13",
+          "samples": 96,
+          "absolute_error_sum": 3814.4659227616216,
+          "mae": 39.73402002876689
+        },
+        {
+          "group_id": "2018-08-14",
+          "samples": 96,
+          "absolute_error_sum": 3464.379174521725,
+          "mae": 36.087283067934635
+        },
+        {
+          "group_id": "2018-08-15",
+          "samples": 96,
+          "absolute_error_sum": 2939.7286097345905,
+          "mae": 30.62217301806865
+        },
+        {
+          "group_id": "2018-08-16",
+          "samples": 96,
+          "absolute_error_sum": 2472.242241431205,
+          "mae": 25.75252334824172
+        },
+        {
+          "group_id": "2018-08-17",
+          "samples": 96,
+          "absolute_error_sum": 2440.149045942853,
+          "mae": 25.418219228571385
+        },
+        {
+          "group_id": "2018-08-20",
+          "samples": 96,
+          "absolute_error_sum": 2868.2382708408713,
+          "mae": 29.877481987925744
+        },
+        {
+          "group_id": "2018-08-21",
+          "samples": 96,
+          "absolute_error_sum": 2065.7390528979495,
+          "mae": 21.51811513435364
+        },
+        {
+          "group_id": "2018-08-22",
+          "samples": 96,
+          "absolute_error_sum": 2117.7603654388868,
+          "mae": 22.06000380665507
+        },
+        {
+          "group_id": "2018-08-23",
+          "samples": 96,
+          "absolute_error_sum": 1957.6560512636966,
+          "mae": 20.39225053399684
+        },
+        {
+          "group_id": "2018-08-24",
+          "samples": 96,
+          "absolute_error_sum": 2113.567895507753,
+          "mae": 22.016332244872427
+        },
+        {
+          "group_id": "2018-08-27",
+          "samples": 96,
+          "absolute_error_sum": 2008.2655415190077,
+          "mae": 20.91943272415633
+        },
+        {
+          "group_id": "2018-08-28",
+          "samples": 96,
+          "absolute_error_sum": 1858.7490528979495,
+          "mae": 19.361969301020306
+        },
+        {
+          "group_id": "2018-08-29",
+          "samples": 96,
+          "absolute_error_sum": 1928.3529551427537,
+          "mae": 20.087009949403683
+        },
+        {
+          "group_id": "2018-08-30",
+          "samples": 96,
+          "absolute_error_sum": 1943.1010807581565,
+          "mae": 20.240636257897464
+        },
+        {
+          "group_id": "2018-08-31",
+          "samples": 96,
+          "absolute_error_sum": 2074.1078955077533,
+          "mae": 21.605290578205764
+        },
+        {
+          "group_id": "2018-09-03",
+          "samples": 96,
+          "absolute_error_sum": 2146.1815465386817,
+          "mae": 22.3560577764446
+        },
+        {
+          "group_id": "2018-09-04",
+          "samples": 96,
+          "absolute_error_sum": 3634.4391719536998,
+          "mae": 37.858741374517706
+        },
+        {
+          "group_id": "2018-09-05",
+          "samples": 96,
+          "absolute_error_sum": 2478.9391706404213,
+          "mae": 25.822283027504387
+        },
+        {
+          "group_id": "2018-09-06",
+          "samples": 96,
+          "absolute_error_sum": 2233.5710807581563,
+          "mae": 23.26636542456413
+        },
+        {
+          "group_id": "2018-09-07",
+          "samples": 96,
+          "absolute_error_sum": 3625.219045942853,
+          "mae": 37.762698395238054
+        },
+        {
+          "group_id": "2018-09-10",
+          "samples": 96,
+          "absolute_error_sum": 2992.902780675281,
+          "mae": 31.17607063203418
+        },
+        {
+          "group_id": "2018-09-11",
+          "samples": 96,
+          "absolute_error_sum": 3254.4191719536993,
+          "mae": 33.90019970785104
+        },
+        {
+          "group_id": "2018-09-12",
+          "samples": 96,
+          "absolute_error_sum": 2500.4629551427533,
+          "mae": 26.046489116070347
+        },
+        {
+          "group_id": "2018-09-13",
+          "samples": 96,
+          "absolute_error_sum": 2657.8822414312053,
+          "mae": 27.686273348241723
+        },
+        {
+          "group_id": "2018-09-14",
+          "samples": 96,
+          "absolute_error_sum": 2153.528288864359,
+          "mae": 22.432586342337075
+        },
+        {
+          "group_id": "2018-09-17",
+          "samples": 96,
+          "absolute_error_sum": 2782.3182708408717,
+          "mae": 28.98248198792575
+        },
+        {
+          "group_id": "2018-09-18",
+          "samples": 96,
+          "absolute_error_sum": 2010.4687360850417,
+          "mae": 20.94238266755252
+        },
+        {
+          "group_id": "2018-09-19",
+          "samples": 96,
+          "absolute_error_sum": 1750.4992447714192,
+          "mae": 18.234367133035615
+        },
+        {
+          "group_id": "2018-09-20",
+          "samples": 96,
+          "absolute_error_sum": 1911.217975919012,
+          "mae": 19.908520582489707
+        },
+        {
+          "group_id": "2018-09-21",
+          "samples": 96,
+          "absolute_error_sum": 1732.62968662054,
+          "mae": 18.048225902297293
+        },
+        {
+          "group_id": "2018-09-24",
+          "samples": 96,
+          "absolute_error_sum": 2064.7855053302164,
+          "mae": 21.508182347189756
+        },
+        {
+          "group_id": "2018-09-25",
+          "samples": 96,
+          "absolute_error_sum": 2078.4364064430442,
+          "mae": 21.65037923378171
+        },
+        {
+          "group_id": "2018-09-26",
+          "samples": 96,
+          "absolute_error_sum": 2065.1168041997134,
+          "mae": 21.511633377080347
+        },
+        {
+          "group_id": "2018-09-27",
+          "samples": 96,
+          "absolute_error_sum": 2288.5910737161944,
+          "mae": 23.839490351210358
+        },
+        {
+          "group_id": "2018-09-28",
+          "samples": 96,
+          "absolute_error_sum": 1803.0375204363058,
+          "mae": 18.781640837878186
+        },
+        {
+          "group_id": "2018-10-01",
+          "samples": 96,
+          "absolute_error_sum": 1696.3244437653625,
+          "mae": 17.670046289222526
+        },
+        {
+          "group_id": "2018-10-02",
+          "samples": 96,
+          "absolute_error_sum": 2668.1652258224403,
+          "mae": 27.793387768983752
+        },
+        {
+          "group_id": "2018-10-03",
+          "samples": 96,
+          "absolute_error_sum": 2208.5186097345904,
+          "mae": 23.005402184735317
+        },
+        {
+          "group_id": "2018-10-04",
+          "samples": 96,
+          "absolute_error_sum": 2409.1810807581564,
+          "mae": 25.095636257897464
+        },
+        {
+          "group_id": "2018-10-05",
+          "samples": 96,
+          "absolute_error_sum": 1976.489045942853,
+          "mae": 20.58842756190472
+        },
+        {
+          "group_id": "2018-10-08",
+          "samples": 96,
+          "absolute_error_sum": 3527.3231637700283,
+          "mae": 36.74294962260446
+        },
+        {
+          "group_id": "2018-10-09",
+          "samples": 96,
+          "absolute_error_sum": 2572.397508863617,
+          "mae": 26.79580738399601
+        },
+        {
+          "group_id": "2018-10-10",
+          "samples": 96,
+          "absolute_error_sum": 3551.2462411264783,
+          "mae": 36.992148345067484
+        },
+        {
+          "group_id": "2018-10-11",
+          "samples": 96,
+          "absolute_error_sum": 3344.8610807581563,
+          "mae": 34.84230292456413
+        },
+        {
+          "group_id": "2018-10-12",
+          "samples": 96,
+          "absolute_error_sum": 2206.409045942853,
+          "mae": 22.98342756190472
+        },
+        {
+          "group_id": "2018-10-15",
+          "samples": 96,
+          "absolute_error_sum": 3864.453163770028,
+          "mae": 40.25472045593779
+        },
+        {
+          "group_id": "2018-10-16",
+          "samples": 96,
+          "absolute_error_sum": 2735.7591719536995,
+          "mae": 28.497491374517704
+        },
+        {
+          "group_id": "2018-10-17",
+          "samples": 96,
+          "absolute_error_sum": 2529.5519018096315,
+          "mae": 26.34949897718366
+        }
+      ],
+      "effective_independent_groups": null,
+      "mae_interval": null,
+      "interval_method": null
+    },
+    "weekend": {
+      "mae": 20.486809603384582,
+      "samples": 1920,
+      "independent_groups": 20,
+      "reliability": "descriptive_only",
+      "independent_unit_kind": "calendar_blocks",
+      "group_errors": [
+        {
+          "group_id": "2018-08-11",
+          "samples": 96,
+          "absolute_error_sum": 3193.082056496305,
+          "mae": 33.26127142183651
+        },
+        {
+          "group_id": "2018-08-12",
+          "samples": 96,
+          "absolute_error_sum": 1946.3423613930802,
+          "mae": 20.274399597844585
+        },
+        {
+          "group_id": "2018-08-18",
+          "samples": 96,
+          "absolute_error_sum": 2468.8947274925113,
+          "mae": 25.717653411380326
+        },
+        {
+          "group_id": "2018-08-19",
+          "samples": 96,
+          "absolute_error_sum": 1943.0423613930802,
+          "mae": 20.240024597844585
+        },
+        {
+          "group_id": "2018-08-25",
+          "samples": 96,
+          "absolute_error_sum": 1931.9121973338579,
+          "mae": 20.124085388894354
+        },
+        {
+          "group_id": "2018-08-26",
+          "samples": 96,
+          "absolute_error_sum": 1853.1123613930802,
+          "mae": 19.30325376451125
+        },
+        {
+          "group_id": "2018-09-01",
+          "samples": 96,
+          "absolute_error_sum": 1268.6934563348404,
+          "mae": 13.215556836821255
+        },
+        {
+          "group_id": "2018-09-02",
+          "samples": 96,
+          "absolute_error_sum": 1792.9109715629074,
+          "mae": 18.676155953780285
+        },
+        {
+          "group_id": "2018-09-08",
+          "samples": 96,
+          "absolute_error_sum": 1624.1324842676304,
+          "mae": 16.91804671112115
+        },
+        {
+          "group_id": "2018-09-09",
+          "samples": 96,
+          "absolute_error_sum": 1587.1724826544903,
+          "mae": 16.53304669431761
+        },
+        {
+          "group_id": "2018-09-15",
+          "samples": 96,
+          "absolute_error_sum": 1631.4331377489061,
+          "mae": 16.99409518488444
+        },
+        {
+          "group_id": "2018-09-16",
+          "samples": 96,
+          "absolute_error_sum": 1953.4123613930801,
+          "mae": 20.34804543117792
+        },
+        {
+          "group_id": "2018-09-22",
+          "samples": 96,
+          "absolute_error_sum": 2009.6121973338577,
+          "mae": 20.93346038889435
+        },
+        {
+          "group_id": "2018-09-23",
+          "samples": 96,
+          "absolute_error_sum": 1962.8023613930802,
+          "mae": 20.44585793117792
+        },
+        {
+          "group_id": "2018-09-29",
+          "samples": 96,
+          "absolute_error_sum": 1765.9032571200557,
+          "mae": 18.39482559500058
+        },
+        {
+          "group_id": "2018-09-30",
+          "samples": 96,
+          "absolute_error_sum": 1964.9823613930805,
+          "mae": 20.468566264511256
+        },
+        {
+          "group_id": "2018-10-06",
+          "samples": 96,
+          "absolute_error_sum": 2563.8519974108485,
+          "mae": 26.706791639696338
+        },
+        {
+          "group_id": "2018-10-07",
+          "samples": 96,
+          "absolute_error_sum": 1966.0123613930805,
+          "mae": 20.47929543117792
+        },
+        {
+          "group_id": "2018-10-13",
+          "samples": 96,
+          "absolute_error_sum": 1965.6165815975385,
+          "mae": 20.47517272497436
+        },
+        {
+          "group_id": "2018-10-14",
+          "samples": 96,
+          "absolute_error_sum": 1941.7523613930803,
+          "mae": 20.226587097844586
+        }
+      ],
+      "effective_independent_groups": null,
+      "mae_interval": null,
+      "interval_method": null
+    }
+  },
+  "robust_objective": 1.2040540601884646,
+  "worst_normalized_mae": 1.4514363185236536,
+  "normalized_regime_mae": {
+    "weekday": 0.9621087745639393,
+    "weekend": 1.4514363185236536
+  },
+  "robustness": {
+    "alpha": 0.3,
+    "epsilon": 1e-08,
+    "weights": {
+      "weekday": 0.7222222222222222,
+      "weekend": 0.2777777777777778
+    },
+    "weight_source": "explicit",
+    "baseline_errors": {
+      "weekday": 27.43548496184978,
+      "weekend": 14.114852527397572
+    },
+    "near_zero_baseline_regimes": []
+  }
+}

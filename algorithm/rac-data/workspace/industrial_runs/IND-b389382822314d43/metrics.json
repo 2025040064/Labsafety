@@ -1,0 +1,718 @@
+{
+  "overall_balanced_accuracy": 0.7434214265416311,
+  "overall_f1_macro": 0.8064231661283557,
+  "overall_log_loss": 0.042886324304061404,
+  "overall_error": 0.2565785734583689,
+  "task_type": "classification",
+  "class_labels": [
+    0,
+    1
+  ],
+  "samples": 2000,
+  "class_counts": {
+    "0": 1955,
+    "1": 45
+  },
+  "missing_classes": [],
+  "confusion_matrix": [
+    [
+      1951,
+      4
+    ],
+    [
+      23,
+      22
+    ]
+  ],
+  "class_recall": {
+    "0": 0.9979539641943734,
+    "1": 0.4888888888888889
+  },
+  "class_precision": {
+    "0": 0.9883485309017224,
+    "1": 0.8461538461538461
+  },
+  "minority_class_samples": 45,
+  "sparse_class_warning": null,
+  "balanced_accuracy_scope": "classes observed in this evaluation subset",
+  "regimes": {
+    "H": {
+      "balanced_accuracy": 0.4972067039106145,
+      "f1_macro": 0.4958217270194986,
+      "log_loss": 0.055881029278769534,
+      "error": 0.5027932960893855,
+      "samples": 181,
+      "class_counts": {
+        "0": 179,
+        "1": 2
+      },
+      "class_recall": {
+        "0": 0.994413407821229,
+        "1": 0.0
+      },
+      "class_precision": {
+        "0": 0.9888888888888889,
+        "1": 0.0
+      },
+      "missing_classes": [],
+      "minority_class_samples": 2,
+      "sparse_class_warning": "at least one fixed class has fewer than five samples; descriptive evaluation only",
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          178,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "group_errors": [],
+      "group_kind": "synthetic_row",
+      "observed_group_count": 181,
+      "group_records_omitted_reason": "groups are not verified independent physical bearings",
+      "effective_independent_groups": null,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "unverified or dependent groups"
+    },
+    "L": {
+      "balanced_accuracy": 0.7718762088974855,
+      "f1_macro": 0.8360255192072756,
+      "log_loss": 0.04851115825002867,
+      "error": 0.22812379110251446,
+      "samples": 1208,
+      "class_counts": {
+        "0": 1175,
+        "1": 33
+      },
+      "class_recall": {
+        "0": 0.9982978723404256,
+        "1": 0.5454545454545454
+      },
+      "class_precision": {
+        "0": 0.9873737373737373,
+        "1": 0.9
+      },
+      "missing_classes": [],
+      "minority_class_samples": 33,
+      "sparse_class_warning": null,
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          1173,
+          2
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "group_errors": [],
+      "group_kind": "synthetic_row",
+      "observed_group_count": 1208,
+      "group_records_omitted_reason": "groups are not verified independent physical bearings",
+      "effective_independent_groups": null,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "unverified or dependent groups"
+    },
+    "M": {
+      "balanced_accuracy": 0.6991680532445923,
+      "f1_macro": 0.763766915216791,
+      "log_loss": 0.027916044423291153,
+      "error": 0.3008319467554077,
+      "samples": 611,
+      "class_counts": {
+        "0": 601,
+        "1": 10
+      },
+      "class_recall": {
+        "0": 0.9983361064891847,
+        "1": 0.4
+      },
+      "class_precision": {
+        "0": 0.9900990099009901,
+        "1": 0.8
+      },
+      "missing_classes": [],
+      "minority_class_samples": 10,
+      "sparse_class_warning": null,
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          600,
+          1
+        ],
+        [
+          6,
+          4
+        ]
+      ],
+      "group_errors": [],
+      "group_kind": "synthetic_row",
+      "observed_group_count": 611,
+      "group_records_omitted_reason": "groups are not verified independent physical bearings",
+      "effective_independent_groups": null,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "unverified or dependent groups"
+    }
+  },
+  "train_metrics": {
+    "overall_balanced_accuracy": 0.9549019607843137,
+    "overall_f1_macro": 0.9753871661193283,
+    "overall_log_loss": 0.015081742766456907,
+    "overall_error": 0.045098039215686336,
+    "task_type": "classification",
+    "class_labels": [
+      0,
+      1
+    ],
+    "samples": 6000,
+    "class_counts": {
+      "0": 5745,
+      "1": 255
+    },
+    "missing_classes": [],
+    "confusion_matrix": [
+      [
+        5745,
+        0
+      ],
+      [
+        23,
+        232
+      ]
+    ],
+    "class_recall": {
+      "0": 1.0,
+      "1": 0.9098039215686274
+    },
+    "class_precision": {
+      "0": 0.996012482662968,
+      "1": 1.0
+    },
+    "minority_class_samples": 255,
+    "sparse_class_warning": null,
+    "balanced_accuracy_scope": "classes observed in this evaluation subset",
+    "regimes": {
+      "H": {
+        "balanced_accuracy": 0.9210526315789473,
+        "f1_macro": 0.9558575100991553,
+        "log_loss": 0.016757567821775045,
+        "error": 0.07894736842105265,
+        "samples": 601,
+        "class_counts": {
+          "0": 582,
+          "1": 19
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 0.8421052631578947
+        },
+        "class_precision": {
+          "0": 0.9948717948717949,
+          "1": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 19,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            582,
+            0
+          ],
+          [
+            3,
+            16
+          ]
+        ],
+        "group_errors": [],
+        "group_kind": "synthetic_row",
+        "observed_group_count": 601,
+        "group_records_omitted_reason": "groups are not verified independent physical bearings",
+        "effective_independent_groups": null,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "unverified or dependent groups"
+      },
+      "L": {
+        "balanced_accuracy": 0.9705882352941176,
+        "f1_macro": 0.9841223738987317,
+        "log_loss": 0.01390458530064596,
+        "error": 0.02941176470588236,
+        "samples": 3608,
+        "class_counts": {
+          "0": 3438,
+          "1": 170
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 0.9411764705882353
+        },
+        "class_precision": {
+          "0": 0.9970997679814385,
+          "1": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 170,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            3438,
+            0
+          ],
+          [
+            10,
+            160
+          ]
+        ],
+        "group_errors": [],
+        "group_kind": "synthetic_row",
+        "observed_group_count": 3608,
+        "group_records_omitted_reason": "groups are not verified independent physical bearings",
+        "effective_independent_groups": null,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "unverified or dependent groups"
+      },
+      "M": {
+        "balanced_accuracy": 0.9242424242424243,
+        "f1_macro": 0.9575713067374206,
+        "log_loss": 0.01689079540654608,
+        "error": 0.07575757575757569,
+        "samples": 1791,
+        "class_counts": {
+          "0": 1725,
+          "1": 66
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 0.8484848484848485
+        },
+        "class_precision": {
+          "0": 0.9942363112391931,
+          "1": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 66,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            1725,
+            0
+          ],
+          [
+            10,
+            56
+          ]
+        ],
+        "group_errors": [],
+        "group_kind": "synthetic_row",
+        "observed_group_count": 1791,
+        "group_records_omitted_reason": "groups are not verified independent physical bearings",
+        "effective_independent_groups": null,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "unverified or dependent groups"
+      }
+    }
+  },
+  "model_name": "lightgbm",
+  "model_version": "classification-0.1.0",
+  "model_library": "lightgbm",
+  "model_library_version": "4.6.0",
+  "seed": 42,
+  "learning_curve": [
+    {
+      "iteration": 1,
+      "train_loss": 0.11546202126656972,
+      "validation_loss": 0.09189588592220306
+    },
+    {
+      "iteration": 2,
+      "train_loss": 0.1028426686468268,
+      "validation_loss": 0.08516397107273127
+    },
+    {
+      "iteration": 3,
+      "train_loss": 0.09293490485161206,
+      "validation_loss": 0.07933662434039071
+    },
+    {
+      "iteration": 4,
+      "train_loss": 0.08529106167549039,
+      "validation_loss": 0.07459531015881651
+    },
+    {
+      "iteration": 5,
+      "train_loss": 0.07916651515518028,
+      "validation_loss": 0.07124128608516565
+    },
+    {
+      "iteration": 6,
+      "train_loss": 0.07358134607668444,
+      "validation_loss": 0.06795680217014093
+    },
+    {
+      "iteration": 7,
+      "train_loss": 0.0688529673196665,
+      "validation_loss": 0.06528140995782808
+    },
+    {
+      "iteration": 8,
+      "train_loss": 0.06446855944083531,
+      "validation_loss": 0.0629325698690454
+    },
+    {
+      "iteration": 9,
+      "train_loss": 0.060999661288407746,
+      "validation_loss": 0.06084874861085424
+    },
+    {
+      "iteration": 10,
+      "train_loss": 0.05766817470756942,
+      "validation_loss": 0.05892270161686472
+    },
+    {
+      "iteration": 11,
+      "train_loss": 0.05472485229381385,
+      "validation_loss": 0.05716885789521186
+    },
+    {
+      "iteration": 12,
+      "train_loss": 0.05222691135090355,
+      "validation_loss": 0.055753068637358086
+    },
+    {
+      "iteration": 13,
+      "train_loss": 0.04975470126823068,
+      "validation_loss": 0.05459461561231555
+    },
+    {
+      "iteration": 14,
+      "train_loss": 0.04770924957513349,
+      "validation_loss": 0.053643929427638196
+    },
+    {
+      "iteration": 15,
+      "train_loss": 0.04554854190862624,
+      "validation_loss": 0.05274997806694215
+    },
+    {
+      "iteration": 16,
+      "train_loss": 0.04337760519131683,
+      "validation_loss": 0.05179518590384478
+    },
+    {
+      "iteration": 17,
+      "train_loss": 0.04136068900913967,
+      "validation_loss": 0.05109810688197986
+    },
+    {
+      "iteration": 18,
+      "train_loss": 0.039667699616701343,
+      "validation_loss": 0.04989083231306077
+    },
+    {
+      "iteration": 19,
+      "train_loss": 0.03823888150359157,
+      "validation_loss": 0.04940462446959917
+    },
+    {
+      "iteration": 20,
+      "train_loss": 0.03672963103514033,
+      "validation_loss": 0.04842055622073876
+    },
+    {
+      "iteration": 21,
+      "train_loss": 0.03521007410116256,
+      "validation_loss": 0.0479295076984108
+    },
+    {
+      "iteration": 22,
+      "train_loss": 0.03391395432535807,
+      "validation_loss": 0.04765584437383403
+    },
+    {
+      "iteration": 23,
+      "train_loss": 0.03281754462863966,
+      "validation_loss": 0.04692609308516542
+    },
+    {
+      "iteration": 24,
+      "train_loss": 0.03147112788909885,
+      "validation_loss": 0.04667211116746695
+    },
+    {
+      "iteration": 25,
+      "train_loss": 0.03040520453580847,
+      "validation_loss": 0.046494879034240294
+    },
+    {
+      "iteration": 26,
+      "train_loss": 0.029412575411484294,
+      "validation_loss": 0.04576880027562385
+    },
+    {
+      "iteration": 27,
+      "train_loss": 0.028474404037854412,
+      "validation_loss": 0.04550513452330091
+    },
+    {
+      "iteration": 28,
+      "train_loss": 0.02734580082819824,
+      "validation_loss": 0.04520940472070033
+    },
+    {
+      "iteration": 29,
+      "train_loss": 0.02667198961369773,
+      "validation_loss": 0.04511923490203499
+    },
+    {
+      "iteration": 30,
+      "train_loss": 0.025857753229489973,
+      "validation_loss": 0.04465074714368278
+    },
+    {
+      "iteration": 31,
+      "train_loss": 0.025154099002236044,
+      "validation_loss": 0.04458532622245172
+    },
+    {
+      "iteration": 32,
+      "train_loss": 0.02415868004154502,
+      "validation_loss": 0.04437159456819418
+    },
+    {
+      "iteration": 33,
+      "train_loss": 0.023472140719529463,
+      "validation_loss": 0.044286259103618414
+    },
+    {
+      "iteration": 34,
+      "train_loss": 0.022883444042895777,
+      "validation_loss": 0.04418640450000936
+    },
+    {
+      "iteration": 35,
+      "train_loss": 0.022249680282662453,
+      "validation_loss": 0.043943475150338016
+    },
+    {
+      "iteration": 36,
+      "train_loss": 0.021836854983738756,
+      "validation_loss": 0.04369031961916497
+    },
+    {
+      "iteration": 37,
+      "train_loss": 0.02117469849807307,
+      "validation_loss": 0.04371337631623662
+    },
+    {
+      "iteration": 38,
+      "train_loss": 0.020770523576568778,
+      "validation_loss": 0.043506064148062094
+    },
+    {
+      "iteration": 39,
+      "train_loss": 0.0202876262630868,
+      "validation_loss": 0.04345550300267322
+    },
+    {
+      "iteration": 40,
+      "train_loss": 0.019583409400567877,
+      "validation_loss": 0.043601962560057654
+    },
+    {
+      "iteration": 41,
+      "train_loss": 0.019159578228782972,
+      "validation_loss": 0.04360530976383835
+    },
+    {
+      "iteration": 42,
+      "train_loss": 0.018640262140570386,
+      "validation_loss": 0.043451438924904724
+    },
+    {
+      "iteration": 43,
+      "train_loss": 0.01817518015938892,
+      "validation_loss": 0.043354098396647285
+    },
+    {
+      "iteration": 44,
+      "train_loss": 0.017787843416790926,
+      "validation_loss": 0.04331214323840169
+    },
+    {
+      "iteration": 45,
+      "train_loss": 0.01759528068070136,
+      "validation_loss": 0.04331702509806531
+    },
+    {
+      "iteration": 46,
+      "train_loss": 0.01733717933188384,
+      "validation_loss": 0.04324056505326269
+    },
+    {
+      "iteration": 47,
+      "train_loss": 0.016968299402742686,
+      "validation_loss": 0.04301552604055628
+    },
+    {
+      "iteration": 48,
+      "train_loss": 0.016583368778732472,
+      "validation_loss": 0.04327610810362494
+    },
+    {
+      "iteration": 49,
+      "train_loss": 0.016358912921195373,
+      "validation_loss": 0.04330489441430145
+    },
+    {
+      "iteration": 50,
+      "train_loss": 0.015982314518704473,
+      "validation_loss": 0.043315604327841595
+    },
+    {
+      "iteration": 51,
+      "train_loss": 0.01576467353989848,
+      "validation_loss": 0.043185488644554806
+    },
+    {
+      "iteration": 52,
+      "train_loss": 0.015501608517128252,
+      "validation_loss": 0.04316213041156563
+    },
+    {
+      "iteration": 53,
+      "train_loss": 0.0154248450694727,
+      "validation_loss": 0.04314675732467823
+    },
+    {
+      "iteration": 54,
+      "train_loss": 0.015208087112220669,
+      "validation_loss": 0.043217274438509735
+    },
+    {
+      "iteration": 55,
+      "train_loss": 0.015081742766456912,
+      "validation_loss": 0.042886324304061446
+    },
+    {
+      "iteration": 56,
+      "train_loss": 0.01448666249433642,
+      "validation_loss": 0.0429426699238222
+    },
+    {
+      "iteration": 57,
+      "train_loss": 0.014381304371925262,
+      "validation_loss": 0.04309423825819787
+    },
+    {
+      "iteration": 58,
+      "train_loss": 0.014255733492480913,
+      "validation_loss": 0.04315444702444048
+    },
+    {
+      "iteration": 59,
+      "train_loss": 0.013663575593235824,
+      "validation_loss": 0.0431708639978267
+    },
+    {
+      "iteration": 60,
+      "train_loss": 0.013576541788247846,
+      "validation_loss": 0.04333288707990521
+    },
+    {
+      "iteration": 61,
+      "train_loss": 0.0134505623540301,
+      "validation_loss": 0.043322356510649085
+    },
+    {
+      "iteration": 62,
+      "train_loss": 0.013327620997648351,
+      "validation_loss": 0.04338426966261109
+    },
+    {
+      "iteration": 63,
+      "train_loss": 0.01324769601977831,
+      "validation_loss": 0.0433561501873647
+    },
+    {
+      "iteration": 64,
+      "train_loss": 0.013129957560276554,
+      "validation_loss": 0.043429970492797364
+    },
+    {
+      "iteration": 65,
+      "train_loss": 0.012898833453543063,
+      "validation_loss": 0.043479779517262895
+    },
+    {
+      "iteration": 66,
+      "train_loss": 0.012805700656289954,
+      "validation_loss": 0.04357152829278987
+    },
+    {
+      "iteration": 67,
+      "train_loss": 0.012609963959628202,
+      "validation_loss": 0.04341294337689003
+    },
+    {
+      "iteration": 68,
+      "train_loss": 0.01215962411705361,
+      "validation_loss": 0.04378988506330322
+    },
+    {
+      "iteration": 69,
+      "train_loss": 0.012065063124025764,
+      "validation_loss": 0.04380142050094045
+    },
+    {
+      "iteration": 70,
+      "train_loss": 0.011962515665205413,
+      "validation_loss": 0.0438537492144679
+    },
+    {
+      "iteration": 71,
+      "train_loss": 0.011916389954957064,
+      "validation_loss": 0.04382996710148212
+    },
+    {
+      "iteration": 72,
+      "train_loss": 0.011806704238929058,
+      "validation_loss": 0.043761255747941645
+    },
+    {
+      "iteration": 73,
+      "train_loss": 0.011373079275319962,
+      "validation_loss": 0.04385630501990087
+    },
+    {
+      "iteration": 74,
+      "train_loss": 0.011246879876229436,
+      "validation_loss": 0.04407424174012791
+    },
+    {
+      "iteration": 75,
+      "train_loss": 0.01095547981847094,
+      "validation_loss": 0.04421892643307557
+    }
+  ],
+  "learning_curve_reason": null,
+  "learning_curve_metric": "log_loss",
+  "preprocessing": {
+    "fit_split": "train",
+    "numeric_imputation": "train median; empty train columns=0",
+    "categorical_encoding": "train-only one-hot; unknown categories ignored",
+    "categories": {},
+    "transformed_features": 6
+  },
+  "data_origin": "synthetic"
+}

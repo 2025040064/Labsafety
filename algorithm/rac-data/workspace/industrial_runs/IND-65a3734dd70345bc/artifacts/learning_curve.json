@@ -1,0 +1,107 @@
+[
+  {
+    "iteration": 1,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 2,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 3,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 4,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 5,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 6,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 7,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 8,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 9,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 10,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 11,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 12,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 13,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 14,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 15,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 16,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 17,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 18,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 19,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 20,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  },
+  {
+    "iteration": 21,
+    "train_loss": 1.09861228866811,
+    "validation_loss": 1.09861228866811
+  }
+]

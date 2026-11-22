@@ -1,0 +1,12 @@
+{
+  "baseline_errors": {
+    "ADOC_10mm": 16.39729599685762,
+    "ADOC_5mm": 38.90378876436484
+  },
+  "weights": {
+    "ADOC_10mm": 0.3375,
+    "ADOC_5mm": 0.6625
+  },
+  "alpha": 0.3,
+  "epsilon": 1e-08
+}

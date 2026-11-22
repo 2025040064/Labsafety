@@ -1,0 +1,73 @@
+{
+  "overall_mae": 23.460194329934048,
+  "regimes": {
+    "ADOC_10mm": {
+      "mae": 13.242210077757665,
+      "samples": 135,
+      "independent_groups": 2,
+      "reliability": "insufficient_independent_groups",
+      "independent_unit_kind": "physical_tool",
+      "group_errors": [
+        {
+          "group_id": "101",
+          "samples": 84,
+          "absolute_error_sum": 601.5657920265429,
+          "mae": 7.161497524125511
+        },
+        {
+          "group_id": "5",
+          "samples": 51,
+          "absolute_error_sum": 1186.1325684707417,
+          "mae": 23.257501342563565
+        }
+      ],
+      "effective_independent_groups": 2,
+      "mae_interval": null,
+      "interval_method": null
+    },
+    "ADOC_5mm": {
+      "mae": 28.665582533872957,
+      "samples": 265,
+      "independent_groups": 2,
+      "reliability": "insufficient_independent_groups",
+      "independent_unit_kind": "physical_tool",
+      "group_errors": [
+        {
+          "group_id": "8",
+          "samples": 116,
+          "absolute_error_sum": 1964.4392862628697,
+          "mae": 16.934821433300602
+        },
+        {
+          "group_id": "9",
+          "samples": 149,
+          "absolute_error_sum": 5631.940085213463,
+          "mae": 37.79825560545948
+        }
+      ],
+      "effective_independent_groups": 2,
+      "mae_interval": null,
+      "interval_method": null
+    }
+  },
+  "robust_objective": 0.7747735995745103,
+  "worst_normalized_mae": 0.807584986708757,
+  "normalized_regime_mae": {
+    "ADOC_10mm": 0.807584986708757,
+    "ADOC_5mm": 0.7368326694381443
+  },
+  "robustness": {
+    "alpha": 0.3,
+    "epsilon": 1e-08,
+    "weights": {
+      "ADOC_10mm": 0.3375,
+      "ADOC_5mm": 0.6625
+    },
+    "weight_source": "explicit",
+    "baseline_errors": {
+      "ADOC_10mm": 16.39729599685762,
+      "ADOC_5mm": 38.90378876436484
+    },
+    "near_zero_baseline_regimes": []
+  }
+}

@@ -1,0 +1,50 @@
+schema_version: 1
+experiment:
+  name: steel_calendar_regression
+  seed: 42
+data:
+  dataset_id: steel_energy
+  path: F:\A_LIU_Astrspire\A_competition\工业制造场景下的模型训练与超参数优化系统\datasets\raw\steel_energy\Steel_industry_data.csv
+model:
+  name: lightgbm
+  n_estimators: 300
+  early_stopping_rounds: 30
+  n_jobs: 4
+optimization:
+  algorithm: tpe_robust
+  max_trials: 16
+  timeout_seconds: 120.0
+  search_space:
+    learning_rate:
+      type: float
+      low: 0.01
+      high: 0.2
+      log: true
+    num_leaves:
+      type: int
+      low: 8
+      high: 64
+    max_depth:
+      type: int
+      low: 3
+      high: 10
+    min_child_samples:
+      type: int
+      low: 20
+      high: 150
+    feature_fraction:
+      type: float
+      low: 0.6
+      high: 1.0
+    lambda_l2:
+      type: float
+      low: 1.0e-05
+      high: 10.0
+      log: true
+robustness:
+  alpha: 0.3
+  epsilon: 1.0e-08
+  minimum_independent_groups: 5
+output:
+  save_trials: true
+  save_model: true

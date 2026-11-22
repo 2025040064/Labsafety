@@ -1,0 +1,342 @@
+{
+  "overall_balanced_accuracy": 0.76538789428815,
+  "overall_f1_macro": 0.8210130660461786,
+  "overall_log_loss": 0.04776809761020048,
+  "overall_error": 0.23461210571184998,
+  "task_type": "classification",
+  "class_labels": [
+    0,
+    1
+  ],
+  "samples": 2000,
+  "class_counts": {
+    "0": 1955,
+    "1": 45
+  },
+  "missing_classes": [],
+  "confusion_matrix": [
+    [
+      1950,
+      5
+    ],
+    [
+      21,
+      24
+    ]
+  ],
+  "class_recall": {
+    "0": 0.9974424552429667,
+    "1": 0.5333333333333333
+  },
+  "class_precision": {
+    "0": 0.989345509893455,
+    "1": 0.8275862068965517
+  },
+  "minority_class_samples": 45,
+  "sparse_class_warning": null,
+  "balanced_accuracy_scope": "classes observed in this evaluation subset",
+  "regimes": {
+    "H": {
+      "balanced_accuracy": 0.4972067039106145,
+      "f1_macro": 0.4958217270194986,
+      "log_loss": 0.04657251355968917,
+      "error": 0.5027932960893855,
+      "samples": 181,
+      "class_counts": {
+        "0": 179,
+        "1": 2
+      },
+      "class_recall": {
+        "0": 0.994413407821229,
+        "1": 0.0
+      },
+      "class_precision": {
+        "0": 0.9888888888888889,
+        "1": 0.0
+      },
+      "missing_classes": [],
+      "minority_class_samples": 2,
+      "sparse_class_warning": "at least one fixed class has fewer than five samples; descriptive evaluation only",
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          178,
+          1
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "group_errors": [],
+      "group_kind": "synthetic_row",
+      "observed_group_count": 181,
+      "group_records_omitted_reason": "groups are not verified independent physical bearings",
+      "effective_independent_groups": null,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "unverified or dependent groups"
+    },
+    "L": {
+      "balanced_accuracy": 0.7710251450676983,
+      "f1_macro": 0.8232490085094913,
+      "log_loss": 0.05628368670343024,
+      "error": 0.22897485493230174,
+      "samples": 1208,
+      "class_counts": {
+        "0": 1175,
+        "1": 33
+      },
+      "class_recall": {
+        "0": 0.9965957446808511,
+        "1": 0.5454545454545454
+      },
+      "class_precision": {
+        "0": 0.9873524451939292,
+        "1": 0.8181818181818182
+      },
+      "missing_classes": [],
+      "minority_class_samples": 33,
+      "sparse_class_warning": null,
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          1171,
+          4
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "group_errors": [],
+      "group_kind": "synthetic_row",
+      "observed_group_count": 1208,
+      "group_records_omitted_reason": "groups are not verified independent physical bearings",
+      "effective_independent_groups": null,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "unverified or dependent groups"
+    },
+    "M": {
+      "balanced_accuracy": 0.8,
+      "f1_macro": 0.8733416252072969,
+      "log_loss": 0.031286213958025375,
+      "error": 0.19999999999999996,
+      "samples": 611,
+      "class_counts": {
+        "0": 601,
+        "1": 10
+      },
+      "class_recall": {
+        "0": 1.0,
+        "1": 0.6
+      },
+      "class_precision": {
+        "0": 0.9933884297520661,
+        "1": 1.0
+      },
+      "missing_classes": [],
+      "minority_class_samples": 10,
+      "sparse_class_warning": null,
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          601,
+          0
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "group_errors": [],
+      "group_kind": "synthetic_row",
+      "observed_group_count": 611,
+      "group_records_omitted_reason": "groups are not verified independent physical bearings",
+      "effective_independent_groups": null,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "unverified or dependent groups"
+    }
+  },
+  "train_metrics": {
+    "overall_balanced_accuracy": 0.9588235294117646,
+    "overall_f1_macro": 0.977615436395062,
+    "overall_log_loss": 0.015173240108734262,
+    "overall_error": 0.04117647058823537,
+    "task_type": "classification",
+    "class_labels": [
+      0,
+      1
+    ],
+    "samples": 6000,
+    "class_counts": {
+      "0": 5745,
+      "1": 255
+    },
+    "missing_classes": [],
+    "confusion_matrix": [
+      [
+        5745,
+        0
+      ],
+      [
+        21,
+        234
+      ]
+    ],
+    "class_recall": {
+      "0": 1.0,
+      "1": 0.9176470588235294
+    },
+    "class_precision": {
+      "0": 0.9963579604578564,
+      "1": 1.0
+    },
+    "minority_class_samples": 255,
+    "sparse_class_warning": null,
+    "balanced_accuracy_scope": "classes observed in this evaluation subset",
+    "regimes": {
+      "H": {
+        "balanced_accuracy": 0.9210526315789473,
+        "f1_macro": 0.9558575100991553,
+        "log_loss": 0.016142513060971562,
+        "error": 0.07894736842105265,
+        "samples": 601,
+        "class_counts": {
+          "0": 582,
+          "1": 19
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 0.8421052631578947
+        },
+        "class_precision": {
+          "0": 0.9948717948717949,
+          "1": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 19,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            582,
+            0
+          ],
+          [
+            3,
+            16
+          ]
+        ],
+        "group_errors": [],
+        "group_kind": "synthetic_row",
+        "observed_group_count": 601,
+        "group_records_omitted_reason": "groups are not verified independent physical bearings",
+        "effective_independent_groups": null,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "unverified or dependent groups"
+      },
+      "L": {
+        "balanced_accuracy": 0.9735294117647059,
+        "f1_macro": 0.9857512390656162,
+        "log_loss": 0.014410987699971288,
+        "error": 0.026470588235294135,
+        "samples": 3608,
+        "class_counts": {
+          "0": 3438,
+          "1": 170
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 0.9470588235294117
+        },
+        "class_precision": {
+          "0": 0.9973890339425587,
+          "1": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 170,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            3438,
+            0
+          ],
+          [
+            9,
+            161
+          ]
+        ],
+        "group_errors": [],
+        "group_kind": "synthetic_row",
+        "observed_group_count": 3608,
+        "group_records_omitted_reason": "groups are not verified independent physical bearings",
+        "effective_independent_groups": null,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "unverified or dependent groups"
+      },
+      "M": {
+        "balanced_accuracy": 0.9318181818181819,
+        "f1_macro": 0.962113680113384,
+        "log_loss": 0.016383554819243588,
+        "error": 0.06818181818181812,
+        "samples": 1791,
+        "class_counts": {
+          "0": 1725,
+          "1": 66
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 0.8636363636363636
+        },
+        "class_precision": {
+          "0": 0.9948096885813149,
+          "1": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 66,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            1725,
+            0
+          ],
+          [
+            9,
+            57
+          ]
+        ],
+        "group_errors": [],
+        "group_kind": "synthetic_row",
+        "observed_group_count": 1791,
+        "group_records_omitted_reason": "groups are not verified independent physical bearings",
+        "effective_independent_groups": null,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "unverified or dependent groups"
+      }
+    }
+  },
+  "model_name": "random_forest",
+  "model_version": "classification-0.1.0",
+  "model_library": "scikit-learn",
+  "model_library_version": "1.7.2",
+  "seed": 42,
+  "learning_curve": [],
+  "learning_curve_reason": "random_forest does not expose a validation learning curve",
+  "learning_curve_metric": null,
+  "preprocessing": {
+    "fit_split": "train",
+    "numeric_imputation": "train median; empty train columns=0",
+    "categorical_encoding": "train-only one-hot; unknown categories ignored",
+    "categories": {},
+    "transformed_features": 6
+  },
+  "data_origin": "synthetic"
+}

@@ -1,0 +1,11 @@
+{
+  "alternative": "Official same-host public HTTP Range acquisition; identical official archive route",
+  "attempted_at": null,
+  "dataset_key": "paderborn",
+  "error_type": "URLError / SSLCertVerificationError",
+  "logged_at": "2026-10-31T06:01:09.853776+00:00",
+  "reason": "certificate verify failed: self-signed certificate in certificate chain",
+  "source_url": "https://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+  "substitution_used": false,
+  "tls_verification_disabled": false
+}

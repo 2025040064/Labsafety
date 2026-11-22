@@ -1,0 +1,239 @@
+{
+  "id": "EXP-ebd201980dac4b36",
+  "algorithm": "baseline",
+  "status": "completed",
+  "created_at": "2026-10-30T05:15:58.614331+00:00",
+  "dataset_id": "uci_steel_energy_851",
+  "data_sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+  "target_unit": "kWh",
+  "app_version": "0.1.0",
+  "algorithm_version": "baseline-1.0",
+  "schema_version": 1,
+  "metrics": {
+    "overall_mae": 20.656474543396364,
+    "regimes": {
+      "weekday": {
+        "mae": 25.557398879706298,
+        "samples": 4992,
+        "independent_groups": 52,
+        "reliability": "descriptive_only"
+      },
+      "weekend": {
+        "mae": 7.9140712689905355,
+        "samples": 1920,
+        "independent_groups": 20,
+        "reliability": "descriptive_only"
+      }
+    },
+    "robust_objective": 0.9999999994391108,
+    "worst_normalized_mae": 0.9999999996087239,
+    "normalized_regime_mae": {
+      "weekday": 0.9999999996087239,
+      "weekend": 0.9999999987364279
+    },
+    "robustness": {
+      "alpha": 0.3,
+      "epsilon": 1e-08,
+      "weights": {
+        "weekday": 0.7222222222222222,
+        "weekend": 0.2777777777777778
+      },
+      "weight_source": "explicit",
+      "baseline_errors": {
+        "weekday": 25.557398879706298,
+        "weekend": 7.9140712689905355
+      },
+      "near_zero_baseline_regimes": []
+    }
+  },
+  "best_params": {
+    "learning_rate": 0.1,
+    "num_leaves": 31,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "feature_fraction": 1.0,
+    "lambda_l2": 0.0
+  },
+  "best_value": 20.656474543396364,
+  "best_trial": -1,
+  "duration_seconds": 1.0166816000000836,
+  "artifacts": {
+    "model": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\experiments\\EXP-ebd201980dac4b36\\artifacts\\model.txt",
+    "convergence": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\experiments\\EXP-ebd201980dac4b36\\artifacts\\convergence.png"
+  },
+  "directory": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\experiments\\EXP-ebd201980dac4b36",
+  "config": {
+    "schema_version": 1,
+    "experiment": {
+      "name": "steel_calendar_regression",
+      "seed": 42
+    },
+    "data": {
+      "dataset_id": "steel_energy",
+      "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\steel_energy\\Steel_industry_data.csv"
+    },
+    "model": {
+      "name": "lightgbm",
+      "n_estimators": 300,
+      "early_stopping_rounds": 30,
+      "n_jobs": 4
+    },
+    "optimization": {
+      "algorithm": "tpe",
+      "max_trials": 12,
+      "timeout_seconds": 120.0,
+      "search_space": {
+        "learning_rate": {
+          "type": "float",
+          "low": 0.01,
+          "high": 0.2,
+          "log": true
+        },
+        "num_leaves": {
+          "type": "int",
+          "low": 8,
+          "high": 64
+        },
+        "max_depth": {
+          "type": "int",
+          "low": 3,
+          "high": 10
+        },
+        "min_child_samples": {
+          "type": "int",
+          "low": 20,
+          "high": 150
+        },
+        "feature_fraction": {
+          "type": "float",
+          "low": 0.6,
+          "high": 1.0
+        },
+        "lambda_l2": {
+          "type": "float",
+          "low": 1e-05,
+          "high": 10.0,
+          "log": true
+        }
+      }
+    },
+    "robustness": {
+      "alpha": 0.3,
+      "epsilon": 1e-08,
+      "minimum_independent_groups": 5
+    },
+    "output": {
+      "save_trials": true,
+      "save_model": true
+    }
+  },
+  "fixed_objective": {
+    "baseline_errors": {
+      "weekday": 25.557398879706298,
+      "weekend": 7.9140712689905355
+    },
+    "weights": {
+      "weekday": 0.7222222222222222,
+      "weekend": 0.2777777777777778
+    },
+    "alpha": 0.3,
+    "epsilon": 1e-08
+  },
+  "baseline_metrics": {
+    "overall_mae": 20.656474543396364,
+    "regimes": {
+      "weekday": {
+        "mae": 25.557398879706298,
+        "samples": 4992,
+        "independent_groups": 52,
+        "reliability": "descriptive_only"
+      },
+      "weekend": {
+        "mae": 7.9140712689905355,
+        "samples": 1920,
+        "independent_groups": 20,
+        "reliability": "descriptive_only"
+      }
+    },
+    "robust_objective": 0.9999999994391108,
+    "worst_normalized_mae": 0.9999999996087239,
+    "normalized_regime_mae": {
+      "weekday": 0.9999999996087239,
+      "weekend": 0.9999999987364279
+    },
+    "robustness": {
+      "alpha": 0.3,
+      "epsilon": 1e-08,
+      "weights": {
+        "weekday": 0.7222222222222222,
+        "weekend": 0.2777777777777778
+      },
+      "weight_source": "explicit",
+      "baseline_errors": {
+        "weekday": 25.557398879706298,
+        "weekend": 7.9140712689905355
+      },
+      "near_zero_baseline_regimes": []
+    }
+  },
+  "baseline_duration_seconds": 0.04487419999895792,
+  "search_duration_seconds": 0.0,
+  "best_iteration": 31,
+  "ended_at": "2026-10-30T05:15:59.630648+00:00",
+  "trials": [
+    {
+      "number": -1,
+      "params": {
+        "learning_rate": 0.1,
+        "num_leaves": 31,
+        "max_depth": -1,
+        "min_child_samples": 20,
+        "feature_fraction": 1.0,
+        "lambda_l2": 0.0
+      },
+      "seed": 42,
+      "status": "completed",
+      "duration_seconds": 0.04487419999895792,
+      "metrics": {
+        "overall_mae": 20.656474543396364,
+        "regimes": {
+          "weekday": {
+            "mae": 25.557398879706298,
+            "samples": 4992,
+            "independent_groups": 52,
+            "reliability": "descriptive_only"
+          },
+          "weekend": {
+            "mae": 7.9140712689905355,
+            "samples": 1920,
+            "independent_groups": 20,
+            "reliability": "descriptive_only"
+          }
+        },
+        "robust_objective": 0.9999999994391108,
+        "worst_normalized_mae": 0.9999999996087239,
+        "normalized_regime_mae": {
+          "weekday": 0.9999999996087239,
+          "weekend": 0.9999999987364279
+        },
+        "robustness": {
+          "alpha": 0.3,
+          "epsilon": 1e-08,
+          "weights": {
+            "weekday": 0.7222222222222222,
+            "weekend": 0.2777777777777778
+          },
+          "weight_source": "explicit",
+          "baseline_errors": {
+            "weekday": 25.557398879706298,
+            "weekend": 7.9140712689905355
+          },
+          "near_zero_baseline_regimes": []
+        }
+      },
+      "objective": 20.656474543396364,
+      "failure_reason": null,
+      "role": "default_baseline"
+    }
+  ]
+}

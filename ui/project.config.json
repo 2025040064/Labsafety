@@ -1,0 +1,42 @@
+{
+  "appid": "wx94334f520838a9d0",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "miniprogram/",
+  "projectname": "LabSafe AI",
+  "setting": {
+    "es6": true,
+    "postcss": true,
+    "minified": false,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "enhance": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    }
+  },
+  "simulatorPluginLibVersion": {},
+  "packOptions": {
+    "ignore": [
+      { "type": "folder", "value": ".git" },
+      { "type": "folder", "value": "backend" },
+      { "type": "folder", "value": "rac-data" },
+      { "type": "folder", "value": "research" },
+      { "type": "folder", "value": "Microsoft" },
+      { "type": "folder", "value": "acceptance-samples" },
+      { "type": "folder", "value": ".workbuddy-ai" }
+    ],
+    "include": []
+  },
+  "editorSetting": {}
+}

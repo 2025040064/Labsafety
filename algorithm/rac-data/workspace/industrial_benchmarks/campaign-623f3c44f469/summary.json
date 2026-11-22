@@ -1,0 +1,431 @@
+{
+  "summary": [
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "algorithm": "rac_hpo",
+      "run_ids": [
+        "IND-a95fdf721d494f42",
+        "IND-d27defb66b04430f",
+        "IND-35829dbcc20648f1"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5896548264097933,
+        "std": 0.04771111367272211,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.5011404207790696,
+        "std": 0.029840827291189722,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.15980861807155244,
+        "std": 0.00657917188366093,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.41034517359020667,
+        "std": 0.04771111367272211,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.8073240389975492,
+        "std": 0.0938681175614356,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 35.65690296666556,
+        "std": 7.82081226350897,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 33.15977980000025,
+        "std": 7.77132870452008,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "algorithm": "random",
+      "run_ids": [
+        "IND-3e03e9b9d47c4fea",
+        "IND-23d586da39434c47",
+        "IND-fa3fad142224430f"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5505719446116797,
+        "std": 0.014128876222397719,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.5026929696623761,
+        "std": 0.015152976019972935,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.16002148126632867,
+        "std": 0.007695747820197952,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.44942805538832026,
+        "std": 0.014128876222397719,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.8842167430419423,
+        "std": 0.027797527916713853,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 30.046163966666427,
+        "std": 1.2731637493044452,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 27.357618699999268,
+        "std": 1.4339651218933402,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "algorithm": "tpe",
+      "run_ids": [
+        "IND-d52567b28b494335",
+        "IND-0e108ce7f9304276",
+        "IND-9f6108cd097846ee"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.5896548264097933,
+        "std": 0.04771111367272211,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.5011404207790696,
+        "std": 0.029840827291189722,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.15980861807155244,
+        "std": 0.00657917188366093,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.41034517359020667,
+        "std": 0.04771111367272211,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.8073240389975492,
+        "std": 0.0938681175614356,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 35.45722399999977,
+        "std": 5.847949746010254,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 32.91449596666583,
+        "std": 5.9907075157369745,
+        "count": 3
+      }
+    }
+  ],
+  "baseline_summary": [],
+  "fair_comparisons": [
+    {
+      "dataset_key": "secom",
+      "model_name": "lightgbm",
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "run_ids": [
+        "IND-3e03e9b9d47c4fea",
+        "IND-d52567b28b494335",
+        "IND-a95fdf721d494f42",
+        "IND-23d586da39434c47",
+        "IND-0e108ce7f9304276",
+        "IND-d27defb66b04430f",
+        "IND-fa3fad142224430f",
+        "IND-9f6108cd097846ee",
+        "IND-35829dbcc20648f1"
+      ],
+      "descriptive_only": false,
+      "paired_all_requested_seeds": true,
+      "data_sha256": "4192d232ff8c08e5834dd973d8b5faa33a9aed2c125b4b422394a0658a74212a",
+      "split_fingerprint": "216f7f624c410744016a506ff0fc532835f1109f61b179f6b6b5531d6600b726",
+      "budget": {
+        "max_trials": 24,
+        "timeout_seconds": 300.0,
+        "baseline_in_search_budget": false,
+        "model_resources": {
+          "n_estimators": 120,
+          "early_stopping_rounds": 20,
+          "n_jobs": 2,
+          "decision_mode": "time_oof",
+          "oof_folds": 3
+        },
+        "running_trial_can_overrun_deadline": true
+      },
+      "objective_definition": {
+        "name": "fixed_baseline_normalized_j",
+        "alpha": 0.3,
+        "epsilon": 1e-08,
+        "error": "1 - balanced_accuracy",
+        "weights": "validation sample proportions",
+        "formula": "0.7 * weighted_mean(error_g / (baseline_error_g + 1e-8)) + 0.3 * max(error_g / (baseline_error_g + 1e-8))",
+        "selection_metric_shared_by_all_methods": true
+      },
+      "search_space": {
+        "learning_rate": {
+          "type": "float",
+          "low": 0.01,
+          "high": 0.2,
+          "log": true
+        },
+        "num_leaves": {
+          "type": "int",
+          "low": 8,
+          "high": 64
+        },
+        "max_depth": {
+          "type": "int",
+          "low": 3,
+          "high": 10
+        },
+        "min_child_samples": {
+          "type": "int",
+          "low": 5,
+          "high": 80
+        },
+        "feature_fraction": {
+          "type": "float",
+          "low": 0.6,
+          "high": 1.0
+        },
+        "lambda_l2": {
+          "type": "float",
+          "low": 1e-05,
+          "high": 10.0,
+          "log": true
+        }
+      },
+      "algorithms": {
+        "random": {
+          "run_ids": [
+            "IND-3e03e9b9d47c4fea",
+            "IND-23d586da39434c47",
+            "IND-fa3fad142224430f"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.5505719446116797,
+            "std": 0.014128876222397719,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.5026929696623761,
+            "std": 0.015152976019972935,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.16002148126632867,
+            "std": 0.007695747820197952,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.44942805538832026,
+            "std": 0.014128876222397719,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.8842167430419423,
+            "std": 0.027797527916713853,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 30.046163966666427,
+            "std": 1.2731637493044452,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 27.357618699999268,
+            "std": 1.4339651218933402,
+            "count": 3
+          }
+        },
+        "tpe": {
+          "run_ids": [
+            "IND-d52567b28b494335",
+            "IND-0e108ce7f9304276",
+            "IND-9f6108cd097846ee"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.5896548264097933,
+            "std": 0.04771111367272211,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.5011404207790696,
+            "std": 0.029840827291189722,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.15980861807155244,
+            "std": 0.00657917188366093,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.41034517359020667,
+            "std": 0.04771111367272211,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.8073240389975492,
+            "std": 0.0938681175614356,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 35.45722399999977,
+            "std": 5.847949746010254,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 32.91449596666583,
+            "std": 5.9907075157369745,
+            "count": 3
+          }
+        },
+        "rac_hpo": {
+          "run_ids": [
+            "IND-a95fdf721d494f42",
+            "IND-d27defb66b04430f",
+            "IND-35829dbcc20648f1"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.5896548264097933,
+            "std": 0.04771111367272211,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.5011404207790696,
+            "std": 0.029840827291189722,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.15980861807155244,
+            "std": 0.00657917188366093,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.41034517359020667,
+            "std": 0.04771111367272211,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.8073240389975492,
+            "std": 0.0938681175614356,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 35.65690296666556,
+            "std": 7.82081226350897,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 33.15977980000025,
+            "std": 7.77132870452008,
+            "count": 3
+          }
+        }
+      },
+      "per_seed": [
+        {
+          "seed": 42,
+          "baseline_errors": {
+            "overall": 0.5082781456953642
+          },
+          "weights": {
+            "overall": 1.0
+          },
+          "run_ids": {
+            "random": "IND-3e03e9b9d47c4fea",
+            "tpe": "IND-d52567b28b494335",
+            "rac_hpo": "IND-a95fdf721d494f42"
+          }
+        },
+        {
+          "seed": 71,
+          "baseline_errors": {
+            "overall": 0.5082781456953642
+          },
+          "weights": {
+            "overall": 1.0
+          },
+          "run_ids": {
+            "random": "IND-23d586da39434c47",
+            "tpe": "IND-0e108ce7f9304276",
+            "rac_hpo": "IND-d27defb66b04430f"
+          }
+        },
+        {
+          "seed": 103,
+          "baseline_errors": {
+            "overall": 0.5082781456953642
+          },
+          "weights": {
+            "overall": 1.0
+          },
+          "run_ids": {
+            "random": "IND-fa3fad142224430f",
+            "tpe": "IND-9f6108cd097846ee",
+            "rac_hpo": "IND-35829dbcc20648f1"
+          }
+        }
+      ]
+    }
+  ],
+  "noncomparable": []
+}

@@ -1,0 +1,147 @@
+{
+  "acquired_at": "2026-10-31T06:07:04.799598+00:00",
+  "acquisition_method": "Official HTTP RAR4 byte ranges; exact compressed entries extracted using tar",
+  "bearings": [
+    "K001",
+    "K002",
+    "K003",
+    "KA04",
+    "KA15",
+    "KA16",
+    "KI04",
+    "KI14",
+    "KI16"
+  ],
+  "dataset_key": "paderborn",
+  "license": "CC BY-NC 4.0",
+  "selected_records": [
+    {
+      "archive_entry": "K001/N15_M07_F10_K001_20.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+      "byte_end": 9826550,
+      "byte_start": 7257985,
+      "sha256": "858a5122648da178991023e08f268826f6a6ed3ccf7150e53a89fb9ca27e46ec"
+    },
+    {
+      "archive_entry": "K001/N09_M07_F10_K001_3.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+      "byte_end": 20970219,
+      "byte_start": 19070625,
+      "sha256": "6c4d86af80479b864b57966669574a00b218370b1e75f75411bbc50599e60dd3"
+    },
+    {
+      "archive_entry": "K002/N15_M07_F10_K002_9.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K002.rar",
+      "byte_end": 4386637,
+      "byte_start": 2263905,
+      "sha256": "a7f1558252c9ddaebde1b2c081c73f4dfe3fa49b811139e5333b83a079dfb939"
+    },
+    {
+      "archive_entry": "K002/N09_M07_F10_K002_16.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K002.rar",
+      "byte_end": 8460610,
+      "byte_start": 6594405,
+      "sha256": "d9e01579f92cf4775bd4a862a970a3c435264e036b92d37c8e5d8d147c5828ff"
+    },
+    {
+      "archive_entry": "K003/N15_M07_F10_K003_18.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K003.rar",
+      "byte_end": 2617709,
+      "byte_start": 20,
+      "sha256": "090e119618085f691305b4bf4001f2d43cdd8e620ec450e2de5c27191fb14898"
+    },
+    {
+      "archive_entry": "K003/N09_M07_F10_K003_14.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K003.rar",
+      "byte_end": 25864389,
+      "byte_start": 23853982,
+      "sha256": "f2992e1b778579d91027ecdc97bc22e497d43c3b534dc962c2b1e44c4a0ac960"
+    },
+    {
+      "archive_entry": "KA04/N15_M07_F10_KA04_10.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA04.rar",
+      "byte_end": 6564847,
+      "byte_start": 4455623,
+      "sha256": "f08980bb636df4a470bd426e49ed7fb79520cd20621afdb54713485df8088699"
+    },
+    {
+      "archive_entry": "KA04/N09_M07_F10_KA04_9.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA04.rar",
+      "byte_end": 12859891,
+      "byte_start": 10915699,
+      "sha256": "13eee14a0a063e74575294e13906bce1eac415d250430285bc54eb413b72bb37"
+    },
+    {
+      "archive_entry": "KA15/N15_M07_F10_KA15_19.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA15.rar",
+      "byte_end": 4515283,
+      "byte_start": 2247764,
+      "sha256": "6afdf18c1e73e25051dd06c5a402e9d92d3234fdc96637c773ceab46b8d438ce"
+    },
+    {
+      "archive_entry": "KA15/N09_M07_F10_KA15_9.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA15.rar",
+      "byte_end": 6468996,
+      "byte_start": 4515284,
+      "sha256": "dc2f1f47245b6f5c87607c9415b4d1b0d8c60568797b980d476a70140488e2f0"
+    },
+    {
+      "archive_entry": "KA16/N09_M07_F10_KA16_16.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA16.rar",
+      "byte_end": 4019252,
+      "byte_start": 1933916,
+      "sha256": "9f77f4153ef57fa2695fb830ab87c5777b0101b3810e674d3c8c57bb9d343490"
+    },
+    {
+      "archive_entry": "KA16/N15_M07_F10_KA16_14.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KA16.rar",
+      "byte_end": 8106861,
+      "byte_start": 5891523,
+      "sha256": "2d85c68de0de29784983433d4c003ea0fe785e070eaeb01415ad102a4378eeef"
+    },
+    {
+      "archive_entry": "KI04/N15_M07_F10_KI04_13.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI04.rar",
+      "byte_end": 2509821,
+      "byte_start": 20,
+      "sha256": "e409cc4b9f01fa545b11b6eea0fdaacf61b57b0d35b909e7b620f63713538244"
+    },
+    {
+      "archive_entry": "KI04/N09_M07_F10_KI04_6.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI04.rar",
+      "byte_end": 19811153,
+      "byte_start": 17744813,
+      "sha256": "fa3d3299f1f2c2d7143f528a2d55ede6d110d5fadda30dd5957e2aec7fa32775"
+    },
+    {
+      "archive_entry": "KI14/N09_M07_F10_KI14_1.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI14.rar",
+      "byte_end": 3799770,
+      "byte_start": 1987947,
+      "sha256": "97c9bbab8538db4ffc265e927d684b87c94a80449a1c024c608e380457dd840e"
+    },
+    {
+      "archive_entry": "KI14/N15_M07_F10_KI14_4.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI14.rar",
+      "byte_end": 9759579,
+      "byte_start": 7735027,
+      "sha256": "90918df547d1fd4e2db1aff2df6d4ec8c4c16d95e2c59f383abf0e505d1d7e30"
+    },
+    {
+      "archive_entry": "KI16/N09_M07_F10_KI16_19.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI16.rar",
+      "byte_end": 1878005,
+      "byte_start": 20,
+      "sha256": "e7dac7daa392a8a1c9d030b5d450dabfc763fb27e18cd0740fac0448c1f5b76a"
+    },
+    {
+      "archive_entry": "KI16/N15_M07_F10_KI16_5.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/KI16.rar",
+      "byte_end": 9875113,
+      "byte_start": 7764177,
+      "sha256": "1c140262f5480764cec250c8d583b0b12e704e2f03ef7d38634cd6eaf9af49ea"
+    }
+  ],
+  "selection_policy": "One first-encountered recording per bearing and each of two predetermined operating conditions; no labels/features used for record selection",
+  "source_url": "https://mb.uni-paderborn.de/en/kat/research/bearing-datacenter"
+}

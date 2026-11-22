@@ -1,0 +1,27 @@
+{
+  "id": "LLM-20261122T083747",
+  "status": "completed",
+  "provider": "pytrio",
+  "base_model": "Qwen/Qwen3.5-4B",
+  "lora_rank": 8,
+  "iterations": 1,
+  "learning_rate": 0.0001,
+  "examples": [
+    {
+      "input": "what is trio",
+      "output": "trio is emotionmachine's AI Infra products."
+    }
+  ],
+  "losses": [
+    6.338552
+  ],
+  "final_loss": 6.338552,
+  "sample_prompt": "Question: what is trio\nAnswer:",
+  "generated": {
+    "base": null,
+    "sft": null
+  },
+  "weights_path": "trio://run_c1w4xlgbg59r/sampler_weights/lab-sft-concurrency",
+  "directory": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\workbuddy-verify-20261122-153317\\workspace\\llm_runs\\LLM-20261122T083747",
+  "created_at": "2026-11-22T08:37:58.593657+00:00"
+}

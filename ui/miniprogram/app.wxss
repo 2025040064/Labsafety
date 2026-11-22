@@ -1,0 +1,15 @@
+/* 全局基调 · 深海军蓝 + 电光靛蓝 + 青绿 */
+page {
+  background: #f1f5fa;
+  color: #0f172a;
+  font-size: 28rpx;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+button {
+  font-size: 27rpx;
+  border-radius: 12rpx;
+  margin: 0;
+  line-height: 1.6;
+}
+button::after { border: 0; }
+view, text, input, picker { box-sizing: border-box; }

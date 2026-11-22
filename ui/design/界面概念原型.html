@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>智维云 · 界面概念原型 v2</title>
+<style>
+:root{
+  --navy:#0E1C38; --navy2:#16294D; --indigo:#4F46E5; --indigo-l:#EEEDFE;
+  --teal:#0D9488; --green:#059669; --orange:#EA580C; --red:#DC2626;
+  --bg:#F1F5F9; --card:#FFFFFF; --text:#0F172A; --muted:#64748B;
+  --faint:#94A3B8; --line:#E2E8F0; --soft:#F8FAFC;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:#E8EDF4;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:var(--text)}
+.stage{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px 40px}
+.stage-head{width:100%;max-width:430px;margin-bottom:16px}
+.stage-head h1{font-size:17px;font-weight:600;margin:0 0 4px}
+.stage-head p{font-size:12px;color:var(--muted);margin:0;line-height:1.6}
+.phone{width:390px;max-width:100%;background:var(--bg);border-radius:26px;overflow:hidden;box-shadow:0 12px 40px rgba(14,28,56,.18);border:6px solid #0B1526}
+.status{height:30px;background:var(--navy);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:0 20px;font-size:12px}
+.status .sig{display:flex;gap:3px;align-items:center}
+.status .sig i{display:block;width:3px;background:#fff;border-radius:1px}
+.status .sig i:nth-child(1){height:5px}.status .sig i:nth-child(2){height:8px}.status .sig i:nth-child(3){height:11px}
+.nav{background:var(--navy);color:#fff;padding:6px 16px 12px;display:flex;align-items:center;gap:10px}
+.logo{width:28px;height:28px;border-radius:8px;background:var(--indigo);display:flex;align-items:center;justify-content:center;flex:none}
+.nav .nm{font-size:16px;font-weight:600}
+.nav .sub{font-size:11px;color:#9FB3D1;margin-left:auto}
+.tabs{display:flex;background:#fff;border-bottom:1px solid var(--line);padding:6px 10px;gap:6px}
+.tab{flex:1;text-align:center;font-size:13px;padding:8px 0;border-radius:8px;color:var(--muted);cursor:pointer;transition:.15s}
+.tab.on{background:var(--indigo);color:#fff;font-weight:600}
+.screen{height:600px;overflow-y:auto;padding:12px;scrollbar-width:thin}
+.screen::-webkit-scrollbar{width:4px}.screen::-webkit-scrollbar-thumb{background:#CBD5E1;border-radius:2px}
+.page{display:none}.page.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px;margin-bottom:11px}
+.ttl{font-size:14px;font-weight:600;display:flex;align-items:center;gap:7px}
+.ttl svg{width:17px;height:17px;flex:none}
+.cap{font-size:11px;color:var(--muted);line-height:1.55}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;flex:none}
+.badge{font-size:10px;padding:2px 8px;border-radius:9px;white-space:nowrap;font-weight:500}
+.b-green{background:#E1F5EE;color:#0F6E56}.b-purple{background:var(--indigo-l);color:#534AB7}
+.b-gray{background:#EEF2F7;color:var(--faint)}.b-orange{background:#FCEBEB;color:#B45309}
+.kpis{display:flex;gap:8px;margin:11px 0}
+.kpi{flex:1;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 4px;text-align:center}
+.kpi .v{font-size:20px;font-weight:700;color:var(--indigo);line-height:1.1}
+.kpi .v.teal{color:var(--teal)}
+.kpi .l{font-size:10px;color:var(--muted);margin-top:3px}
+.btn{background:var(--indigo);color:#fff;border:none;border-radius:9px;padding:10px;width:100%;font-size:13px;font-weight:600;cursor:pointer;margin-top:4px}
+.btn:active{opacity:.85}
+.btn.ghost{background:#fff;color:var(--indigo);border:1px solid #C7D2FE}
+.btn.sm{width:auto;padding:5px 11px;font-size:11px;margin:0}
+.row{display:flex;align-items:center;gap:8px;margin-top:9px}
+.row .grow{flex:1;min-width:0}
+.ds{padding:9px 0;border-bottom:1px solid #F1F5F9}
+.ds:last-child{border-bottom:none;padding-bottom:2px}
+.ds .t{display:flex;justify-content:space-between;align-items:center}
+.ds .n{font-size:12px;font-weight:600}
+.pills{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;margin-top:9px}
+.pill{flex:none;font-size:11px;padding:6px 11px;border-radius:8px;background:var(--soft);color:var(--muted);cursor:pointer;border:1px solid var(--line)}
+.pill.on{background:var(--indigo);color:#fff;border-color:var(--indigo);font-weight:600}
+.field{display:flex;align-items:center;gap:8px;margin-top:9px;font-size:12px}
+.field label{width:78px;color:var(--muted);flex:none}
+.field input,.field select{flex:1;min-width:0;border:1px solid var(--line);border-radius:7px;padding:7px 9px;font-size:12px;background:#fff;color:var(--text);outline:none}
+.field input:focus,.field select:focus{border-color:var(--indigo)}
+.hint{font-size:11px;color:var(--muted);line-height:1.6;margin-top:7px}
+.section-t{font-size:12px;font-weight:600;margin:12px 0 2px;display:flex;align-items:center;gap:6px}
+.stack{display:flex;height:11px;border-radius:6px;overflow:hidden;margin:8px 0 5px}
+.stack i{display:block;height:100%}
+.legend{display:flex;gap:12px;font-size:10px;color:var(--muted);flex-wrap:wrap}
+.legend span{display:flex;align-items:center;gap:4px}
+.legend b{width:9px;height:3px;border-radius:2px;display:inline-block}
+.chip{font-size:10px;padding:2px 8px;border-radius:9px;background:var(--indigo-l);color:#534AB7}
+.chip.live{background:var(--indigo);color:#fff}
+.trial{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #F1F5F9}
+.trial:last-child{border-bottom:none}
+.trial .id{font-size:12px;font-weight:600}
+.trial .meta{font-size:10px;color:var(--muted);margin-top:2px}
+.trial .val{font-size:12px;font-weight:600;color:var(--indigo)}
+.rec{display:flex;gap:9px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #F1F5F9}
+.rec:last-child{border-bottom:none}
+.cbox{width:15px;height:15px;border:1.5px solid #CBD5E1;border-radius:4px;flex:none;margin-top:2px;cursor:pointer}
+.cbox.on{background:var(--indigo);border-color:var(--indigo);position:relative}
+.cbox.on::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.logline{font-size:10px;color:var(--muted);padding:5px 0;border-bottom:1px dashed #EEF2F7;font-family:ui-monospace,monospace}
+.toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:10px 18px;border-radius:10px;font-size:12px;opacity:0;pointer-events:none;transition:.25s;z-index:99;box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:10px;background:var(--soft);border:1px solid var(--line);border-radius:7px;padding:3px 7px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="stage-head">
+    <h1>智维云 · 界面概念原型 v2</h1>
+    <p>完整三页可交互原型（运行 / 结果 / 记录）· 点击标签、任务类型、数据集与按钮体验流程 · 采用新版配色并嵌入 17 枚科研风格图标</p>
+  </div>
+
+  <div class="phone">
+    <div class="status"><span>9:41</span><span class="sig"><i></i><i></i><i></i><span style="font-size:10px;margin-left:4px">●</span></span></div>
+    <div class="nav">
+      <div class="logo"><svg viewBox="0 0 24 24" width="16" height="16"><polyline points="2,14 7,8 12,16 17,5 22,11" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="nm">智维云</span><span class="sub">工业设备数据分析</span>
+    </div>
+    <div class="tabs">
+      <div class="tab on" data-p="run" onclick="go('run')">运行</div>
+      <div class="tab" data-p="result" onclick="go('result')">结果</div>
+      <div class="tab" data-p="record" onclick="go('record')">记录</div>
+    </div>
+
+    <div class="screen">
+      <!-- ============ 运行页 ============ -->
+      <div class="page on" id="p-run">
+        <div class="card">
+          <div class="ttl"><span class="dot"></span>本机引擎在线 <span class="cap" style="margin-left:auto;font-weight:400">v2.0</span></div>
+          <div class="cap" style="margin-top:6px">训练与数据保存在这台电脑 · 自动连接本机 Python 服务</div>
+          <div class="kpis">
+            <div class="kpi"><div class="v">01</div><div class="l">本地数据源</div></div>
+            <div class="kpi"><div class="v">12</div><div class="l">完成任务</div></div>
+            <div class="kpi"><div class="v teal">00</div><div class="l">运行中</div></div>
+          </div>
+          <button class="btn" onclick="toast('已切换到工业训练配置')">创建工业分类任务</button>
+        </div>
+
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3" fill="none" stroke="#1E3A5F" stroke-width="1.6"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" fill="none" stroke="#1E3A5F" stroke-width="1.6"/></svg>数据集 <span class="cap" style="margin-left:auto;font-weight:400">4 个来源</span></div>
+          <div class="cap" style="margin-top:6px">「文件存在」不代表已通过审计。AI4I 2020 是合成示例数据。</div>
+          <div class="ds"><div class="t"><span class="n">ai4i_2020</span><span class="badge b-green">就绪</span></div><div class="cap">公开合成示例 · 14 列 · 10,000 行 · 分类</div></div>
+          <div class="ds"><div class="t"><span class="n">user_csv</span><span class="badge b-purple">已导入</span></div><div class="cap">用户上传 · 3 列 · 12 行 · 需字段映射</div></div>
+          <div class="ds"><div class="t"><span class="n" style="color:#94A3B8">steel_energy</span><span class="badge b-gray">未提供</span></div><div class="cap">历史公开数据 · 点击查看来源说明</div></div>
+          <button class="btn ghost sm" style="margin-top:9px" onclick="toast('已展开 ai4i_2020 前 5 行预览')">预览首行</button>
+        </div>
+
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><path d="M12 2v6M12 16v6M2 12h6M16 12h6" stroke="#4F46E5" stroke-width="1.6" fill="none"/><circle cx="12" cy="12" r="4" fill="none" stroke="#4F46E5" stroke-width="1.6"/></svg>任务类型</div>
+          <div class="pills" id="taskpills">
+            <div class="pill" onclick="task(0,this)">数据审计</div>
+            <div class="pill" onclick="task(1,this)">基线训练</div>
+            <div class="pill" onclick="task(2,this)">参数搜索</div>
+            <div class="pill on" onclick="task(3,this)">工业训练</div>
+            <div class="pill" onclick="task(4,this)">自主优化</div>
+          </div>
+          <div class="hint" id="taskhint">切换任务类型会清除不匹配的导入文件。</div>
+        </div>
+
+        <div class="card" id="form">
+          <div class="ttl"><svg viewBox="0 0 24 24"><circle cx="6" cy="7" r="2.5" fill="#4F46E5"/><circle cx="6" cy="17" r="2.5" fill="#4F46E5"/><circle cx="18" cy="12" r="3" fill="#4F46E5"/><path d="M8.5 7L15 11M8.5 17L15 13" stroke="#AFA9EC" stroke-width="1.5"/></svg>工业训练 · 分类</div>
+          <div class="field"><label>数据集</label><select><option>ai4i_2020（合成示例）</option><option>user_csv（用户上传）</option></select></div>
+          <div class="field"><label>方法</label><select><option>baseline · 基线</option><option selected>rac_hpo · RAC-HPO</option></select></div>
+          <div class="field"><label>模型</label><select><option selected>random_forest</option><option>lightgbm</option></select></div>
+          <div class="field"><label>阈值策略</label><select><option selected>balanced_accuracy</option><option>f1_macro</option></select></div>
+          <div class="section-t">训练参数</div>
+          <div class="field"><label>随机种子</label><input value="42" type="number"></div>
+          <div class="field"><label>最大树数</label><input value="10" type="number"></div>
+          <div class="field"><label>试验次数</label><input value="2" type="number"></div>
+          <div class="field"><label>时间预算（秒）</label><input value="60" type="number"></div>
+          <div class="row"><button class="btn ghost sm" onclick="toast('模拟器文件选择器：请选择本地 CSV')">导入文件（可多选）</button><span class="cap">使用工作区默认</span></div>
+          <div class="hint">单文件上限 32 MB；user_csv 仅支持单个 UTF-8 CSV，需指定整数标签列与设备分组列。</div>
+          <div class="row" style="gap:6px;flex-wrap:wrap"><button class="btn ghost sm" onclick="toast('审计任务已提交')">审计</button><button class="btn ghost sm" onclick="toast('正在获取公开数据')">获取公开数据</button><button class="btn sm" onclick="toast('工业训练任务已提交：rac_hpo / 2 试验')">运行</button></div>
+        </div>
+      </div>
+
+      <!-- ============ 结果页 ============ -->
+      <div class="page" id="p-result">
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#4F46E5" stroke-width="1.6"/><circle cx="12" cy="12" r="5" fill="none" stroke="#AFA9EC" stroke-width="1.6"/><circle cx="12" cy="12" r="1.8" fill="#4F46E5"/></svg>当前实验</div>
+          <div class="field"><label>切换实验</label><select><option>IND-fa3c15a0 · rac_hpo</option><option>IND-62811810 · baseline</option></select></div>
+          <div class="cap" style="margin-top:6px">图表、试验、比较与详情都在这里；在「记录」页勾选实验可并排比较。</div>
+        </div>
+
+        <div class="card">
+          <div class="ttl">IND-fa3c15a0 <span class="badge b-green" style="margin-left:auto">已完成</span></div>
+          <div class="kpis">
+            <div class="kpi"><div class="v">0.71</div><div class="l">Balanced Acc</div></div>
+            <div class="kpi"><div class="v">0.68</div><div class="l">F1-macro</div></div>
+            <div class="kpi"><div class="v teal">02</div><div class="l">试验</div></div>
+          </div>
+          <div class="tag">
+            <svg viewBox="0 0 24 24" width="12" height="12"><path d="M4 20V4M4 20h16" stroke="#64748B" stroke-width="1.8" fill="none"/><polyline points="6,15 11,10 15,13 20,6" fill="none" stroke="#4F46E5" stroke-width="1.8"/></svg>
+            指标基于验证集 · test_accessed = false
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="#1E3A5F" stroke-width="1.6"/><path d="M9 3v18M15 3v18M3 9h18M3 15h18" stroke="#CBD5E1" stroke-width="1.2"/></svg>数据划分 <span class="cap" style="margin-left:auto;font-weight:400">固定分层 · 整组</span></div>
+          <div class="stack"><i style="width:60%;background:#4F46E5"></i><i style="width:20%;background:#0D9488"></i><i style="width:20%;background:#CBD5E1"></i></div>
+          <div class="legend"><span><b style="background:#4F46E5"></b>训练 60%</span><span><b style="background:#0D9488"></b>验证 20%</span><span><b style="background:#CBD5E1"></b>测试 20%</span></div>
+          <div class="hint">同一设备只出现在一个划分区，避免物理分组泄漏。</div>
+        </div>
+
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><path d="M3 20h18M3 20V4" stroke="#94A3B8" stroke-width="1.6" fill="none"/><path d="M5 17C9 8 14 14 20 5" fill="none" stroke="#4F46E5" stroke-width="1.8"/><path d="M5 17L20 5" stroke="#CBD5E1" stroke-dasharray="3 3" stroke-width="1.3"/></svg>图表 <span class="cap" style="margin-left:auto;font-weight:400">累积最优</span></div>
+          <div class="pills"><div class="pill on" onclick="chart(this)">累积最优</div><div class="pill" onclick="chart(this)">分布</div><div class="pill" onclick="chart(this)">散点</div><div class="pill" onclick="chart(this)">平行坐标</div></div>
+          <svg viewBox="0 0 340 130" width="100%" style="margin-top:8px">
+            <line x1="30" y1="112" x2="330" y2="112" stroke="#E2E8F0"/><line x1="30" y1="12" x2="30" y2="112" stroke="#E2E8F0"/>
+            <path d="M30 92 C90 72 150 48 210 36 S290 22 325 18" fill="none" stroke="#4F46E5" stroke-width="2.2"/>
+            <path d="M30 100 C90 88 150 80 210 70 S290 60 325 56" fill="none" stroke="#0D9488" stroke-width="1.8" stroke-dasharray="4 3"/>
+            <circle cx="325" cy="18" r="4" fill="#4F46E5"/>
+            <text x="30" y="126" font-size="9" fill="#94A3B8">试验 0</text><text x="300" y="126" font-size="9" fill="#94A3B8">试验 N</text>
+          </svg>
+          <div class="legend"><span><b style="background:#4F46E5"></b>累积最优（含 baseline）</span><span><b style="background:#0D9488"></b>单次试验</span></div>
+        </div>
+
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="#1E3A5F" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h5" stroke="#94A3B8" stroke-width="1.5"/></svg>试验列表 <span class="cap" style="margin-left:auto;font-weight:400">共 2 条 · 1/1 页</span></div>
+          <div class="trial"><div><div class="id">#1 · completed</div><div class="meta">选择方式 tpe_fallback · 5.2 秒</div></div><div class="val">0.68</div></div>
+          <div class="trial"><div><div class="id">#2 · completed ★</div><div class="meta">选择方式 tpe_fallback · 6.1 秒</div></div><div class="val">0.71</div></div>
+          <div class="hint">本轮仅 2 次预热试验，代理门禁未触发（insufficient_history）；选择方式均为 tpe_fallback。</div>
+          <button class="btn ghost sm" style="margin-top:9px" onclick="toast('已比较 2 条试验')">比较勾选的 2 条试验</button>
+        </div>
+
+        <div class="card">
+          <div class="ttl">并排比较</div>
+          <div class="cap">在「记录」页勾选 2 至 8 条；数据、版本与划分证据不足时只并排展示，不生成排名。</div>
+          <button class="btn ghost" style="margin-top:8px" onclick="toast('请先到记录页勾选至少 2 条实验')">并排比较 0 条实验</button>
+        </div>
+
+        <div class="card">
+          <div class="row"><div class="ttl">导出</div><span class="chip live" style="margin-left:auto">仅本机</span></div>
+          <div class="row" style="gap:6px"><button class="btn sm" onclick="toast('ZIP 已导出到本机下载目录')">导出 ZIP</button><button class="btn ghost sm" onclick="toast('指标摘要已复制')">复制摘要</button></div>
+        </div>
+      </div>
+
+      <!-- ============ 记录页 ============ -->
+      <div class="page" id="p-record">
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none" stroke="#1E3A5F" stroke-width="1.6"/><path d="M8 9h8M8 13h8M8 17h5" stroke="#94A3B8" stroke-width="1.5"/></svg>历史实验 <button class="btn ghost sm" style="margin-left:auto" onclick="toast('记录已刷新')">刷新</button></div>
+          <div class="field"><label style="width:auto;flex:1"><input placeholder="搜索实验 ID / 算法 / 数据集" style="width:100%"></label></div>
+          <div class="cap" style="margin:6px 0">共 2 条实验 · 勾选可比较</div>
+          <div class="rec"><div class="cbox" onclick="pick(this)"></div><div class="grow" onclick="go('result')" style="cursor:pointer"><div style="font-size:12px;font-weight:600">IND-fa3c15a0</div><div class="cap">工业分类 · rac_hpo · random_forest · 0.71</div></div><button class="btn ghost sm" onclick="go('result')">打开</button></div>
+          <div class="rec"><div class="cbox" onclick="pick(this)"></div><div class="grow" onclick="go('result')" style="cursor:pointer"><div style="font-size:12px;font-weight:600">IND-62811810</div><div class="cap">工业分类 · baseline · 用户 CSV · 0.50</div></div><button class="btn ghost sm" onclick="go('result')">打开</button></div>
+          <button class="btn ghost" style="margin-top:9px" onclick="toast('请勾选至少 2 条实验')">比较选中的 0 条实验</button>
+        </div>
+
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><path d="M12 3l9 17H3z" fill="none" stroke="#EA580C" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 9v5M12 17v.5" stroke="#EA580C" stroke-width="1.8"/></svg>失败任务与反馈 <span class="badge b-orange" style="margin-left:auto">1 条失败</span></div>
+          <div class="cap" style="margin-top:6px;color:#B45309">JOB-a6cb86e0 · 拒绝原因：Each class requires at least three physical groups for train/validation/test（每类至少 3 个独立分组）</div>
+          <div class="cap" style="margin-top:5px">提示已原文展示在模拟器，未做吞错处理。</div>
+        </div>
+
+        <div class="card">
+          <div class="ttl"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5z" fill="none" stroke="#1E3A5F" stroke-width="1.6"/><path d="M8 8h8M8 12h8M8 16h6" stroke="#94A3B8" stroke-width="1.5"/></svg>任务日志 <button class="btn ghost sm" style="margin-left:auto" onclick="toast('任务日志已刷新')">刷新</button></div>
+          <div class="logline">JOB-609377f6 · industrial_run · completed → IND-fa3c15a0</div>
+          <div class="logline">JOB-6a11da66 · industrial_run · completed → IND-62811810</div>
+          <div class="logline">JOB-a6cb86e0 · industrial_run · failed · 分组不足</div>
+          <div class="logline">JOB-6305ac4e · industrial_audit · failed · 列映射非整数标签</div>
+        </div>
+
+        <div class="card">
+          <div class="ttl">数据来源声明</div>
+          <div class="cap">AI4I 2020 为公开合成示例数据，不代表现场实时状态。用户 CSV 为本轮测试夹具，来源标记为 user_supplied。分类指标评估集为 validation，测试集未参与选优。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+function go(p){
+  document.querySelectorAll('.page').forEach(function(el){el.classList.remove('on')});
+  document.getElementById('p-'+p).classList.add('on');
+  document.querySelectorAll('.tab').forEach(function(el){el.classList.toggle('on',el.dataset.p===p)});
+  document.querySelector('.screen').scrollTop=0;
+}
+var hints=['数据审计：概览 / 固定划分 / 工况 / 字段 / 来源 / SHA-256 / 质量审计分组显示。','基线训练：桌面默认 300 棵树、种子 42，早停与搜索空间由工作区配置决定。','参数搜索：TPE 搜索，仅用验证集选优；累计最优保留完整任务序列。','切换任务类型会清除不匹配的导入文件。','自主优化 · 受控离线回放：固定 seed=42、RAC-HPO，门禁未通过不能切换。'];
+function task(i,el){
+  document.querySelectorAll('#taskpills .pill').forEach(function(p){p.classList.remove('on')});
+  el.classList.add('on');
+  document.getElementById('taskhint').textContent=hints[i];
+}
+function chart(el){
+  document.querySelectorAll('#p-result .pill').forEach(function(p){p.classList.remove('on')});
+  el.classList.add('on');
+}
+function pick(el){el.classList.toggle('on')}
+var t;
+function toast(msg){
+  var e=document.getElementById('toast');e.textContent=msg;e.classList.add('show');
+  clearTimeout(t);t=setTimeout(function(){e.classList.remove('show')},2200);
+}
+</script>
+</body>
+</html>

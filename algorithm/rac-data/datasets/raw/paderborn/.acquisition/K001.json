@@ -1,0 +1,22 @@
+{
+  "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+  "bearing": "K001",
+  "next_offset": 20970220,
+  "selected_records": [
+    {
+      "archive_entry": "K001/N15_M07_F10_K001_20.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+      "byte_end": 9826550,
+      "byte_start": 7257985,
+      "sha256": "858a5122648da178991023e08f268826f6a6ed3ccf7150e53a89fb9ca27e46ec"
+    },
+    {
+      "archive_entry": "K001/N09_M07_F10_K001_3.mat",
+      "archive_url": "http://groups.uni-paderborn.de/kat/BearingDataCenter/K001.rar",
+      "byte_end": 20970219,
+      "byte_start": 19070625,
+      "sha256": "6c4d86af80479b864b57966669574a00b218370b1e75f75411bbc50599e60dd3"
+    }
+  ],
+  "updated_at": "2026-10-31T06:06:50.164620+00:00"
+}

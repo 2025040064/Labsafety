@@ -1,0 +1,53 @@
+{
+  "id": "IND-0cc8a91a32b240b2",
+  "status": "failed",
+  "created_at": "2026-11-09T12:34:30.809741+00:00",
+  "task_type": "classification",
+  "dataset_key": "ai4i_2020",
+  "model_name": "lightgbm",
+  "algorithm": "baseline",
+  "config": {
+    "dataset_key": "ai4i_2020",
+    "model_name": "lightgbm",
+    "algorithm": "baseline",
+    "seed": 42,
+    "max_trials": 24,
+    "timeout_seconds": 120,
+    "model_config": {
+      "n_estimators": 10,
+      "early_stopping_rounds": 20,
+      "n_jobs": 2,
+      "decision_mode": "native"
+    },
+    "data_path": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\datasets\\raw\\ai4i_2020\\data.csv",
+    "evaluation_partition": "validation",
+    "test_accessed": false
+  },
+  "directory": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\workspace\\industrial_runs\\IND-0cc8a91a32b240b2",
+  "metrics": {},
+  "best_params": {},
+  "best_trial": null,
+  "best_value": null,
+  "artifacts": {
+    "log": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\workspace\\industrial_runs\\IND-0cc8a91a32b240b2\\logs\\experiment.log"
+  },
+  "trials": [
+    {
+      "number": -1,
+      "role": "default_baseline",
+      "params": {},
+      "seed": 42,
+      "status": "failed",
+      "metrics": {},
+      "objective": null,
+      "duration_seconds": 0.05662609999853885,
+      "failure_reason": "ValueError: Existing immutable dataset manifest differs"
+    }
+  ],
+  "manifest": {},
+  "duration_seconds": 0.06547139999929641,
+  "pid": 33532,
+  "training_version": "industrial-classification-1.0",
+  "failure_reason": "ValueError: Existing immutable dataset manifest differs",
+  "ended_at": "2026-11-09T12:34:30.883124+00:00"
+}

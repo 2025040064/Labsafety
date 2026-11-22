@@ -1,0 +1,8 @@
+{
+  "seed": 42,
+  "algorithm": "rac_hpo",
+  "max_trials": 48,
+  "timeout_seconds": 120.0,
+  "training_budget_seconds": 300.0,
+  "scenario": "natural"
+}

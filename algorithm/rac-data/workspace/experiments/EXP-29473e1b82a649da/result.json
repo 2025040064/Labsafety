@@ -1,0 +1,347 @@
+{
+  "id": "EXP-29473e1b82a649da",
+  "algorithm": "baseline",
+  "status": "completed",
+  "created_at": "2026-10-30T05:55:57.083529+00:00",
+  "dataset_id": "cnc_milling_2025",
+  "data_sha256": "e125471f983e98ae326e2c47e15f633bb30738e285b9ad6e54b5e364d4d66dbc",
+  "target_unit": "cycles",
+  "app_version": "0.1.0",
+  "algorithm_version": "baseline-1.0",
+  "schema_version": 1,
+  "metrics": {
+    "overall_mae": 31.307847455331153,
+    "regimes": {
+      "ADOC_10mm": {
+        "mae": 16.39729599685762,
+        "samples": 135,
+        "independent_groups": 2,
+        "reliability": "insufficient_independent_groups",
+        "independent_unit_kind": "physical_tool",
+        "group_errors": [
+          {
+            "group_id": "101",
+            "samples": 84,
+            "absolute_error_sum": 1092.2444303680752,
+            "mae": 13.002909885334228
+          },
+          {
+            "group_id": "5",
+            "samples": 51,
+            "absolute_error_sum": 1121.3905292077031,
+            "mae": 21.988049592307906
+          }
+        ],
+        "effective_independent_groups": 2,
+        "mae_interval": null,
+        "interval_method": null
+      },
+      "ADOC_5mm": {
+        "mae": 38.90378876436484,
+        "samples": 265,
+        "independent_groups": 2,
+        "reliability": "insufficient_independent_groups",
+        "independent_unit_kind": "physical_tool",
+        "group_errors": [
+          {
+            "group_id": "8",
+            "samples": 116,
+            "absolute_error_sum": 2838.4901307443115,
+            "mae": 24.469742506416477
+          },
+          {
+            "group_id": "9",
+            "samples": 149,
+            "absolute_error_sum": 7471.013891812372,
+            "mae": 50.14103283095552
+          }
+        ],
+        "effective_independent_groups": 2,
+        "mae_interval": null,
+        "interval_method": null
+      }
+    },
+    "robust_objective": 0.9999999996596036,
+    "worst_normalized_mae": 0.9999999997429556,
+    "normalized_regime_mae": {
+      "ADOC_10mm": 0.9999999993901433,
+      "ADOC_5mm": 0.9999999997429556
+    },
+    "robustness": {
+      "alpha": 0.3,
+      "epsilon": 1e-08,
+      "weights": {
+        "ADOC_10mm": 0.3375,
+        "ADOC_5mm": 0.6625
+      },
+      "weight_source": "explicit",
+      "baseline_errors": {
+        "ADOC_10mm": 16.39729599685762,
+        "ADOC_5mm": 38.90378876436484
+      },
+      "near_zero_baseline_regimes": []
+    }
+  },
+  "best_params": {
+    "learning_rate": 0.1,
+    "num_leaves": 31,
+    "max_depth": -1,
+    "min_child_samples": 20,
+    "feature_fraction": 1.0,
+    "lambda_l2": 0.0
+  },
+  "best_value": 31.307847455331153,
+  "best_trial": -1,
+  "duration_seconds": 0.6117649999996502,
+  "artifacts": {
+    "model": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\experiments\\EXP-29473e1b82a649da\\artifacts\\model.txt",
+    "convergence": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\experiments\\EXP-29473e1b82a649da\\artifacts\\convergence.png"
+  },
+  "directory": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\workspace\\experiments\\EXP-29473e1b82a649da",
+  "config": {
+    "schema_version": 1,
+    "experiment": {
+      "name": "steel_calendar_regression",
+      "seed": 42
+    },
+    "data": {
+      "dataset_id": "cnc_milling_2025",
+      "path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\cnc_milling_2025\\FeatureAndMetadata_Milling.csv"
+    },
+    "model": {
+      "name": "lightgbm",
+      "n_estimators": 300,
+      "early_stopping_rounds": 30,
+      "n_jobs": 4
+    },
+    "optimization": {
+      "algorithm": "tpe",
+      "max_trials": 12,
+      "timeout_seconds": 120.0,
+      "search_space": {
+        "learning_rate": {
+          "type": "float",
+          "low": 0.01,
+          "high": 0.2,
+          "log": true
+        },
+        "num_leaves": {
+          "type": "int",
+          "low": 8,
+          "high": 64
+        },
+        "max_depth": {
+          "type": "int",
+          "low": 3,
+          "high": 10
+        },
+        "min_child_samples": {
+          "type": "int",
+          "low": 20,
+          "high": 150
+        },
+        "feature_fraction": {
+          "type": "float",
+          "low": 0.6,
+          "high": 1.0
+        },
+        "lambda_l2": {
+          "type": "float",
+          "low": 1e-05,
+          "high": 10.0,
+          "log": true
+        }
+      }
+    },
+    "robustness": {
+      "alpha": 0.3,
+      "epsilon": 1e-08,
+      "minimum_independent_groups": 5
+    },
+    "output": {
+      "save_trials": true,
+      "save_model": true
+    }
+  },
+  "fixed_objective": {
+    "baseline_errors": {
+      "ADOC_10mm": 16.39729599685762,
+      "ADOC_5mm": 38.90378876436484
+    },
+    "weights": {
+      "ADOC_10mm": 0.3375,
+      "ADOC_5mm": 0.6625
+    },
+    "alpha": 0.3,
+    "epsilon": 1e-08
+  },
+  "baseline_metrics": {
+    "overall_mae": 31.307847455331153,
+    "regimes": {
+      "ADOC_10mm": {
+        "mae": 16.39729599685762,
+        "samples": 135,
+        "independent_groups": 2,
+        "reliability": "insufficient_independent_groups",
+        "independent_unit_kind": "physical_tool",
+        "group_errors": [
+          {
+            "group_id": "101",
+            "samples": 84,
+            "absolute_error_sum": 1092.2444303680752,
+            "mae": 13.002909885334228
+          },
+          {
+            "group_id": "5",
+            "samples": 51,
+            "absolute_error_sum": 1121.3905292077031,
+            "mae": 21.988049592307906
+          }
+        ],
+        "effective_independent_groups": 2,
+        "mae_interval": null,
+        "interval_method": null
+      },
+      "ADOC_5mm": {
+        "mae": 38.90378876436484,
+        "samples": 265,
+        "independent_groups": 2,
+        "reliability": "insufficient_independent_groups",
+        "independent_unit_kind": "physical_tool",
+        "group_errors": [
+          {
+            "group_id": "8",
+            "samples": 116,
+            "absolute_error_sum": 2838.4901307443115,
+            "mae": 24.469742506416477
+          },
+          {
+            "group_id": "9",
+            "samples": 149,
+            "absolute_error_sum": 7471.013891812372,
+            "mae": 50.14103283095552
+          }
+        ],
+        "effective_independent_groups": 2,
+        "mae_interval": null,
+        "interval_method": null
+      }
+    },
+    "robust_objective": 0.9999999996596036,
+    "worst_normalized_mae": 0.9999999997429556,
+    "normalized_regime_mae": {
+      "ADOC_10mm": 0.9999999993901433,
+      "ADOC_5mm": 0.9999999997429556
+    },
+    "robustness": {
+      "alpha": 0.3,
+      "epsilon": 1e-08,
+      "weights": {
+        "ADOC_10mm": 0.3375,
+        "ADOC_5mm": 0.6625
+      },
+      "weight_source": "explicit",
+      "baseline_errors": {
+        "ADOC_10mm": 16.39729599685762,
+        "ADOC_5mm": 38.90378876436484
+      },
+      "near_zero_baseline_regimes": []
+    }
+  },
+  "baseline_duration_seconds": 0.05632250000053318,
+  "search_duration_seconds": 0.0,
+  "best_iteration": 42,
+  "ended_at": "2026-10-30T05:55:57.695629+00:00",
+  "trials": [
+    {
+      "number": -1,
+      "params": {
+        "learning_rate": 0.1,
+        "num_leaves": 31,
+        "max_depth": -1,
+        "min_child_samples": 20,
+        "feature_fraction": 1.0,
+        "lambda_l2": 0.0
+      },
+      "seed": 42,
+      "status": "completed",
+      "duration_seconds": 0.05632250000053318,
+      "metrics": {
+        "overall_mae": 31.307847455331153,
+        "regimes": {
+          "ADOC_10mm": {
+            "mae": 16.39729599685762,
+            "samples": 135,
+            "independent_groups": 2,
+            "reliability": "insufficient_independent_groups",
+            "independent_unit_kind": "physical_tool",
+            "group_errors": [
+              {
+                "group_id": "101",
+                "samples": 84,
+                "absolute_error_sum": 1092.2444303680752,
+                "mae": 13.002909885334228
+              },
+              {
+                "group_id": "5",
+                "samples": 51,
+                "absolute_error_sum": 1121.3905292077031,
+                "mae": 21.988049592307906
+              }
+            ],
+            "effective_independent_groups": 2,
+            "mae_interval": null,
+            "interval_method": null
+          },
+          "ADOC_5mm": {
+            "mae": 38.90378876436484,
+            "samples": 265,
+            "independent_groups": 2,
+            "reliability": "insufficient_independent_groups",
+            "independent_unit_kind": "physical_tool",
+            "group_errors": [
+              {
+                "group_id": "8",
+                "samples": 116,
+                "absolute_error_sum": 2838.4901307443115,
+                "mae": 24.469742506416477
+              },
+              {
+                "group_id": "9",
+                "samples": 149,
+                "absolute_error_sum": 7471.013891812372,
+                "mae": 50.14103283095552
+              }
+            ],
+            "effective_independent_groups": 2,
+            "mae_interval": null,
+            "interval_method": null
+          }
+        },
+        "robust_objective": 0.9999999996596036,
+        "worst_normalized_mae": 0.9999999997429556,
+        "normalized_regime_mae": {
+          "ADOC_10mm": 0.9999999993901433,
+          "ADOC_5mm": 0.9999999997429556
+        },
+        "robustness": {
+          "alpha": 0.3,
+          "epsilon": 1e-08,
+          "weights": {
+            "ADOC_10mm": 0.3375,
+            "ADOC_5mm": 0.6625
+          },
+          "weight_source": "explicit",
+          "baseline_errors": {
+            "ADOC_10mm": 16.39729599685762,
+            "ADOC_5mm": 38.90378876436484
+          },
+          "near_zero_baseline_regimes": []
+        }
+      },
+      "objective": 31.307847455331153,
+      "failure_reason": null,
+      "role": "default_baseline"
+    }
+  ]
+}

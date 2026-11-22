@@ -1,0 +1,533 @@
+{
+  "overall_balanced_accuracy": 0.375,
+  "overall_f1_macro": 0.2719298245614035,
+  "overall_log_loss": 1.0991165181010023,
+  "overall_error": 0.625,
+  "task_type": "classification",
+  "class_labels": [
+    0,
+    1,
+    2
+  ],
+  "samples": 48,
+  "class_counts": {
+    "0": 16,
+    "1": 16,
+    "2": 16
+  },
+  "missing_classes": [],
+  "confusion_matrix": [
+    [
+      3,
+      0,
+      13
+    ],
+    [
+      0,
+      0,
+      16
+    ],
+    [
+      0,
+      1,
+      15
+    ]
+  ],
+  "class_recall": {
+    "0": 0.1875,
+    "1": 0.0,
+    "2": 0.9375
+  },
+  "class_precision": {
+    "0": 1.0,
+    "1": 0.0,
+    "2": 0.3409090909090909
+  },
+  "minority_class_samples": 16,
+  "sparse_class_warning": null,
+  "balanced_accuracy_scope": "classes observed in this evaluation subset",
+  "regimes": {
+    "N09_M07_F10": {
+      "balanced_accuracy": 0.4166666666666667,
+      "f1_macro": 0.3111111111111111,
+      "log_loss": 1.1042888057091946,
+      "error": 0.5833333333333333,
+      "samples": 24,
+      "class_counts": {
+        "0": 8,
+        "1": 8,
+        "2": 8
+      },
+      "class_recall": {
+        "0": 0.25,
+        "1": 0.0,
+        "2": 1.0
+      },
+      "class_precision": {
+        "0": 1.0,
+        "1": null,
+        "2": 0.36363636363636365
+      },
+      "missing_classes": [],
+      "minority_class_samples": 8,
+      "sparse_class_warning": null,
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          6
+        ],
+        [
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          0,
+          8
+        ]
+      ],
+      "group_errors": [
+        {
+          "group_id": "K002",
+          "samples": 8,
+          "balanced_error": 0.75,
+          "class_weighted_error_sum": 6.0
+        },
+        {
+          "group_id": "KA15",
+          "samples": 8,
+          "balanced_error": 1.0,
+          "class_weighted_error_sum": 8.0
+        },
+        {
+          "group_id": "KI14",
+          "samples": 8,
+          "balanced_error": 0.0,
+          "class_weighted_error_sum": 0.0
+        }
+      ],
+      "group_kind": "physical_bearings",
+      "observed_group_count": 3,
+      "group_records_omitted_reason": null,
+      "effective_independent_groups": 3,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "physical bearings"
+    },
+    "N15_M07_F10": {
+      "balanced_accuracy": 0.3333333333333333,
+      "f1_macro": 0.22962962962962963,
+      "log_loss": 1.09394423049281,
+      "error": 0.6666666666666667,
+      "samples": 24,
+      "class_counts": {
+        "0": 8,
+        "1": 8,
+        "2": 8
+      },
+      "class_recall": {
+        "0": 0.125,
+        "1": 0.0,
+        "2": 0.875
+      },
+      "class_precision": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.3181818181818182
+      },
+      "missing_classes": [],
+      "minority_class_samples": 8,
+      "sparse_class_warning": null,
+      "balanced_accuracy_scope": "classes observed in this evaluation subset",
+      "confusion_matrix": [
+        [
+          1,
+          0,
+          7
+        ],
+        [
+          0,
+          0,
+          8
+        ],
+        [
+          0,
+          1,
+          7
+        ]
+      ],
+      "group_errors": [
+        {
+          "group_id": "K002",
+          "samples": 8,
+          "balanced_error": 0.875,
+          "class_weighted_error_sum": 7.0
+        },
+        {
+          "group_id": "KA15",
+          "samples": 8,
+          "balanced_error": 1.0,
+          "class_weighted_error_sum": 8.0
+        },
+        {
+          "group_id": "KI14",
+          "samples": 8,
+          "balanced_error": 0.125,
+          "class_weighted_error_sum": 1.0
+        }
+      ],
+      "group_kind": "physical_bearings",
+      "observed_group_count": 3,
+      "group_records_omitted_reason": null,
+      "effective_independent_groups": 3,
+      "balanced_error_interval": null,
+      "interval_method": null,
+      "independent_evidence_kind": "physical bearings"
+    }
+  },
+  "train_metrics": {
+    "overall_balanced_accuracy": 0.8541666666666666,
+    "overall_f1_macro": 0.8562203228869896,
+    "overall_log_loss": 1.0487382416869926,
+    "overall_error": 0.14583333333333337,
+    "task_type": "classification",
+    "class_labels": [
+      0,
+      1,
+      2
+    ],
+    "samples": 48,
+    "class_counts": {
+      "0": 16,
+      "1": 16,
+      "2": 16
+    },
+    "missing_classes": [],
+    "confusion_matrix": [
+      [
+        16,
+        0,
+        0
+      ],
+      [
+        5,
+        11,
+        0
+      ],
+      [
+        2,
+        0,
+        14
+      ]
+    ],
+    "class_recall": {
+      "0": 1.0,
+      "1": 0.6875,
+      "2": 0.875
+    },
+    "class_precision": {
+      "0": 0.6956521739130435,
+      "1": 1.0,
+      "2": 1.0
+    },
+    "minority_class_samples": 16,
+    "sparse_class_warning": null,
+    "balanced_accuracy_scope": "classes observed in this evaluation subset",
+    "regimes": {
+      "N09_M07_F10": {
+        "balanced_accuracy": 1.0,
+        "f1_macro": 1.0,
+        "log_loss": 1.038224929435267,
+        "error": 0.0,
+        "samples": 24,
+        "class_counts": {
+          "0": 8,
+          "1": 8,
+          "2": 8
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 1.0,
+          "2": 1.0
+        },
+        "class_precision": {
+          "0": 1.0,
+          "1": 1.0,
+          "2": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 8,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            8
+          ]
+        ],
+        "group_errors": [
+          {
+            "group_id": "K001",
+            "samples": 8,
+            "balanced_error": 0.0,
+            "class_weighted_error_sum": 0.0
+          },
+          {
+            "group_id": "KA04",
+            "samples": 8,
+            "balanced_error": 0.0,
+            "class_weighted_error_sum": 0.0
+          },
+          {
+            "group_id": "KI04",
+            "samples": 8,
+            "balanced_error": 0.0,
+            "class_weighted_error_sum": 0.0
+          }
+        ],
+        "group_kind": "physical_bearings",
+        "observed_group_count": 3,
+        "group_records_omitted_reason": null,
+        "effective_independent_groups": 3,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "physical bearings"
+      },
+      "N15_M07_F10": {
+        "balanced_accuracy": 0.7083333333333334,
+        "f1_macro": 0.699416525503482,
+        "log_loss": 1.0592515539387184,
+        "error": 0.29166666666666663,
+        "samples": 24,
+        "class_counts": {
+          "0": 8,
+          "1": 8,
+          "2": 8
+        },
+        "class_recall": {
+          "0": 1.0,
+          "1": 0.375,
+          "2": 0.75
+        },
+        "class_precision": {
+          "0": 0.5333333333333333,
+          "1": 1.0,
+          "2": 1.0
+        },
+        "missing_classes": [],
+        "minority_class_samples": 8,
+        "sparse_class_warning": null,
+        "balanced_accuracy_scope": "classes observed in this evaluation subset",
+        "confusion_matrix": [
+          [
+            8,
+            0,
+            0
+          ],
+          [
+            5,
+            3,
+            0
+          ],
+          [
+            2,
+            0,
+            6
+          ]
+        ],
+        "group_errors": [
+          {
+            "group_id": "K001",
+            "samples": 8,
+            "balanced_error": 0.0,
+            "class_weighted_error_sum": 0.0
+          },
+          {
+            "group_id": "KA04",
+            "samples": 8,
+            "balanced_error": 0.625,
+            "class_weighted_error_sum": 5.0
+          },
+          {
+            "group_id": "KI04",
+            "samples": 8,
+            "balanced_error": 0.25,
+            "class_weighted_error_sum": 2.0
+          }
+        ],
+        "group_kind": "physical_bearings",
+        "observed_group_count": 3,
+        "group_records_omitted_reason": null,
+        "effective_independent_groups": 3,
+        "balanced_error_interval": null,
+        "interval_method": null,
+        "independent_evidence_kind": "physical bearings"
+      }
+    }
+  },
+  "model_name": "lightgbm",
+  "model_version": "classification-0.1.0",
+  "model_library": "lightgbm",
+  "model_library_version": "4.6.0",
+  "seed": 42,
+  "learning_curve": [
+    {
+      "iteration": 1,
+      "train_loss": 1.0728779913724205,
+      "validation_loss": 1.1000880965790587
+    },
+    {
+      "iteration": 2,
+      "train_loss": 1.0487382416869928,
+      "validation_loss": 1.0991165181010019
+    },
+    {
+      "iteration": 3,
+      "train_loss": 1.0258002035630924,
+      "validation_loss": 1.1083104108843875
+    },
+    {
+      "iteration": 4,
+      "train_loss": 1.0027095534149966,
+      "validation_loss": 1.1105608949069996
+    },
+    {
+      "iteration": 5,
+      "train_loss": 0.98097534072086,
+      "validation_loss": 1.112349985036414
+    },
+    {
+      "iteration": 6,
+      "train_loss": 0.9599763199125219,
+      "validation_loss": 1.1187355673091115
+    },
+    {
+      "iteration": 7,
+      "train_loss": 0.9392144999095381,
+      "validation_loss": 1.1162598338852667
+    },
+    {
+      "iteration": 8,
+      "train_loss": 0.9194383793658897,
+      "validation_loss": 1.1295637680220376
+    },
+    {
+      "iteration": 9,
+      "train_loss": 0.9000336225124871,
+      "validation_loss": 1.1438604389646345
+    },
+    {
+      "iteration": 10,
+      "train_loss": 0.8814742390215952,
+      "validation_loss": 1.1483680793294424
+    },
+    {
+      "iteration": 11,
+      "train_loss": 0.8633065830928123,
+      "validation_loss": 1.1440212406480066
+    },
+    {
+      "iteration": 12,
+      "train_loss": 0.8441923701287083,
+      "validation_loss": 1.1443174684511204
+    },
+    {
+      "iteration": 13,
+      "train_loss": 0.8256966081332736,
+      "validation_loss": 1.1546037246949246
+    },
+    {
+      "iteration": 14,
+      "train_loss": 0.8078504222735076,
+      "validation_loss": 1.1523972149224952
+    },
+    {
+      "iteration": 15,
+      "train_loss": 0.7900414522831021,
+      "validation_loss": 1.1560547374784604
+    },
+    {
+      "iteration": 16,
+      "train_loss": 0.7701484666991188,
+      "validation_loss": 1.1638508968970571
+    },
+    {
+      "iteration": 17,
+      "train_loss": 0.7509756216300835,
+      "validation_loss": 1.1623962392202545
+    },
+    {
+      "iteration": 18,
+      "train_loss": 0.7303497746987674,
+      "validation_loss": 1.1661554709105582
+    },
+    {
+      "iteration": 19,
+      "train_loss": 0.71265860805442,
+      "validation_loss": 1.171819399711265
+    },
+    {
+      "iteration": 20,
+      "train_loss": 0.6953135439580097,
+      "validation_loss": 1.180720598780544
+    },
+    {
+      "iteration": 21,
+      "train_loss": 0.6736256400998667,
+      "validation_loss": 1.175642912298857
+    },
+    {
+      "iteration": 22,
+      "train_loss": 0.6519711686015149,
+      "validation_loss": 1.1819691854600165
+    }
+  ],
+  "learning_curve_reason": null,
+  "learning_curve_metric": "log_loss",
+  "preprocessing": {
+    "fit_split": "train",
+    "numeric_imputation": "train median; empty train columns=0",
+    "categorical_encoding": "train-only one-hot; unknown categories ignored",
+    "categories": {},
+    "transformed_features": 36
+  },
+  "data_origin": "real_measurement",
+  "robust_objective": 0.6749011786226624,
+  "normalized_regime_error": {
+    "N09_M07_F10": 0.6363636294214876,
+    "N15_M07_F10": 0.6956521666540644
+  },
+  "worst_normalized_error": 0.6956521666540644,
+  "mean_normalized_error": 0.6660078980377759,
+  "weighted_regime_error": 0.625,
+  "worst_regime_error": 0.6666666666666667,
+  "regime_error_std": 0.04166666666666674,
+  "robustness": {
+    "alpha": 0.3,
+    "epsilon": 1e-08,
+    "weights": {
+      "N09_M07_F10": 0.5,
+      "N15_M07_F10": 0.5
+    },
+    "baseline_errors": {
+      "N09_M07_F10": 0.9166666666666666,
+      "N15_M07_F10": 0.9583333333333334
+    },
+    "error_definition": "1 - balanced_accuracy",
+    "near_zero_baseline_regimes": []
+  }
+}

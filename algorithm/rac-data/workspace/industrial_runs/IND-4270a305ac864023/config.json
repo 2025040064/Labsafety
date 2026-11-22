@@ -1,0 +1,16 @@
+{
+  "dataset_key": "paderborn",
+  "model_name": "lightgbm",
+  "algorithm": "tpe",
+  "seed": 71,
+  "max_trials": 24,
+  "timeout_seconds": 300.0,
+  "model_config": {
+    "n_estimators": 120,
+    "early_stopping_rounds": 20,
+    "n_jobs": 2
+  },
+  "data_path": "F:\\A_LIU_Astrspire\\A_competition\\工业制造场景下的模型训练与超参数优化系统\\datasets\\raw\\paderborn",
+  "evaluation_partition": "validation",
+  "test_accessed": false
+}

@@ -1,0 +1,111 @@
+{
+  "id": "EXP-085bd05d7a374466",
+  "algorithm": "random",
+  "status": "cancelled",
+  "created_at": "2026-11-09T12:36:40.755054+00:00",
+  "dataset_id": "uci_steel_energy_851",
+  "data_sha256": "9b1cee6f9cb9cd9df2b95814ca90a9a2ff15b7f5f1fba0fae3c643e82072eacc",
+  "target_unit": "kWh",
+  "app_version": "0.3.0",
+  "algorithm_version": "baseline-1.0",
+  "schema_version": 1,
+  "metrics": {},
+  "best_params": {},
+  "best_value": null,
+  "best_trial": null,
+  "duration_seconds": 0.2780621000001702,
+  "artifacts": {
+    "quality_audit": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\workspace\\experiments\\EXP-085bd05d7a374466\\quality_audit.json"
+  },
+  "directory": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\workspace\\experiments\\EXP-085bd05d7a374466",
+  "config": {
+    "schema_version": 1,
+    "experiment": {
+      "name": "steel_calendar_regression",
+      "seed": 42
+    },
+    "data": {
+      "dataset_id": "steel_energy",
+      "path": "F:\\A_LIU_Astrspire\\A_competition\\Labsafety\\rac-data\\datasets\\raw\\steel_energy\\Steel_industry_data.csv"
+    },
+    "model": {
+      "name": "lightgbm",
+      "n_estimators": 10,
+      "early_stopping_rounds": 30,
+      "n_jobs": 2
+    },
+    "optimization": {
+      "algorithm": "random",
+      "max_trials": 128,
+      "timeout_seconds": 20.0,
+      "search_space": {
+        "learning_rate": {
+          "type": "float",
+          "low": 0.01,
+          "high": 0.2,
+          "log": true
+        },
+        "num_leaves": {
+          "type": "int",
+          "low": 8,
+          "high": 64
+        },
+        "max_depth": {
+          "type": "int",
+          "low": 3,
+          "high": 10
+        },
+        "min_child_samples": {
+          "type": "int",
+          "low": 20,
+          "high": 150
+        },
+        "feature_fraction": {
+          "type": "float",
+          "low": 0.6,
+          "high": 1.0
+        },
+        "lambda_l2": {
+          "type": "float",
+          "low": 1e-05,
+          "high": 10.0,
+          "log": true
+        }
+      },
+      "rac_hpo": {
+        "warmup_trials": 16,
+        "minimum_history": 16,
+        "forward_holdout": 5,
+        "min_forward_train": 8,
+        "surrogate_trees": 48,
+        "candidates": 128,
+        "refit_interval": 4,
+        "exploration_fraction": 0.2,
+        "local_fraction": 0.5,
+        "beta": 0.5,
+        "gamma": 0.5,
+        "t0": 0.01,
+        "q_max": 0.5,
+        "shrinkage_k": 5.0,
+        "weakness_threshold": 1.0,
+        "minimum_rank_correlation": 0.0,
+        "maximum_mae_ratio": 1.25,
+        "maximum_overall_degradation": 0.1
+      },
+      "min_resource": 10,
+      "reduction_factor": 3
+    },
+    "robustness": {
+      "alpha": 0.3,
+      "epsilon": 1e-08,
+      "minimum_independent_groups": 5
+    },
+    "output": {
+      "save_trials": true,
+      "save_model": true
+    }
+  },
+  "failure_reason": "Cancelled before training",
+  "ended_at": "2026-11-09T12:36:41.032665+00:00",
+  "trials": []
+}

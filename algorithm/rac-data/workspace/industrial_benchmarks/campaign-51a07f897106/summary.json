@@ -1,0 +1,556 @@
+{
+  "summary": [
+    {
+      "dataset_key": "ai4i_2020",
+      "model_name": "lightgbm",
+      "algorithm": "rac_hpo",
+      "run_ids": [
+        "IND-dec274e4d2444fa7",
+        "IND-8f9f382eb1bb46b0",
+        "IND-90ae8a82ad1d4bf4"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.7475513877048403,
+        "std": 0.006715194913357981,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.8174972541528431,
+        "std": 0.01209735992447292,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.044444422102380816,
+        "std": 0.002404959074055269,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.25244861229515964,
+        "std": 0.006715194913357981,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.9907508540498912,
+        "std": 0.014840807387306329,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 3.9952720333330944,
+        "std": 0.18733860126003715,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 3.4935370999998363,
+        "std": 0.1990107916688869,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "ai4i_2020",
+      "model_name": "lightgbm",
+      "algorithm": "random",
+      "run_ids": [
+        "IND-42e5a71919c6432d",
+        "IND-aa47c18d1c214a47",
+        "IND-b78a6eaad75146e3"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.7398882258217296,
+        "std": 0.01669373144131784,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.8058776688929219,
+        "std": 0.010540543712915252,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.044186163249809916,
+        "std": 0.0038034373076069766,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.2601117741782703,
+        "std": 0.01669373144131784,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 1.01925800864705,
+        "std": 0.06655373614573099,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 3.965630666666281,
+        "std": 0.20762274789366023,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 3.4531464999993964,
+        "std": 0.21151290179770826,
+        "count": 3
+      }
+    },
+    {
+      "dataset_key": "ai4i_2020",
+      "model_name": "lightgbm",
+      "algorithm": "tpe",
+      "run_ids": [
+        "IND-02463131f9554e0a",
+        "IND-778eb7793aa34947",
+        "IND-8db3e23d66224ca8"
+      ],
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.7473808847210381,
+        "std": 0.006857982737177119,
+        "count": 3
+      },
+      "overall_f1_macro": {
+        "mean": 0.8144180671105288,
+        "std": 0.013847574702606018,
+        "count": 3
+      },
+      "overall_log_loss": {
+        "mean": 0.04435130702957932,
+        "std": 0.002535901079388511,
+        "count": 3
+      },
+      "overall_error": {
+        "mean": 0.25261911527896186,
+        "std": 0.006857982737177119,
+        "count": 3
+      },
+      "robust_objective": {
+        "mean": 0.9912108778793108,
+        "std": 0.015223149136107898,
+        "count": 3
+      },
+      "duration_seconds": {
+        "mean": 3.83638366666734,
+        "std": 0.2568287913917939,
+        "count": 3
+      },
+      "search_seconds": {
+        "mean": 3.324556533333331,
+        "std": 0.23503119404870096,
+        "count": 3
+      }
+    }
+  ],
+  "baseline_summary": [
+    {
+      "dataset_key": "ai4i_2020",
+      "model_name": "lightgbm",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-b389382822314d43"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.7434214265416311,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.8064231661283557,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 0.042886324304061404,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.2565785734583689,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 0.476772299998629,
+        "std": null,
+        "count": 1
+      }
+    },
+    {
+      "dataset_key": "ai4i_2020",
+      "model_name": "random_forest",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-4aa47ffe31dc428a"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.76538789428815,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.8210130660461786,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 0.04776809761020048,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.23461210571184998,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 1.2449421000001166,
+        "std": null,
+        "count": 1
+      }
+    },
+    {
+      "dataset_key": "ai4i_2020",
+      "model_name": "xgboost",
+      "algorithm": "baseline",
+      "run_ids": [
+        "IND-26b5d09a824b4b80"
+      ],
+      "seeds": [
+        42
+      ],
+      "descriptive_only": true,
+      "comparison_scope": "successful runs only; not a fairness proof or ranking",
+      "overall_balanced_accuracy": {
+        "mean": 0.7545325376527423,
+        "std": null,
+        "count": 1
+      },
+      "overall_f1_macro": {
+        "mean": 0.8161348721430188,
+        "std": null,
+        "count": 1
+      },
+      "overall_log_loss": {
+        "mean": 0.03924167652052432,
+        "std": null,
+        "count": 1
+      },
+      "overall_error": {
+        "mean": 0.2454674623472577,
+        "std": null,
+        "count": 1
+      },
+      "duration_seconds": {
+        "mean": 0.6480547999999544,
+        "std": null,
+        "count": 1
+      }
+    }
+  ],
+  "fair_comparisons": [
+    {
+      "dataset_key": "ai4i_2020",
+      "model_name": "lightgbm",
+      "seeds": [
+        42,
+        71,
+        103
+      ],
+      "run_ids": [
+        "IND-42e5a71919c6432d",
+        "IND-02463131f9554e0a",
+        "IND-dec274e4d2444fa7",
+        "IND-aa47c18d1c214a47",
+        "IND-778eb7793aa34947",
+        "IND-8f9f382eb1bb46b0",
+        "IND-b78a6eaad75146e3",
+        "IND-8db3e23d66224ca8",
+        "IND-90ae8a82ad1d4bf4"
+      ],
+      "descriptive_only": false,
+      "paired_all_requested_seeds": true,
+      "data_sha256": "d53de7a50257692814e769c6c7af63b78ce1c5a34c4ec4bd64686654a7e0a673",
+      "split_fingerprint": "75b56ea7978fa3759c74e97a71b2efd73b9afbdbe5147b0effb5b25033d2e91b",
+      "budget": {
+        "max_trials": 24,
+        "timeout_seconds": 300.0,
+        "baseline_in_search_budget": false,
+        "model_resources": {
+          "n_estimators": 120,
+          "early_stopping_rounds": 20,
+          "n_jobs": 2
+        },
+        "running_trial_can_overrun_deadline": true
+      },
+      "objective_definition": {
+        "name": "fixed_baseline_normalized_j",
+        "alpha": 0.3,
+        "epsilon": 1e-08,
+        "error": "1 - balanced_accuracy",
+        "weights": "validation sample proportions",
+        "formula": "0.7 * weighted_mean(error_g / (baseline_error_g + 1e-8)) + 0.3 * max(error_g / (baseline_error_g + 1e-8))",
+        "selection_metric_shared_by_all_methods": true
+      },
+      "search_space": {
+        "learning_rate": {
+          "type": "float",
+          "low": 0.01,
+          "high": 0.2,
+          "log": true
+        },
+        "num_leaves": {
+          "type": "int",
+          "low": 8,
+          "high": 64
+        },
+        "max_depth": {
+          "type": "int",
+          "low": 3,
+          "high": 10
+        },
+        "min_child_samples": {
+          "type": "int",
+          "low": 5,
+          "high": 80
+        },
+        "feature_fraction": {
+          "type": "float",
+          "low": 0.6,
+          "high": 1.0
+        },
+        "lambda_l2": {
+          "type": "float",
+          "low": 1e-05,
+          "high": 10.0,
+          "log": true
+        }
+      },
+      "algorithms": {
+        "random": {
+          "run_ids": [
+            "IND-42e5a71919c6432d",
+            "IND-aa47c18d1c214a47",
+            "IND-b78a6eaad75146e3"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.7398882258217296,
+            "std": 0.01669373144131784,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.8058776688929219,
+            "std": 0.010540543712915252,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.044186163249809916,
+            "std": 0.0038034373076069766,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.2601117741782703,
+            "std": 0.01669373144131784,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 1.01925800864705,
+            "std": 0.06655373614573099,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 3.965630666666281,
+            "std": 0.20762274789366023,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 3.4531464999993964,
+            "std": 0.21151290179770826,
+            "count": 3
+          }
+        },
+        "tpe": {
+          "run_ids": [
+            "IND-02463131f9554e0a",
+            "IND-778eb7793aa34947",
+            "IND-8db3e23d66224ca8"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.7473808847210381,
+            "std": 0.006857982737177119,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.8144180671105288,
+            "std": 0.013847574702606018,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.04435130702957932,
+            "std": 0.002535901079388511,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.25261911527896186,
+            "std": 0.006857982737177119,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.9912108778793108,
+            "std": 0.015223149136107898,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 3.83638366666734,
+            "std": 0.2568287913917939,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 3.324556533333331,
+            "std": 0.23503119404870096,
+            "count": 3
+          }
+        },
+        "rac_hpo": {
+          "run_ids": [
+            "IND-dec274e4d2444fa7",
+            "IND-8f9f382eb1bb46b0",
+            "IND-90ae8a82ad1d4bf4"
+          ],
+          "seeds": [
+            42,
+            71,
+            103
+          ],
+          "overall_balanced_accuracy": {
+            "mean": 0.7475513877048403,
+            "std": 0.006715194913357981,
+            "count": 3
+          },
+          "overall_f1_macro": {
+            "mean": 0.8174972541528431,
+            "std": 0.01209735992447292,
+            "count": 3
+          },
+          "overall_log_loss": {
+            "mean": 0.044444422102380816,
+            "std": 0.002404959074055269,
+            "count": 3
+          },
+          "overall_error": {
+            "mean": 0.25244861229515964,
+            "std": 0.006715194913357981,
+            "count": 3
+          },
+          "robust_objective": {
+            "mean": 0.9907508540498912,
+            "std": 0.014840807387306329,
+            "count": 3
+          },
+          "duration_seconds": {
+            "mean": 3.9952720333330944,
+            "std": 0.18733860126003715,
+            "count": 3
+          },
+          "search_seconds": {
+            "mean": 3.4935370999998363,
+            "std": 0.1990107916688869,
+            "count": 3
+          }
+        }
+      },
+      "per_seed": [
+        {
+          "seed": 42,
+          "baseline_errors": {
+            "H": 0.5027932960893855,
+            "L": 0.22812379110251446,
+            "M": 0.3008319467554077
+          },
+          "weights": {
+            "H": 0.0905,
+            "L": 0.604,
+            "M": 0.3055
+          },
+          "run_ids": {
+            "random": "IND-42e5a71919c6432d",
+            "tpe": "IND-02463131f9554e0a",
+            "rac_hpo": "IND-dec274e4d2444fa7"
+          }
+        },
+        {
+          "seed": 71,
+          "baseline_errors": {
+            "H": 0.5027932960893855,
+            "L": 0.22812379110251446,
+            "M": 0.3008319467554077
+          },
+          "weights": {
+            "H": 0.0905,
+            "L": 0.604,
+            "M": 0.3055
+          },
+          "run_ids": {
+            "random": "IND-aa47c18d1c214a47",
+            "tpe": "IND-778eb7793aa34947",
+            "rac_hpo": "IND-8f9f382eb1bb46b0"
+          }
+        },
+        {
+          "seed": 103,
+          "baseline_errors": {
+            "H": 0.5027932960893855,
+            "L": 0.22812379110251446,
+            "M": 0.3008319467554077
+          },
+          "weights": {
+            "H": 0.0905,
+            "L": 0.604,
+            "M": 0.3055
+          },
+          "run_ids": {
+            "random": "IND-b78a6eaad75146e3",
+            "tpe": "IND-8db3e23d66224ca8",
+            "rac_hpo": "IND-90ae8a82ad1d4bf4"
+          }
+        }
+      ]
+    }
+  ],
+  "noncomparable": []
+}

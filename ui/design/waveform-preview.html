@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>智训引擎 · 实时波形示意图</title>
+<style>
+body{margin:0;padding:32px 20px 48px;background:#f3f6fa;color:#122338;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+.wrap{max-width:520px;margin:0 auto}
+h1{font-size:20px;font-weight:500;margin:0 0 6px}
+.sub{font-size:13px;color:#6b7280;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:16px;margin-bottom:20px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.head b{font-size:14px;font-weight:500}
+.chip{font-size:12px;background:#E6F1FB;color:#185FA5;border-radius:6px;padding:2px 8px}
+.kpis{display:flex;gap:12px;margin:12px 0}
+.kpi{flex:1;background:#f5f7fa;border-radius:8px;padding:10px}
+.kpi span{display:block;font-size:13px;color:#6b7280}
+.kpi strong{display:block;font-size:24px;font-weight:500}
+.lg{display:flex;align-items:center;gap:5px;font-size:12px;color:#6b7280;margin-right:14px}
+.sw{width:12px;height:3px;border-radius:2px}
+.note{font-size:12px;color:#9ca3af}
+button{font-size:13px;margin:8px 8px 0 0}
+h2{font-size:15px;font-weight:500;margin:28px 0 10px}
+table{width:100%;border-collapse:collapse;font-size:13px;background:#fff;border-radius:10px;overflow:hidden}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid #e5e7eb;vertical-align:top}
+th{background:#f8fafc;font-weight:500;color:#0C447C}
+tr:last-child td{border-bottom:0}
+.box{font-size:13px;color:#4b5563;background:#fff;border-radius:10px;padding:14px 16px;margin-top:12px}
+code{font-family:Consolas,Monaco,monospace;font-size:12px;background:#f1efe8;padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>实时波形 · 示意图</h1>
+<p class="sub">双通道波形随时间向左滚动，右侧为扫描线与当前点，可暂停、从头回放。<strong>已落地到小程序代码（2026-11-13）</strong>；本文件里的波形为演示数据，小程序里回放的是真实序列。</p>
+
+<div class="card">
+<div class="head"><b>实时波形 · 验证损失</b><span class="chip" id="wState">采集中</span></div>
+<div class="kpis">
+<div class="kpi"><span>当前值</span><strong id="wVal">0.0842</strong></div>
+<div class="kpi"><span>采样点</span><strong id="wCount">90</strong></div>
+</div>
+<svg id="wScope" viewBox="0 0 360 170" role="img" aria-label="双通道实时波形，随时间向左滚动" style="display:block;width:100%;height:auto;">
+<rect x="0" y="0" width="360" height="170" fill="#ffffff"/>
+<line x1="8" y1="8" x2="344" y2="8" stroke="#E5E7EB"/><line x1="8" y1="46" x2="344" y2="46" stroke="#E5E7EB"/>
+<line x1="8" y1="84" x2="344" y2="84" stroke="#E5E7EB"/><line x1="8" y1="122" x2="344" y2="122" stroke="#E5E7EB"/>
+<line x1="8" y1="162" x2="344" y2="162" stroke="#E5E7EB"/>
+<line x1="8" y1="8" x2="8" y2="162" stroke="#E5E7EB"/><line x1="80" y1="8" x2="80" y2="162" stroke="#E5E7EB"/>
+<line x1="152" y1="8" x2="152" y2="162" stroke="#E5E7EB"/><line x1="224" y1="8" x2="224" y2="162" stroke="#E5E7EB"/>
+<line x1="296" y1="8" x2="296" y2="162" stroke="#E5E7EB"/>
+<path id="wA" d="M8,105 L40,92 L72,78 L104,88 L136,110 L168,122 L200,100 L232,76 L264,68 L296,84 L328,104 L344,96" fill="none" stroke="#2563eb" stroke-width="2"/>
+<path id="wB" d="M8,118 L40,108 L72,96 L104,104 L136,124 L168,134 L200,116 L232,96 L264,88 L296,100 L328,116 L344,110" fill="none" stroke="#BA7517" stroke-width="2"/>
+<line x1="344" y1="8" x2="344" y2="162" stroke="#9CA3AF" stroke-width="1" stroke-dasharray="3 3"/>
+<circle id="wDotA" cx="344" cy="96" r="3.5" fill="#2563eb"/>
+<circle id="wDotB" cx="344" cy="110" r="3.5" fill="#BA7517"/>
+<text x="8" y="12" font-size="11" fill="#9CA3AF">高</text>
+<text x="8" y="160" font-size="11" fill="#9CA3AF">低</text>
+<text x="344" y="168" font-size="11" fill="#9CA3AF" text-anchor="end">时间 →</text>
+</svg>
+<div style="display:flex;margin:8px 0 4px;">
+<span class="lg"><span class="sw" style="background:#2563eb"></span>训练损失</span>
+<span class="lg"><span class="sw" style="background:#BA7517"></span>验证损失</span>
+</div>
+<div class="note">演示波形 · 版式示意，非真实采集</div>
+<button id="wToggle">暂停</button><button id="wReplay">从头回放</button>
+</div>
+
+<h2>项目里现有的数据通道</h2>
+<table>
+<tr><th>来源</th><th>真实内容</th><th>能否做实时波形</th></tr>
+<tr><td><code>/api/jobs/{id}/events</code></td><td>started / trial_completed / finished 等离散事件，finished 里带一次 <code>best_value</code></td><td>只有离散点，画不出连续波形</td></tr>
+<tr><td><code>/api/jobs/{id}</code> 的 progress</td><td>任务最新状态，小程序每 1.5 秒轮询一次</td><td>通道现成，但缺连续数值</td></tr>
+<tr><td><code>metrics.learning_curve</code></td><td>训练结束后保存的采样点，例如 IND 实验有 10 个 <code>{iteration, train_loss, validation_loss}</code></td><td>可逐点回放成滚动波形，数据是真实的</td></tr>
+<tr><td>工业原始传感器信号</td><td>数据集里有振动、电流等时序数据，但小程序接口没有暴露原始序列</td><td>需要另加接口</td></tr>
+</table>
+
+<h2>两种落地方式</h2>
+<div class="box">
+<b>回放型（不用改后端）</b>：把 <code>learning_curve</code> 的真实采样点按固定间隔逐点推入波形，配合 <code>/api/jobs/{id}/events</code> 的任务事件标注阶段。视觉上是实时滚动，数据全部真实，适合答辩展示已有的实验过程。<br><br>
+<b>真正实时（要改后端）</b>：在训练过程的 <code>progress_callback</code> 里补上数值指标（当前迭代的 loss / MAE），写入 <code>job_events</code>；小程序沿用现有 1.5 秒轮询，把新数值追加到波形末端。这样任务跑的时候波形就跟着动，但会改动 <code>backend/</code> 的服务层，需要先确认。
+</div>
+
+<div class="box">
+约束：只画真实数值，不插值、不拟合、不补点；测试集只在显式最终评估读取；回归与分类指标分开显示；无数据显示空态，不生成排名。
+</div>
+</div>
+<script>
+(function(){
+var N=90,L=8,R=344,TOP=8,BOT=162,data=[],count=90,timer=null,running=true;
+function gen(i,p){return 0.5+0.17*Math.sin(i*0.15+p)+0.07*Math.sin(i*0.43+p*1.6)+0.025*Math.sin(i*0.93+p*0.7);}
+function fill(){data=[];for(var i=0;i<N;i++)data.push({a:gen(i,0),b:gen(i,0.9)*0.96+0.02});}
+function el(id){return document.getElementById(id);}
+function draw(){var step=(R-L)/(N-1),y=function(v){return BOT-(BOT-TOP)*v;};
+var pa=data.map(function(d,i){return (i?'L':'M')+(L+i*step).toFixed(1)+','+y(d.a).toFixed(1);}).join(' ');
+var pb=data.map(function(d,i){return (i?'L':'M')+(L+i*step).toFixed(1)+','+y(d.b).toFixed(1);}).join(' ');
+el('wA').setAttribute('d',pa);el('wB').setAttribute('d',pb);
+var last=data[data.length-1];el('wDotA').setAttribute('cy',y(last.a));el('wDotB').setAttribute('cy',y(last.b));
+el('wVal').textContent=(0.06+0.06*last.b).toFixed(4);el('wCount').textContent=String(count);}
+function tick(){var i=count+90;data.shift();data.push({a:gen(i,0),b:gen(i,0.9)*0.96+0.02});count+=1;draw();}
+function start(){if(timer)return;timer=setInterval(tick,180);running=true;el('wState').textContent='采集中';el('wToggle').textContent='暂停';}
+function stop(){clearInterval(timer);timer=null;running=false;el('wState').textContent='已暂停';el('wToggle').textContent='继续';}
+fill();draw();start();
+el('wToggle').addEventListener('click',function(){running?stop():start();});
+el('wReplay').addEventListener('click',function(){count=90;fill();draw();});
+})();
+</script>
+</body>
+</html>

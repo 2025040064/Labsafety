@@ -1,0 +1,37 @@
+{
+  "overall_mae": 20.656474543396364,
+  "regimes": {
+    "weekday": {
+      "mae": 25.557398879706298,
+      "samples": 4992,
+      "independent_groups": 52,
+      "reliability": "descriptive_only"
+    },
+    "weekend": {
+      "mae": 7.9140712689905355,
+      "samples": 1920,
+      "independent_groups": 20,
+      "reliability": "descriptive_only"
+    }
+  },
+  "robust_objective": 0.9999999994391108,
+  "worst_normalized_mae": 0.9999999996087239,
+  "normalized_regime_mae": {
+    "weekday": 0.9999999996087239,
+    "weekend": 0.9999999987364279
+  },
+  "robustness": {
+    "alpha": 0.3,
+    "epsilon": 1e-08,
+    "weights": {
+      "weekday": 0.7222222222222222,
+      "weekend": 0.2777777777777778
+    },
+    "weight_source": "explicit",
+    "baseline_errors": {
+      "weekday": 25.557398879706298,
+      "weekend": 7.9140712689905355
+    },
+    "near_zero_baseline_regimes": []
+  }
+}
