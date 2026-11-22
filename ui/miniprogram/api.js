@@ -38,6 +38,13 @@ function demoJobId(action) {
 function simulatedJob(jobId) {
   const job = demoJobs[jobId]
   if (!job) return null
+  if (job.cancelled) {
+    return {
+      id: jobId, action: job.action, status: 'cancelled', created: job.created / 1000,
+      error: null, progress: null, result: null,
+      events: [{ type: 'demo', message: '演示任务已取消' }]
+    }
+  }
   const elapsed = Date.now() - job.created
   // 演示任务 2.5 秒后完成，让 watch 能看到 running → completed 的过渡
   const done = elapsed >= 2500

@@ -13,7 +13,8 @@ const initialConfig = () => JSON.parse(JSON.stringify(C.pageConfig))
 Page({
   data: {
     tabs: C.tabs, tasks: C.tasks, task: 0, runChoices: [], recentRuns: [],
-    dashboard: null, datasets: [], datasetPreview: null,
+    dashboard: null, datasets: [], datasetPreview: null, datasetPreviewId: '',
+    datasetPreviewError: '', industrialAdvanced: false,
     regression: C.regression, industrial: C.industrial, methods: C.methods,
     industrialMethods: C.industrialMethods, models: C.models, decisions: C.decisions,
     scenarios: C.scenarios, chartKinds: C.chartKinds,
@@ -26,6 +27,7 @@ Page({
     model: 0, decision: 0, scenario: 0, llmModel: 0, authorize: false, manual: false,
     upload: null, csvInspection: null, csvTarget: '', csvGroup: '', csvFeatures: '',
     error: '', output: '', sections: [], detail: null, isLlmDetail: false,
+    resultSummary: [], submittingAction: '', taskFeedback: {},
     active: null, activeResultId: '', freshId: '', viewingId: '', viewingResource: '',
     runs: [], allRuns: [], runQuery: '', jobs: [], loops: [],
     selected: {}, selectedCount: 0, compare: null,
@@ -85,14 +87,19 @@ Page({
 
   // 手动在演示 / 真实模式之间切换
   switchMode() {
+    if (this.data.submittingAction) return
     const force = isDemo() ? 'real' : 'demo'
-    this.setData({ notice: '', error: '' })
+    this.previewRequest = null
+    this.setData({ notice: '', error: '', taskFeedback: {}, datasetPreviewId: '',
+      datasetPreview: null, datasetPreviewError: '' })
     this.connect(force)
   },
 
   switchTab(event) {
     const tab = Number(event.currentTarget.dataset.index)
+    const changed = tab !== this.data.tab
     this.setData({ tab, error: '' }, () => {
+      if (changed) wx.pageScrollTo({ scrollTop: 0, duration: 0 })
       if (this.data.role) this.refresh()
       else this.connect()
       if (tab === 1) { this.drawChart(); this.drawVisuals(); this.drawLlmLoss() }
@@ -147,16 +154,23 @@ Page({
     })
   },
 
-  showDataset(event) {
-    return this.execute(async () => {
-      const id = event.currentTarget.dataset.id
+  async showDataset(event) {
+    const id = event.currentTarget.dataset.id
+    const nextId = this.data.datasetPreviewId === id ? '' : id
+    const previewRequest = {}
+    this.previewRequest = previewRequest
+    this.setData({ datasetPreviewId: nextId, datasetPreview: null, datasetPreviewError: '' })
+    if (!nextId) return
+    try {
       const result = await request('/api/datasets/' + encodeURIComponent(id) + '/preview?limit=5')
-      this.setData({ datasetPreview: result })
-    })
+      if (this.previewRequest === previewRequest) this.setData({ datasetPreview: result })
+    } catch (error) {
+      if (this.previewRequest === previewRequest) this.setData({ datasetPreviewError: error.message })
+    }
   },
 
-  startIndustrial() {
-    this.setData({ tab: 0, task: 3, error: '' })
+  toggleIndustrialAdvanced() {
+    this.setData({ industrialAdvanced: !this.data.industrialAdvanced })
   },
 
   checkLlm() {
@@ -356,9 +370,13 @@ Page({
     return params
   },
 
-  submit(event) {
-    return this.execute(async () => {
-      const action = event.currentTarget.dataset.action
+  async submit(event) {
+    if (this.data.submittingAction) return
+    const { action, form } = event.currentTarget.dataset
+    const feedbackPath = form === undefined ? '' : 'taskFeedback.form' + form
+    this.setData({ submittingAction: action, error: '',
+      ...(feedbackPath ? { [feedbackPath]: { status: 'submitting' } } : {}) })
+    try {
       const params = this.buildParams(action)
       if (['finalize', 'promote', 'rollback', 'decline'].includes(action)) {
         const answer = await new Promise(resolve => wx.showModal({
@@ -370,9 +388,30 @@ Page({
         params.confirmed = true
       }
       const job = await post('/api/jobs', params)
-      this.setData({ active: job, freshId: '', output: '', error: '' })
+      const tracked = this.watchedJobs || (this.watchedJobs = {})
+      tracked[job.id] = true
+      this.setData({ active: { ...job, action }, freshId: '',
+        ...(feedbackPath ? { [feedbackPath]: { id: job.id, status: 'submitted' } } : {}) })
       this.watch()
-    })
+    } catch (error) {
+      this.setData(feedbackPath ? { [feedbackPath]: { status: 'failed', error: error.message } }
+        : { error: error.message })
+    } finally {
+      this.setData({ submittingAction: '' })
+    }
+  },
+
+  updateTaskFeedback(job) {
+    const key = Object.keys(this.data.taskFeedback).find(key => this.data.taskFeedback[key].id === job.id)
+    if (!key) return false
+    const status = job.status
+    const resultId = ((job.result || {}).id) || (status === 'completed' ? job.id : '')
+    const error = job.error || ''
+    const previous = this.data.taskFeedback[key]
+    if (previous.status !== status || previous.resultId !== resultId || previous.error !== error) {
+      this.setData({ ['taskFeedback.' + key]: { id: job.id, status, resultId, error } })
+    }
+    return true
   },
 
   cancel() { return this.execute(() => post('/api/jobs/' + this.data.active.id + '/cancel', {})) },
@@ -393,26 +432,31 @@ Page({
         }
         if (active) {
           const updated = await request('/api/jobs/' + active.id)
+          const hasFormFeedback = this.updateTaskFeedback(updated)
           if (['running', 'cancelling'].includes(updated.status)) {
             tracked[updated.id] = true
             if (this.data.tab === 2 && this.data.logJobId === updated.id) this.loadEvents()
-            this.setData({ active: { id: updated.id, status: updated.status, action: updated.action,
-              progress: updated.progress ? V.pretty(updated.progress, 1200) : '' } })
+            if (this.data.active === active || !this.data.active ||
+                !['running', 'cancelling'].includes(this.data.active.status)) {
+              this.setData({ active: { id: updated.id, status: updated.status, action: updated.action,
+                progress: updated.progress ? V.pretty(updated.progress, 1200) : '' } })
+            }
           } else {
             delete tracked[updated.id]
-            await this.finishJob(updated, true)
+            await this.finishJob(updated, hasFormFeedback)
           }
         }
         // A PyTRIO job can now run beside a local experiment: watch both to completion.
         for (const id of ids) {
           if (active && id === active.id) continue
           const updated = await request('/api/jobs/' + id)
+          const hasFormFeedback = this.updateTaskFeedback(updated)
           if (['running', 'cancelling'].includes(updated.status)) { tracked[id] = true; continue }
           delete tracked[id]
           const resultId = (updated.result && updated.result.id) || ''
           if (resultId) {
             this.setData({ freshId: resultId })
-            if (!this.data.viewingId) { await this.refresh(); await this.openDetail(resultId) }
+            if (!hasFormFeedback && !this.data.viewingId) { await this.refresh(); await this.openDetail(resultId) }
           }
         }
       } catch (error) { this.setData({ error: error.message }) }
@@ -420,21 +464,24 @@ Page({
     }, 1500)
   },
 
-  async finishJob(updated, primary) {
+  async finishJob(updated, hasFormFeedback) {
     const result = updated.result || {}
     const resultId = result.id || ''
     const patch = {
       active: { id: updated.id, status: updated.status, action: updated.action, progress: '' },
       activeResultId: resultId || this.data.activeResultId,
-      freshId: resultId || this.data.freshId,
-      error: updated.error || '',
-      output: V.pretty(result.id ? { id: result.id, status: result.status,
-        best_value: result.best_value, state: result.state } : (updated.events || result)),
-      sections: result.id ? [] : V.dataSections(result)
+      freshId: resultId || this.data.freshId
     }
-    if (!resultId && result.split_counts) patch.visual = V.visuals(null, null, result)
+    if (!hasFormFeedback) patch.error = updated.error || ''
+    if (!hasFormFeedback && !resultId && !this.data.viewingId) {
+      patch.output = V.pretty(updated.events || result)
+      patch.sections = V.dataSections(result)
+      if (result.split_counts) patch.visual = V.visuals(null, null, result)
+    }
     await this.refresh()
-    if (resultId && !this.data.viewingId) await this.openDetail(resultId)
+    if (!hasFormFeedback && resultId && !this.data.viewingId) await this.openDetail(resultId)
+    if (this.data.active && this.data.active.id !== updated.id &&
+        ['running', 'cancelling'].includes(this.data.active.status)) delete patch.active
     this.setData(patch)
   },
 
@@ -443,7 +490,9 @@ Page({
   },
 
   sectionsFor(detail, resource) {
-    if (resource === 'jobs') return V.jobSections(detail)
+    if (resource === 'jobs') {
+      return V.jobSections(detail).concat(V.dataSections(detail.result).filter(section => section.rows.length))
+    }
     if (String(detail.id || '').startsWith('LLM-')) return V.llmSections(detail)
     if (resource === 'loops' || String(detail.id || '').startsWith('LOOP-')) return V.loopSections(detail)
     if (String(detail.id || '').startsWith('IND-')) return V.industrialSections(detail)
@@ -463,6 +512,7 @@ Page({
       const patch = {
         tab: 1, viewingId: id, viewingResource: resource, detail, isLlmDetail,
         output: V.pretty(detail), sections: this.sectionsFor(detail, resource),
+        resultSummary: V.resultSummary(detail),
         chartMeta: series || null,
         chartSeries: null, chartParams: params,
         chartParam: params.indexOf(this.data.chartParam) >= 0 ? this.data.chartParam : (params[0] || ''),
@@ -470,7 +520,7 @@ Page({
         chartParamChoices: this.paramChoices(params, '选择参数'),
         logJobId: resource === 'jobs' ? id : this.data.logJobId,
         compare: null, compareBars: { rows: [], note: '' },
-        visual: V.visuals(detail, series),
+        visual: V.visuals(detail, series, resource === 'jobs' ? detail.result : null),
         wave: { index: 0, running: false, done: false, total: 0, current: '—' }
       }
       this.setData(patch, () => {
@@ -479,8 +529,7 @@ Page({
         if (isLlmDetail) this.drawLlmLoss()
         this.drawChart()
         this.drawVisuals()
-        const target = this.data.visual.any ? '#visuals' : '#result'
-        if (wx.pageScrollTo) wx.pageScrollTo({ selector: target, duration: 200, fail() {} })
+        if (wx.pageScrollTo) wx.pageScrollTo({ scrollTop: 0, duration: 0 })
       })
     })
   },
@@ -581,7 +630,8 @@ Page({
   },
 
   selectRun(event) {
-    const selected = {}
+    const selected = Object.assign({}, this.data.selected)
+    for (const item of this.data.runs) delete selected[item.id]
     for (const id of event.detail.value) selected[id] = true
     this.setData({ selected, selectedCount: Object.keys(selected).length })
   },
@@ -592,14 +642,22 @@ Page({
       if (ids.length < 2 || ids.length > 8) throw new Error('请勾选 2 至 8 条实验再比较')
       const query = ids.map(id => 'id=' + encodeURIComponent(id)).join('&')
       const result = await request('/api/compare?' + query)
-      this.setData({ tab: 1, compare: V.compareView(result), compareBars: V.compareBars(result) })
+      this.setData({ tab: 1, compare: V.compareView(result), compareBars: V.compareBars(result) }, () => {
+        wx.pageScrollTo({ selector: '#experiment-comparison', duration: 200, fail() {} })
+      })
     })
   },
 
-  addToCompare(event) {
+  toggleCompareRun(event) {
+    const id = event.currentTarget.dataset.id
     const selected = Object.assign({}, this.data.selected)
-    selected[event.currentTarget.dataset.id] = true
+    if (selected[id]) delete selected[id]
+    else selected[id] = true
     this.setData({ selected, selectedCount: Object.keys(selected).length })
+  },
+
+  clearCompareSelection() {
+    this.setData({ selected: {}, selectedCount: 0 })
   },
 
   setChartKind(event) {

@@ -42,6 +42,7 @@ const methodHints = {
 }
 
 const statusText = {
+  submitting: '正在提交…', submitted: '已提交，等待状态更新', cancelling: '正在取消',
   completed: '完成', running: '运行中', starting: '启动中', failed: '失败',
   cancelled: '已取消', interrupted: '已中断', data_review: '待数据复核',
   budget_exhausted: '预算耗尽', pruned: '已剪枝', unknown: '未知'

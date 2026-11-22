@@ -187,6 +187,27 @@ const llmSections = detail => {
   ]
 }
 
+const resultSummary = detail => {
+  const config = detail.config || {}
+  const metrics = detail.metrics || {}
+  const result = detail.result || {}
+  const status = detail.status || detail.state
+  const losses = detail.losses || []
+  const objective = (detail.charts || {}).objective_label || '最佳目标值'
+  return section('', [
+    row('状态', statusText[status] || status),
+    row('数据集', detail.dataset_id || detail.dataset_key || result.dataset_id || result.dataset_key),
+    row('模型', detail.base_model || detail.model_name || (config.model || {}).name),
+    row('算法', detail.algorithm || (detail.policy || {}).algorithm),
+    row('验证 MAE', metrics.overall_mae, detail.target_unit),
+    row('平衡准确率', metrics.balanced_accuracy),
+    row('F1', metrics.f1),
+    row(objective, detail.best_value),
+    row('最终 Loss', losses[losses.length - 1]),
+    row('记录数', result.row_count)
+  ]).rows
+}
+
 const compareView = result => {
   const runs = result.runs || []
   const verdict = result.reason || (result.comparable ? '证据一致，可公平比较' :
@@ -539,5 +560,5 @@ const compareBars = result => {
 module.exports = {
   text, pretty, section, row, pairs, dataSections, trainSections, optimizeSections,
   industrialSections, loopSections, jobSections, llmSections, compareView, trialRows, logRows, runRows,
-  visuals, compareBars
+  visuals, compareBars, resultSummary
 }
